@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#070b17">
+<meta name="description" content="Seven envelopes, seven little pieces of my heart.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8C%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Caveat:wght@400;500;600&family=Fredoka:wght@500;600&display=swap">
+<title>Seven Days of You</title>
+<style>
+:root{--ink:#080d1c;--navy:#101d3a;--blue:#5578c9;--pale:#dce6ff;--paper:#f4efe5;--muted:#aab6d2;--gold:#c8a875}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 15%,#1b315e 0%,#0d1730 43%,#070b17 100%);color:var(--paper);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");z-index:5}
+.stars{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#dce6ff;opacity:.55;animation:twinkle 3s infinite ease-in-out}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:.9;transform:scale(1.5)}}
+.wrap{position:relative;z-index:2;max-width:1100px;margin:auto;padding:34px 24px 90px}
+.topline{display:flex;justify-content:space-between;align-items:center;color:#9eafd4;font-size:10px;letter-spacing:.24em;text-transform:uppercase}
+.topline span:last-child{font-family:'Caveat';font-size:19px;letter-spacing:.04em;color:#c6d5fb;text-transform:none}
+.hero{text-align:center;padding:82px 0 30px}
+.eyebrow{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:#8da9e8}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(54px,9vw,100px);font-weight:500;line-height:.88;letter-spacing:-.045em;margin:22px 0 18px;color:#f6f1e8}
+h1 em{font-weight:400;color:#91aeea}
+.subtitle{font-family:'Caveat',cursive;font-size:27px;color:#b8c9ee;margin:0}
+.intro{max-width:510px;margin:22px auto 0;font-size:12px;line-height:1.9;color:#aab6d2;font-weight:300}
+.rule{display:flex;align-items:center;gap:14px;justify-content:center;margin:34px auto 10px;color:#8da9e8;font-size:10px;letter-spacing:.25em;text-transform:uppercase}
+.rule:before,.rule:after{content:"";width:55px;height:1px;background:linear-gradient(90deg,transparent,#6684c5)}
+.rule:after{transform:scaleX(-1)}
+.envelope-stage{position:relative;min-height:460px;margin:8px auto 0;max-width:900px;display:flex;align-items:center;justify-content:center}
+.envelope{position:absolute;width:150px;height:104px;border:1px solid rgba(170,195,246,.45);background:linear-gradient(145deg,#233c70,#14264c);box-shadow:0 18px 45px #02061180;cursor:pointer;transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .4s;animation:float 5s ease-in-out infinite;transform-style:preserve-3d}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent 49.5%,#9eb6eb80 50%,transparent 50.8%),linear-gradient(35deg,transparent 49.5%,#9eb6eb65 50%,transparent 50.8%);opacity:.8}
+.envelope:after{content:"";position:absolute;left:0;right:0;top:0;margin:auto;width:0;height:0;border-left:74px solid transparent;border-right:74px solid transparent;border-top:55px solid #38558b;filter:drop-shadow(0 1px 1px #8da9e8)}
+.envelope:hover{filter:brightness(1.25);z-index:4}
+.envelope .seal{position:absolute;z-index:2;left:50%;top:45%;transform:translate(-50%,-50%);width:27px;height:27px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a8c0f4,#4d6fae 70%);border:1px solid #c0d0f0;display:grid;place-items:center;color:#f4efe5;font-size:12px;box-shadow:0 0 16px #7294d966}
+.envelope .day{position:absolute;z-index:3;bottom:10px;left:0;right:0;text-align:center;font-size:9px;letter-spacing:.2em;color:#e0e9ff;text-transform:uppercase}
+.envelope:nth-child(1){left:7%;top:8%;animation-delay:-1s;transform:rotate(-12deg) scale(.86)}
+.envelope:nth-child(2){right:9%;top:7%;animation-delay:-2.4s;transform:rotate(11deg) scale(.92)}
+.envelope:nth-child(3){left:1%;top:53%;animation-delay:-3s;transform:rotate(8deg) scale(.75)}
+.envelope:nth-child(4){right:1%;top:53%;animation-delay:-.8s;transform:rotate(-9deg) scale(.78)}
+.envelope:nth-child(5){left:19%;bottom:1%;animation-delay:-1.8s;transform:rotate(7deg) scale(.78)}
+.envelope:nth-child(6){right:19%;bottom:1%;animation-delay:-2.8s;transform:rotate(-7deg) scale(.8)}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -15px}}
+.main-envelope{position:relative;z-index:3;width:260px;height:178px;animation:centerFloat 4.5s ease-in-out infinite;transform:rotate(0deg)}
+.main-envelope:after{border-left-width:129px;border-right-width:129px;border-top-width:93px}
+.main-envelope .seal{width:43px;height:43px;font-size:18px;top:48%}
+.main-envelope .day{bottom:18px;font-size:10px}
+.main-envelope:focus-visible,.envelope:focus-visible{outline:2px solid #dce6ff;outline-offset:8px}
+@keyframes centerFloat{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.hint{position:absolute;bottom:0;left:0;right:0;text-align:center;color:#8fa4d0;font-size:10px;letter-spacing:.2em;text-transform:uppercase;animation:pulse 2.2s infinite}
+@keyframes pulse{50%{opacity:.45}}
+.envelope.opening{animation:openBurst .8s forwards;pointer-events:none}
+@keyframes openBurst{to{transform:scale(1.55) rotate(8deg);opacity:0;filter:blur(5px)}}
+.overlay{position:fixed;inset:0;background:#050916d9;backdrop-filter:blur(12px);z-index:10;display:none;align-items:center;justify-content:center;padding:22px;opacity:0;transition:opacity .5s}
+.overlay.show{display:flex;opacity:1}
+.letter{position:relative;width:min(690px,100%);max-height:85vh;overflow:auto;background:var(--paper);color:#1b2232;padding:clamp(28px,6vw,58px);box-shadow:0 30px 100px #000b;border:1px solid #d8cbb7;transform:translateY(25px) scale(.97);animation:letterIn .65s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes letterIn{to{transform:translateY(0) scale(1)}}
+.letter:before{content:"";position:absolute;inset:10px;border:1px solid #c9b99e;pointer-events:none}
+.letter-top{display:flex;justify-content:space-between;gap:12px;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#63718b}
+.letter h2{font:500 clamp(38px,7vw,60px)/.95 'Cormorant Garamond',serif;margin:38px 0 8px;color:#101d3a}
+.letter .script{font:24px 'Caveat',cursive;color:#5271ae;margin-bottom:26px}
+.letter p{font:16px/1.9 'Cormorant Garamond',serif;color:#303849;margin:0 0 17px}
+.letter .sign{font:26px 'Caveat',cursive;color:#31518b;margin-top:28px}
+.close{position:sticky;float:right;top:0;border:1px solid #b9b09f;background:transparent;color:#243553;width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer;z-index:2}
+.locked-note{position:fixed;inset:0;z-index:11;background:#050916d9;backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:24px}
+.locked-note.show{display:flex}
+.lock-card{max-width:390px;text-align:center;border:1px solid #536b9b;background:linear-gradient(145deg,#17294e,#0c1429);padding:40px 30px;box-shadow:0 25px 90px #0009}
+.lock-card .lock-icon{font-size:30px;color:#a9c0f1}
+.lock-card h3{font:500 38px 'Cormorant Garamond';margin:16px 0 8px}
+.lock-card p{font-size:12px;line-height:1.8;color:#b6c4e2}
+.lock-card button{margin-top:15px;background:transparent;border:1px solid #819bd0;color:#e9efff;padding:10px 22px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+.seventh{position:relative;margin:70px auto 0;max-width:720px;text-align:center;padding:48px 24px 44px;border-top:1px solid #425782;border-bottom:1px solid #425782;overflow:hidden}
+.seventh:before{content:"07";position:absolute;inset:-50px 0 auto;font:200px 'Cormorant Garamond';color:#ffffff08;line-height:1}
+.seventh .eyebrow{position:relative}
+.seventh h2{position:relative;font:500 clamp(40px,7vw,65px)/.95 'Cormorant Garamond';margin:18px 0;color:#f6f1e8}
+.seventh p{position:relative;max-width:440px;margin:0 auto;color:#aab6d2;font-size:12px;line-height:1.9}
+.seventh .date{position:relative;display:inline-block;margin-top:24px;color:#b8c9ee;font:22px 'Caveat'}
+.footer{text-align:center;margin-top:60px;color:#7082aa;font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+@media(max-width:650px){.wrap{padding:24px 17px 65px}.hero{padding-top:65px}.envelope-stage{min-height:440px}.envelope{width:116px;height:81px}.envelope:after{border-left-width:57px;border-right-width:57px;border-top-width:44px}.envelope:nth-child(1){left:0;top:5%}.envelope:nth-child(2){right:0;top:5%}.envelope:nth-child(3){left:-3%;top:48%}.envelope:nth-child(4){right:-3%;top:48%}.envelope:nth-child(5){left:8%;bottom:4%}.envelope:nth-child(6){right:8%;bottom:4%}.main-envelope{width:205px;height:142px}.main-envelope:after{border-left-width:102px;border-right-width:102px;border-top-width:74px}.hint{bottom:-4px;font-size:8px}.letter{padding:30px 25px}.letter p{font-size:15px}}
+
+
+/* DAY TWO — OF YOU, AND ALL THINGS LOVELY */
+.day-two-overlay{position:fixed;inset:0;z-index:21;display:none;align-items:center;justify-content:center;overflow:auto;padding:24px 16px;background:radial-gradient(ellipse at 50% 10%,#1a315aee,#050916f5 72%);backdrop-filter:blur(13px);opacity:0}
+.day-two-overlay.show{display:flex;opacity:1;animation:dtIn .5s ease both}
+.day-two-paper{position:relative;width:min(760px,100%);max-height:88vh;overflow:auto;padding:clamp(30px,6vw,62px);color:#263047;background:linear-gradient(135deg,#f8f3e9,#eee5d5);border:1px solid #d5c6ad;box-shadow:0 30px 100px #000c;animation:letterIn .65s cubic-bezier(.2,.8,.2,1) both}
+.day-two-paper:before{content:"";position:absolute;inset:11px;border:1px solid #cdbd9f;pointer-events:none}
+.day-two-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#687895;font-size:9px;letter-spacing:.22em;text-transform:uppercase}
+.day-two-close{position:sticky;top:0;float:right;z-index:2;width:34px;height:34px;border:1px solid #b9b09f;border-radius:50%;background:transparent;color:#243553;font-size:18px;cursor:pointer}
+.day-two-title{margin:34px 0 5px;text-align:center;font:500 clamp(32px,6vw,52px)/1.05 'Cormorant Garamond',serif;letter-spacing:.025em;color:#142443}
+.day-two-subtitle{text-align:center;margin:0 0 28px;color:#60749a;font:italic 19px 'Cormorant Garamond',serif}
+.day-two-rule{width:70px;height:1px;margin:0 auto 27px;background:#b9a985}
+.day-two-poem{margin:0 auto;max-width:570px;white-space:pre-line;text-align:center;font:17px/1.72 'Cormorant Garamond',serif;color:#30394b}
+@media(max-width:600px){.day-two-overlay{padding:12px}.day-two-paper{padding:28px 22px}.day-two-poem{font-size:16px;line-height:1.65}.day-two-title{margin-top:28px}}
+
+/* DAY THREE — THE BLUE HOUR */
+:root{--electric:#58a6ff;--ice:#c7e3ff;--deep:#050a16}
+.day-three-overlay{position:fixed;inset:0;z-index:20;display:none;overflow:auto;background:radial-gradient(ellipse at 50% 0%,#142f5b 0%,#080f20 48%,#03060d 100%);color:#edf5ff;padding:24px 18px 60px;opacity:0;transition:opacity .45s}
+.day-three-overlay.show{display:block;opacity:1;animation:dtIn .55s ease both}
+@keyframes dtIn{from{opacity:0}to{opacity:1}}
+.day-three-shell{max-width:1080px;margin:0 auto;position:relative}
+.day-three-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#8db8ee;font-size:9px;letter-spacing:.24em;text-transform:uppercase}
+.day-three-close{border:1px solid #4779b7;background:#071326;color:#dcecff;border-radius:50%;width:42px;height:42px;font-size:22px;cursor:pointer;transition:.25s}
+.day-three-close:hover{background:#173d70;box-shadow:0 0 24px #3994ff66;transform:rotate(90deg)}
+.day-three-hero{text-align:center;padding:54px 12px 30px}
+.day-three-hero .kicker{font-size:9px;letter-spacing:.38em;color:#66aaff;text-transform:uppercase}
+.day-three-hero h2{font:500 clamp(48px,8vw,88px)/.88 'Cormorant Garamond',serif;margin:17px 0 14px;color:#f2f7ff}
+.day-three-hero h2 em{color:#76b7ff;font-weight:400}
+.day-three-hero p{font:italic 18px 'Cormorant Garamond',serif;color:#9fb8d9;margin:0}
+.day-three-progress{display:flex;align-items:center;justify-content:center;gap:8px;margin:28px auto 0}
+.day-three-progress i{height:2px;width:34px;background:#24436d;transition:.35s}
+.day-three-progress i.active{background:#6ab2ff;box-shadow:0 0 12px #4c9dff}
+.surprise-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:22px auto 26px;max-width:880px}
+.surprise-tab{min-height:90px;border:1px solid #24466e;background:linear-gradient(145deg,#0d1b31cc,#07101fdd);color:#a9c9ed;padding:13px 8px;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
+.surprise-tab:before{content:"";position:absolute;inset:-80% 30% auto;height:130px;background:#328cff18;filter:blur(25px);transition:.4s}
+.surprise-tab:hover,.surprise-tab.active{transform:translateY(-5px);border-color:#67b1ff;box-shadow:0 12px 36px #006eff24, inset 0 0 25px #1b579b22;color:#f2f8ff}
+.surprise-tab .num{display:block;font:italic 24px 'Cormorant Garamond',serif;color:#65adff}
+.surprise-tab .tab-name{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-top:7px}
+.surprise-stage{max-width:880px;min-height:390px;margin:0 auto;border:1px solid #23466f;background:linear-gradient(145deg,#0a1729eF,#060d19f5);box-shadow:0 30px 90px #0008,inset 0 0 70px #0e3a7022;position:relative;overflow:hidden}
+.surprise-stage:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 20%,#5baaff08 50%,transparent 75%);transform:translateX(-100%);animation:stageSheen 8s ease-in-out infinite}
+@keyframes stageSheen{50%,100%{transform:translateX(100%)}}
+.surprise-panel{display:none;position:relative;min-height:390px;padding:clamp(25px,5vw,55px);animation:panelIn .55s cubic-bezier(.2,.8,.2,1) both}
+.surprise-panel.active{display:flex;align-items:center;justify-content:center}
+@keyframes panelIn{from{opacity:0;transform:translateY(18px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+.panel-copy{max-width:650px;text-align:center;position:relative;z-index:1}
+.panel-eyebrow{font-size:9px;letter-spacing:.3em;color:#66aaff;text-transform:uppercase}
+.panel-title{font:500 clamp(36px,6vw,62px)/.95 'Cormorant Garamond',serif;color:#f3f7ff;margin:16px 0}
+.panel-copy p{font:17px/1.8 'Cormorant Garamond',serif;color:#b5c8e1;margin:12px auto;max-width:580px}
+.blue-cta{border:1px solid #559ce8;background:linear-gradient(110deg,#0d2b50,#10203b);color:#e7f3ff;padding:13px 20px;margin-top:17px;letter-spacing:.16em;text-transform:uppercase;font-size:9px;cursor:pointer;transition:.3s;box-shadow:0 0 0 #3d9aff}
+.blue-cta:hover{transform:translateY(-3px);box-shadow:0 9px 30px #168aff44,0 0 18px #168aff33}
+.constellation{position:absolute;inset:0;opacity:.65;pointer-events:none}
+.constellation i{position:absolute;width:4px;height:4px;border-radius:50%;background:#c5e5ff;box-shadow:0 0 14px 4px #55aaff88;animation:constTwinkle 2.8s ease-in-out infinite}
+@keyframes constTwinkle{50%{transform:scale(2.5);opacity:.45}}
+.star-note{display:inline-flex;align-items:center;gap:9px;border:1px solid #2a5a8c;background:#0a1a2dcc;padding:12px 15px;margin:7px;color:#d5e9ff;font:italic 17px 'Cormorant Garamond',serif;cursor:pointer;transition:.25s}
+.star-note:hover{transform:translateY(-4px);background:#102c4c;box-shadow:0 8px 22px #168aff2c}
+.star-note b{font:10px 'DM Sans',sans-serif;color:#64b2ff}
+.memory-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:25px}
+.memory-tile{min-height:118px;padding:17px 12px;border:1px solid #294d76;background:linear-gradient(150deg,#122747,#081322);display:flex;flex-direction:column;justify-content:space-between;text-align:left;transition:.35s}
+.memory-tile:hover{transform:translateY(-6px) rotate(-1deg);border-color:#70baff;box-shadow:0 15px 32px #006eff22}
+.memory-tile span{font-size:8px;letter-spacing:.16em;color:#6eb5ff;text-transform:uppercase}
+.memory-tile strong{font:20px 'Cormorant Garamond',serif;color:#e5f1ff}
+.memory-tile small{font-size:10px;line-height:1.5;color:#91a9c7}
+.door-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:25px}
+.mini-door{width:116px;height:172px;border:1px solid #4777aa;background:linear-gradient(90deg,#09172a,#102a4b 48%,#09172a);box-shadow:inset 0 0 25px #2b83d522,0 15px 30px #0007;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:#cfe5ff;cursor:pointer;transition:.4s;position:relative}
+.mini-door:before{content:"";position:absolute;inset:7px;border:1px solid #4b77a455}
+.mini-door:hover{transform:perspective(500px) rotateY(-12deg) translateY(-5px);box-shadow:0 15px 38px #168aff33}
+.mini-door span{font:30px 'Cormorant Garamond',serif;color:#7dbdff}.mini-door small{font-size:8px;letter-spacing:.15em;text-transform:uppercase}
+.door-message{min-height:46px;margin:18px auto 0;color:#d5e8ff;font:italic 18px 'Cormorant Garamond',serif;max-width:560px}
+.wish-orbit{width:190px;height:190px;border:1px solid #3676b4;border-radius:50%;margin:18px auto;display:grid;place-items:center;position:relative;box-shadow:0 0 50px #168aff24,inset 0 0 40px #168aff15;animation:orbitPulse 4s ease-in-out infinite}
+.wish-orbit:before,.wish-orbit:after{content:"";position:absolute;border:1px solid #4389c355;border-radius:50%;inset:13px;transform:rotateX(65deg) rotate(25deg)}
+.wish-orbit:after{inset:-12px;transform:rotateY(68deg) rotate(-22deg)}
+@keyframes orbitPulse{50%{box-shadow:0 0 75px #168aff48,inset 0 0 55px #168aff26;transform:scale(1.025)}}
+.wish-orbit span{font:italic 32px 'Cormorant Garamond',serif;color:#cce7ff}
+.wish-output{min-height:52px;color:#cfe4ff;font:italic 19px 'Cormorant Garamond',serif;margin:15px auto;max-width:540px}
+.final-envelope{width:170px;height:115px;margin:12px auto 20px;position:relative;border:1px solid #5799dc;background:linear-gradient(145deg,#1b4775,#0a1a30);cursor:pointer;box-shadow:0 15px 45px #0008;transition:.4s}
+.final-envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent 49%,#82c1ff70 50%,transparent 51%),linear-gradient(35deg,transparent 49%,#82c1ff55 50%,transparent 51%)}
+.final-envelope:after{content:"";position:absolute;top:0;left:0;right:0;margin:auto;width:0;height:0;border-left:84px solid transparent;border-right:84px solid transparent;border-top:63px solid #2d659e;filter:drop-shadow(0 1px 2px #9dd0ff)}
+.final-envelope:hover{transform:translateY(-8px) rotate(-2deg);box-shadow:0 22px 55px #168aff33}
+.final-envelope span{position:absolute;z-index:2;top:44%;left:50%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#8dc7ff;color:#08203b}
+.final-letter{display:none;text-align:left;max-width:610px;margin:20px auto 0;padding:25px;border-left:2px solid #5baaff;background:#09182a;color:#dcecff;font:17px/1.9 'Cormorant Garamond',serif;animation:panelIn .5s both}
+.final-letter.show{display:block}
+.day-three-foot{text-align:center;color:#6685aa;font-size:9px;letter-spacing:.2em;margin:25px 0 0;text-transform:uppercase}
+@media(max-width:650px){.day-three-overlay{padding:18px 12px 40px}.day-three-hero{padding:38px 8px 18px}.surprise-nav{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.surprise-tab{min-height:78px;padding:9px 3px}.surprise-tab .num{font-size:20px}.surprise-tab .tab-name{font-size:7px;letter-spacing:.04em}.surprise-stage,.surprise-panel{min-height:440px}.surprise-panel{padding:25px 17px}.memory-strip{grid-template-columns:repeat(2,1fr)}.memory-tile{min-height:105px}.mini-door{width:91px;height:145px}}
+
+/* DAY FOUR — A MEMORY I'LL KEEP */
+.day-four-overlay{position:fixed;inset:0;z-index:22;display:none;align-items:center;justify-content:center;overflow:auto;padding:24px 16px;background:radial-gradient(ellipse at 50% 10%,#1a315aee,#050916f5 72%);backdrop-filter:blur(13px);opacity:0}
+.day-four-overlay.show{display:flex;opacity:1;animation:dtIn .5s ease both}
+.day-four-paper{position:relative;width:min(760px,100%);max-height:88vh;overflow:auto;padding:clamp(30px,6vw,62px);color:#263047;background:linear-gradient(135deg,#f8f3e9,#eee5d5);border:1px solid #d5c6ad;box-shadow:0 30px 100px #000c;animation:letterIn .65s cubic-bezier(.2,.8,.2,1) both}
+.day-four-paper:before{content:"";position:absolute;inset:11px;border:1px solid #cdbd9f;pointer-events:none}
+.day-four-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#687895;font-size:9px;letter-spacing:.22em;text-transform:uppercase}
+.day-four-close{position:sticky;top:0;float:right;z-index:2;width:34px;height:34px;border:1px solid #b9b09f;border-radius:50%;background:transparent;color:#243553;font-size:18px;cursor:pointer}
+.day-four-title{margin:34px 0 5px;text-align:center;font:500 clamp(32px,6vw,52px)/1.05 'Cormorant Garamond',serif;letter-spacing:.025em;color:#142443}
+.day-four-subtitle{text-align:center;margin:0 0 28px;color:#60749a;font:italic 19px 'Cormorant Garamond',serif}
+.day-four-rule{width:70px;height:1px;margin:0 auto 27px;background:#b9a985}
+.day-four-copy{margin:0 auto;max-width:570px;text-align:center;font:18px/1.8 'Cormorant Garamond',serif;color:#30394b}
+.day-four-copy p{margin:0 0 20px}
+@media(max-width:600px){.day-four-overlay{padding:12px}.day-four-paper{padding:28px 22px}.day-four-copy{font-size:17px;line-height:1.7}.day-four-title{margin-top:28px}}
+
+/* THE TWENTY DOORS — corrected 3D hallway geometry */
+/* First-person mouse-look camera and cinematic door reveal */
+.mansion-frame{perspective:820px;perspective-origin:50% 48%;cursor:crosshair}
+.mansion-world{transform-origin:50% 50%;transition:transform .12s linear}
+.mansion-player{display:none!important}
+.mansion-player i{position:absolute;display:block;background:linear-gradient(90deg,#101c31,#5479a9 48%,#101c31);border:1px solid #91bce8}
+.player-head{width:22px;height:24px;border-radius:48% 48% 42% 42%;left:16px;top:0;background:radial-gradient(circle at 40% 30%,#d7e8ff,#607fa9 70%)!important}
+.player-body{width:34px;height:48px;left:10px;top:26px;border-radius:10px 10px 5px 5px}
+.player-arm{width:10px;height:42px;top:30px;border-radius:8px;transform-origin:top center}.player-arm.left{left:3px;transform:rotate(9deg)}.player-arm.right{right:3px;transform:rotate(-9deg)}
+.player-leg{width:12px;height:38px;top:70px;border-radius:3px 3px 7px 7px}.player-leg.left{left:13px}.player-leg.right{right:13px}
+.mansion-reticle{display:none;position:absolute;z-index:9;left:50%;top:48%;width:14px;height:14px;transform:translate(-50%,-50%);border:1px solid #d8ebff;border-radius:50%;box-shadow:0 0 10px #65b5ff;background:#75baff22;pointer-events:none}
+.mansion-frame.shift-locked .mansion-reticle{display:block}.mansion-frame.shift-locked{cursor:none}
+.mansion-lock-row{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin:10px auto 0}
+#shiftLockButton{border:1px solid #679bd1;background:linear-gradient(120deg,#102b4b,#09172b);color:#e2f1ff;padding:10px 17px;font:10px 'DM Sans',sans-serif;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;box-shadow:0 0 18px #3b8bdb22}
+#shiftLockButton[aria-pressed="true"]{background:linear-gradient(120deg,#244d78,#102b4b);border-color:#b5d8ff;box-shadow:0 0 22px #58a6ff55}
+#cameraStatus{font-size:9px;letter-spacing:.12em;color:#8caed6}
+.mansion-zoom-shade{position:absolute;z-index:10;inset:0;background:#020713;opacity:0;pointer-events:none;transition:opacity .75s ease}
+.mansion-frame.door-zoom .mansion-zoom-shade{opacity:.56}
+.mansion-note-focus{position:absolute;z-index:11;left:50%;top:50%;width:min(410px,calc(100% - 36px));padding:30px 27px;text-align:center;background:linear-gradient(145deg,#172f50f5,#081426f7);border:1px solid #8db9e8;box-shadow:0 20px 80px #000c,0 0 38px #438bd655;opacity:0;transform:translate(-50%,-44%) scale(.72);pointer-events:none;transition:opacity .55s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.mansion-frame.door-note-open .mansion-note-focus{opacity:1;transform:translate(-50%,-50%) scale(1);pointer-events:auto;transition-delay:.22s}
+.mansion-note-focus:before{content:'✦';display:block;color:#a9d2ff;font-size:20px;margin-bottom:12px}
+.mansion-note-focus small{font-size:9px;letter-spacing:.2em;color:#9fc8f4}
+.mansion-note-focus p{font:italic 23px/1.4 'Cormorant Garamond',serif;color:#edf6ff;margin:14px 0 22px}
+.mansion-note-focus button{border:1px solid #6f9ccc;background:transparent;color:#dcecff;padding:10px 14px;font-size:9px;letter-spacing:.15em;cursor:pointer}
+.mansion-frame.door-note-open .mansion-player,.mansion-frame.door-note-open .mansion-reticle{opacity:0}
+
+.door-game-intro{max-width:620px;margin:0 auto 18px;color:#a9bfdc;font-size:12px;line-height:1.8}
+.mansion-hud{display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:760px;margin:0 auto 12px;color:#bcd8f5;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.mansion-count{font:24px 'Cormorant Garamond',serif;color:#eaf5ff;letter-spacing:0}
+.mansion-frame{height:440px;max-width:760px;margin:0 auto;position:relative;overflow:hidden;border:1px solid #315783;background:radial-gradient(ellipse at 50% 45%,#1b3456,#050b18 75%);perspective:760px;perspective-origin:50% 48%;box-shadow:inset 0 0 90px #000c,0 20px 55px #0008;touch-action:pan-y;outline:none}
+.mansion-world{position:absolute;inset:0;transform-style:preserve-3d;transform:translate3d(0,0,0) rotateY(0deg);transition:transform .12s linear}
+.mansion-floor{position:absolute;width:440px;height:2200px;left:50%;top:55%;transform:translate(-50%,-50%) rotateX(90deg) translateZ(-145px);transform-origin:center;background:repeating-linear-gradient(90deg,#182b46 0 2px,#0b1729 2px 108px),repeating-linear-gradient(0deg,transparent 0 108px,#37507155 109px 111px);box-shadow:inset 0 0 90px #02050c}
+.mansion-ceiling{position:absolute;width:440px;height:2200px;left:50%;top:45%;transform:translate(-50%,-50%) rotateX(90deg) translateZ(145px);background:repeating-linear-gradient(90deg,#152741 0 2px,#0a1425 2px 108px);opacity:.72}
+.mansion-wall{position:absolute;width:2200px;height:290px;left:50%;top:50%;background:linear-gradient(180deg,#142945,#0a1528 78%);border:1px solid #345071;box-shadow:inset 0 0 55px #020711}
+.mansion-wall.left{transform:translate(-50%,-50%) translate3d(-220px,0,-1100px) rotateY(90deg)}
+.mansion-wall.right{transform:translate(-50%,-50%) translate3d(220px,0,-1100px) rotateY(-90deg)}
+.mansion-wall.end{width:440px;transform:translate(-50%,-50%) translateZ(-2200px)}
+.mansion-wall:after{content:"✦     ·      ✧       ·      ✦";position:absolute;left:0;right:0;top:20px;text-align:center;color:#7fa9d766;letter-spacing:2.6em;font-size:12px}
+#mansionDoors{position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none}
+.mansion-door{position:absolute;box-sizing:border-box;width:90px;height:156px;left:50%;top:50%;margin:-78px 0 0 -45px;padding:0;border:2px solid #8bb8e8;border-radius:3px;background:linear-gradient(90deg,#061326 0%,#102b4b 18%,#1d4168 50%,#102b4b 82%,#061326 100%);box-shadow:inset 0 0 0 5px #07162b,inset 0 0 0 7px #6e9ac766,inset 0 0 28px #69b8ff55,0 0 18px #3d8fe688;transform-style:preserve-3d;backface-visibility:visible;cursor:pointer;color:#e5f2ff;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;transition:filter .25s,box-shadow .25s;pointer-events:auto;z-index:5;font-family:inherit}
+.mansion-door:before{content:"";position:absolute;inset:12px 10px;border:1px solid #9acaffaa;box-shadow:inset 0 0 14px #8ac5ff33,0 0 8px #8ac5ff22;pointer-events:none}.mansion-door:after{content:"";position:absolute;right:13px;top:50%;width:7px;height:7px;border-radius:50%;background:#e8d5a2;box-shadow:0 0 8px #f3dca1;pointer-events:none}
+.mansion-door:hover,.mansion-door:focus-visible{filter:brightness(1.55);box-shadow:0 0 34px #4caaffaa,inset 0 0 22px #69b8ff55;outline:2px solid #a9d5ff;outline-offset:3px}
+.mansion-door.opened{border-color:#e4cb91;background:linear-gradient(90deg,#242039,#6a573b 48%,#282039);box-shadow:0 0 26px #d4b87988}
+.mansion-door b{font:26px 'Cormorant Garamond',serif;z-index:1;text-shadow:0 0 12px #9acaff}.mansion-door small{z-index:1;font-size:8px;letter-spacing:.18em;text-shadow:0 1px 5px #000}
+.mansion-light{position:absolute;width:150px;height:150px;left:50%;top:18%;transform:translateX(-50%) translateZ(-280px);border-radius:50%;background:#65aaff18;filter:blur(30px)}
+.mansion-controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:12px auto;color:#91acd0;font-size:9px;letter-spacing:.08em}
+.mansion-controls span{padding:7px 10px;border:1px solid #294669;background:#081528}
+.door-reason{display:none;position:relative;max-width:390px;margin:12px auto 0;padding:15px 18px;border:1px solid #6f91bd;background:linear-gradient(145deg,#172d4b,#0b1729);color:#e4f1ff;text-align:center;box-shadow:0 12px 35px #0009;border-radius:5px;animation:panelIn .35s both}.door-reason:before{content:'✦';display:block;color:#9bcaff;font-size:14px;margin-bottom:5px}
+.door-reason.show{display:block}.door-reason small{display:block;color:#8fb9eb;font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:7px}.door-reason p{font:italic 18px/1.45 'Cormorant Garamond',serif;margin:0}
+@media(max-width:650px){.mansion-frame{height:390px;perspective:680px}.mansion-door{width:70px;height:132px;margin:-66px 0 0 -35px}.mansion-wall.left{transform:translate(-50%,-50%) translate3d(-190px,0,-1100px) rotateY(90deg)}.mansion-wall.right{transform:translate(-50%,-50%) translate3d(190px,0,-1100px) rotateY(-90deg)}.mansion-floor,.mansion-ceiling{width:380px}}
+@media(prefers-reduced-motion:reduce){.day-three-overlay *, .day-three-overlay *:before,.day-three-overlay *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* DAY FIVE — THE BIRTHDAY ARCADE */
+.arcade-overlay{position:fixed;inset:0;z-index:30;display:none;overflow:auto;background:radial-gradient(ellipse at 50% 0%,#172b52 0%,#080d1b 58%,#03050c 100%);color:#dffcff;font-family:'Courier New',monospace;padding:clamp(12px,3vw,34px)}
+.arcade-overlay.show{display:block;animation:arcadeIn .45s ease both}@keyframes arcadeIn{from{opacity:0;filter:blur(8px)}to{opacity:1;filter:blur(0)}}
+.arcade-shell{max-width:1180px;margin:0 auto;border:1px solid #1d5471;background:linear-gradient(145deg,#0d1a2bdf,#060b16f5);box-shadow:0 0 70px #00eaff17,inset 0 0 55px #00eaff08;padding:clamp(14px,2.5vw,28px);position:relative}
+.arcade-shell:before{content:'';position:absolute;inset:7px;border:1px solid #1d496055;pointer-events:none}
+.arcade-head{display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid #1d4960;padding:0 4px 16px;position:relative;z-index:1}
+.arcade-brand{font-size:10px;letter-spacing:.3em;color:#61eaff}.arcade-close{background:transparent;color:#9ff6ff;border:1px solid #28627a;width:36px;height:36px;font-size:22px;cursor:pointer}
+.arcade-title{text-align:center;padding:25px 8px 20px}.arcade-title .arcade-kicker{font-size:9px;letter-spacing:.42em;color:#5bdff4}.arcade-title h2{font:500 clamp(42px,7vw,76px)/.95 'Cormorant Garamond',serif;letter-spacing:.04em;color:#effcff;margin:13px 0 8px;text-shadow:0 0 22px #00dfff50}.arcade-title h2 em{color:#57e8ff}.arcade-title p{font-size:10px;color:#8aaec3;letter-spacing:.12em}
+.arcade-playerbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:11px 14px;background:#071421;border:1px solid #17465b;color:#8db7c9;font-size:10px;letter-spacing:.12em;margin:0 0 17px}.arcade-playerbar strong{color:#76f2ff}.arcade-coins{color:#f6d88b!important}
+.arcade-lobby{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;position:relative;z-index:1}.arcade-machine{border:1px solid #1a5066;background:linear-gradient(180deg,#10283a,#081321);padding:10px;cursor:pointer;color:#dffcff;text-align:left;min-width:0;transition:.2s;box-shadow:0 8px 20px #0005}.arcade-machine:hover{transform:translateY(-5px);border-color:#56eaff;box-shadow:0 0 22px #00dfff26}.arcade-machine .machine-art{height:100px;display:grid;place-items:center;background:radial-gradient(circle,#17465a,#07111e 70%);border:1px solid #24546a;font-size:39px;text-shadow:0 0 16px #4feaff;margin-bottom:10px}.arcade-machine b{display:block;font-size:10px;letter-spacing:.12em;color:#8df4ff}.arcade-machine small{display:block;color:#7c9caf;font-size:9px;line-height:1.5;margin-top:6px}.arcade-machine .machine-status{display:block;margin-top:9px;color:#f1d58b;font-size:8px;letter-spacing:.16em}.arcade-machine.done{border-color:#b99a52}.arcade-machine.done .machine-status{color:#f6d88b}
+.arcade-gameview{display:none;position:relative;z-index:1}.arcade-gameview.active{display:block}.arcade-gamebar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}.arcade-gamebar h3{margin:0;font-size:12px;letter-spacing:.18em;color:#8ff3ff}.arcade-gamebar button,.arcade-action{background:#0c2536;border:1px solid #28627a;color:#b9f7ff;padding:9px 13px;font:10px 'Courier New',monospace;letter-spacing:.12em;cursor:pointer}.arcade-gamebar button:hover,.arcade-action:hover{background:#143a4f;border-color:#68eaff}
+.arcade-screen{position:relative;background:#02060b;border:2px solid #1c8196;box-shadow:0 0 28px #00dfff22,inset 0 0 40px #00dfff0b;padding:7px;max-width:900px;margin:auto}.arcade-screen canvas{width:100%;height:auto;display:block;background:#030913;image-rendering:pixelated;aspect-ratio:800/500}.arcade-screen:after{content:'';pointer-events:none;position:absolute;inset:7px;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,#0005 4px);opacity:.45}
+.arcade-help{text-align:center;color:#83a9bc;font-size:9px;letter-spacing:.08em;line-height:1.8;margin:12px 0}.arcade-gameover{display:none;position:absolute;inset:7px;z-index:3;background:#030a12eF;align-items:center;justify-content:center;text-align:center;padding:20px}.arcade-gameover.show{display:flex}.arcade-gameover h4{font:42px 'Cormorant Garamond',serif;color:#9af5ff;margin:0 0 8px}.arcade-gameover p{font-size:10px;color:#a8c6d4;line-height:1.8}.arcade-gameover button{margin-top:10px}
+.arcade-secret{display:none;text-align:center;margin:20px auto 0;padding:25px;border:1px solid #b79a5c;background:radial-gradient(ellipse,#24314a,#0b1422);box-shadow:0 0 35px #e9c97920;max-width:700px}.arcade-secret.show{display:block;animation:arcadeIn .8s both}.arcade-secret .secret-star{font-size:30px;color:#f2d58b;text-shadow:0 0 18px #f2d58b}.arcade-secret h3{font:42px 'Cormorant Garamond',serif;color:#fff0c8;margin:10px}.arcade-secret p{font:italic 18px/1.7 'Cormorant Garamond',serif;color:#d8d5c9;max-width:500px;margin:auto}
+.arcade-foot{text-align:center;color:#547b8e;font-size:8px;letter-spacing:.2em;margin:20px 0 2px}
+@media(max-width:800px){.arcade-lobby{grid-template-columns:repeat(2,minmax(0,1fr))}.arcade-machine:last-child{grid-column:span 2}.arcade-machine .machine-art{height:78px}}
+@media(max-width:430px){.arcade-lobby{gap:8px}.arcade-machine{padding:7px}.arcade-machine .machine-art{height:66px;font-size:30px}.arcade-playerbar{font-size:9px}}
+
+
+/* ===== MOTION LAYER · choreography, tactile hovers, ambient depth (transform + opacity only) ===== */
+:root{--ease:cubic-bezier(.16,1,.3,1);--ease-io:cubic-bezier(.65,0,.35,1)}
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.ambient i{position:absolute;border-radius:50%;filter:blur(80px);opacity:.3;will-change:transform;animation:drift 32s var(--ease-io) infinite alternate}
+.ambient i:nth-child(1){width:48vmax;height:48vmax;left:-14vmax;top:-12vmax;background:#2a4f9c}
+.ambient i:nth-child(2){width:42vmax;height:42vmax;right:-12vmax;bottom:-10vmax;background:#40337f;animation-duration:41s;animation-delay:-11s}
+.ambient i:nth-child(3){width:26vmax;height:26vmax;left:42%;top:38%;background:#1f6aa8;opacity:.16;animation-duration:27s;animation-delay:-5s}
+@keyframes drift{to{transform:translate3d(9vmax,6vmax,0) scale(1.2)}}
+@keyframes rise{from{opacity:0;transform:translate3d(0,26px,0)}}
+.rv{opacity:0;transform:translate3d(0,30px,0);transition:opacity 1.1s var(--ease),transform 1.2s var(--ease);transition-delay:calc(var(--i,0)*95ms)}
+.rv.in{opacity:1;transform:none}
+.spot{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;opacity:0;transition:opacity .4s var(--ease)}
+.spot i{position:absolute;left:0;top:0;width:340px;height:340px;margin:-170px 0 0 -170px;border-radius:50%;background:radial-gradient(circle,rgba(130,190,255,.26),transparent 66%);will-change:transform}
+.has-spot:hover>.spot,.has-spot:focus-visible>.spot{opacity:1}
+.arcade-machine,.memory-tile,.star-note,.lock-card{position:relative}
+.mag{transition:translate .45s var(--ease)}
+.mag.live{transition:translate .12s linear}
+/* staggered overlay entrances (backwards fill so hover transforms keep working afterwards) */
+.arcade-overlay.show .arcade-title>*,.arcade-overlay.show .arcade-playerbar{animation:rise 1s var(--ease) backwards}
+.arcade-overlay.show .arcade-title>*:nth-child(2){animation-delay:.08s}.arcade-overlay.show .arcade-title>*:nth-child(3){animation-delay:.16s}.arcade-overlay.show .arcade-playerbar{animation-delay:.24s}
+.arcade-lobby.in .arcade-machine{animation:rise .9s var(--ease) backwards;animation-delay:calc(var(--i,0)*75ms + .3s)}
+.overlay.show .letter>*:nth-child(-n+6),.day-two-overlay.show .day-two-paper>*:nth-child(n+3),.day-four-overlay.show .day-four-copy p{animation:rise 1s var(--ease) backwards}
+.day-two-overlay.show .day-two-paper>*:nth-child(4){animation-delay:.08s}.day-two-overlay.show .day-two-paper>*:nth-child(5){animation-delay:.16s}.day-two-overlay.show .day-two-paper>*:nth-child(6){animation-delay:.24s}
+.day-four-overlay.show .day-four-copy p:nth-child(2){animation-delay:.1s}.day-four-overlay.show .day-four-copy p:nth-child(3){animation-delay:.2s}.day-four-overlay.show .day-four-copy p:nth-child(4){animation-delay:.3s}
+.surprise-panel.active .panel-copy>*{animation:rise .9s var(--ease) backwards}
+.surprise-panel.active .panel-copy>*:nth-child(2){animation-delay:.07s}.surprise-panel.active .panel-copy>*:nth-child(3){animation-delay:.14s}.surprise-panel.active .panel-copy>*:nth-child(n+4){animation-delay:.21s}
+/* arcade polish */
+.arcade-screen canvas{image-rendering:auto}
+.arcade-machine.done{border-color:#c8a875}
+.arcade-gamebar>button,.arcade-gamebar>.arcade-action{margin-left:6px}
+#arcadePause,#arcadeMute{background:#0c2536;border:1px solid #28627a;color:#b9f7ff;padding:9px 12px;font:10px 'Courier New',monospace;letter-spacing:.1em;cursor:pointer}
+.arcade-gameover.show>div{animation:rise .6s var(--ease) backwards}
+.arcade-gameover p{max-width:520px;margin:0 auto 16px;line-height:1.7}
+.arcade-pad{display:none;justify-content:space-between;align-items:center;gap:14px;max-width:900px;margin:12px auto 0;padding:0 6px;user-select:none;-webkit-user-select:none;touch-action:none}
+.arcade-pad button{touch-action:none;-webkit-tap-highlight-color:transparent;background:#0c2536cc;border:1px solid #28627a;color:#b9f7ff;font:16px 'Courier New',monospace;cursor:pointer;transition:transform .12s var(--ease),background .12s}
+.arcade-pad button.on{background:#1b5a78;transform:scale(.92)}
+.arcade-pad .dpad{display:grid;grid-template:repeat(3,54px)/repeat(3,54px);gap:4px}
+.dpad [data-k=arrowup]{grid-area:1/2}.dpad [data-k=arrowleft]{grid-area:2/1}.dpad [data-k=arrowdown]{grid-area:3/2}.dpad [data-k=arrowright]{grid-area:2/3}
+.arcade-pad .acts{display:flex;gap:14px}.arcade-pad .acts button{width:70px;height:70px;border-radius:50%;font-size:18px}
+@media(pointer:coarse),(max-width:760px){.arcade-pad{display:flex}}
+:focus-visible{outline:2px solid #dce6ff;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){
+ .rv{opacity:1;transform:none;transition:none}
+ .ambient i,.star,.envelope,.main-envelope,.hint,.surprise-stage:before{animation:none!important}
+ .arcade-overlay *,.surprise-panel *,.day-two-paper *,.day-four-copy *,.letter *{animation:none!important}
+ .mag{transition:none}
+}
+/* ===== START SCREEN + TUTORIALS ===== */
+.arcade-start{position:absolute;inset:0;z-index:20;display:none;align-items:center;justify-content:center;padding:clamp(16px,4vw,40px);text-align:center;background:radial-gradient(ellipse at 50% 30%,#12304f,#050b16 75%)}
+.arcade-start.show{display:flex;animation:arcadeIn .5s both}
+.arcade-start>div{width:100%;max-width:640px}
+.as-menu .arcade-kicker{font-size:10px;letter-spacing:.42em;color:#5bdff4}
+.as-menu h2{font:500 clamp(48px,10vw,92px)/.95 'Cormorant Garamond',serif;letter-spacing:.04em;color:#effcff;margin:16px 0 8px;text-shadow:0 0 26px #00dfff55}
+.as-menu h2 em{color:#57e8ff}
+.as-menu p{font-size:11px;letter-spacing:.16em;color:#8aaec3;margin:0 0 30px}
+.as-menu small{display:block;margin-top:26px;font-size:9px;letter-spacing:.2em;color:#547b8e}
+.as-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.as-primary{border-color:#56eaff!important;color:#effcff!important;background:#0f3a52!important;animation:startPulse 2.4s var(--ease-io) infinite}
+@keyframes startPulse{50%{box-shadow:0 0 26px #00e5ff55}}
+.arcade-start .arcade-action{padding:13px 24px;font-size:12px;letter-spacing:.18em}
+.as-tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
+.as-tabs button{background:#0a1f2f;border:1px solid #1d4960;color:#8db7c9;padding:8px 11px;font:10px 'Courier New',monospace;letter-spacing:.1em;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.as-tabs button.on{background:#12405a;border-color:#56eaff;color:#effcff}
+.as-body{text-align:left;border:1px solid #1d4960;background:#071421cc;padding:clamp(16px,3vw,26px);margin-bottom:16px;font-size:12px;line-height:1.8;color:#b6d4e0}
+.as-body.swap{animation:rise .5s var(--ease) backwards}
+.as-body h3{margin:0 0 10px;font:500 28px 'Cormorant Garamond',serif;letter-spacing:.05em;color:#9af5ff}
+.as-body b{color:#f4d58c;letter-spacing:.14em;font-size:10px;margin-right:6px}
+.as-body p{margin:0 0 12px}
+.as-keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;margin:12px 0}
+.as-keys>div{display:flex;align-items:center;gap:10px}
+.as-keys kbd{font:11px 'Courier New',monospace;background:#0f2a3c;border:1px solid #2a6a86;border-bottom-width:3px;border-radius:4px;padding:3px 7px;color:#dffcff;white-space:nowrap}
+.as-body ul{margin:10px 0 0;padding-left:18px}.as-body li{margin-bottom:5px}
+#arcadeHow{background:#0c2536;border:1px solid #28627a;color:#b9f7ff;padding:9px 12px;font:10px 'Courier New',monospace;letter-spacing:.1em;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.as-primary,.arcade-start.show,.as-body.swap{animation:none!important}}
+/* ===== UNLOCKED LETTER ===== */
+.arcade-letter{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:20px;background:radial-gradient(ellipse at 50% 10%,#1a315aee,#050916f5 72%);backdrop-filter:blur(13px)}
+.arcade-letter.show{display:flex;animation:arcadeIn .6s both}
+.al-paper{position:relative;width:min(720px,100%);max-height:88vh;overflow:auto;padding:clamp(28px,6vw,60px);color:#263047;background:linear-gradient(135deg,#f8f3e9,#eee5d5);border:1px solid #d5c6ad;box-shadow:0 30px 100px #000c;animation:letterIn .8s var(--ease) both}
+.al-paper:before{content:"";position:absolute;inset:11px;border:1px solid #cdbd9f;pointer-events:none}
+.al-top{display:flex;justify-content:space-between;gap:12px;color:#687895;font-size:9px;letter-spacing:.22em}
+.al-close{position:sticky;top:0;float:right;z-index:2;width:34px;height:34px;border:1px solid #b9b09f;border-radius:50%;background:transparent;color:#243553;font-size:18px;cursor:pointer}
+.al-copy{margin-top:30px}
+.al-copy p{font:18px/1.85 'Cormorant Garamond',serif;color:#30394b;margin:0 0 18px}
+.al-copy .al-first{font:500 clamp(34px,6vw,52px)/1 'Cormorant Garamond',serif;color:#142443;margin-bottom:24px}
+.arcade-letter.show .al-copy p{animation:rise 1s var(--ease) backwards}
+.arcade-letter.show .al-copy p:nth-child(1){animation-delay:.3s}.arcade-letter.show .al-copy p:nth-child(2){animation-delay:.5s}.arcade-letter.show .al-copy p:nth-child(3){animation-delay:.7s}.arcade-letter.show .al-copy p:nth-child(4){animation-delay:.9s}.arcade-letter.show .al-copy p:nth-child(5){animation-delay:1.1s}.arcade-letter.show .al-copy p:nth-child(6){animation-delay:1.3s}.arcade-letter.show .al-copy p:nth-child(7){animation-delay:1.5s}.arcade-letter.show .al-copy p:nth-child(8){animation-delay:1.7s}
+@media(prefers-reduced-motion:reduce){.arcade-letter.show,.al-paper,.arcade-letter.show .al-copy p{animation:none!important}}
+
+
+/* ===== HALLWAY GEOMETRY FIX: walls, floor and ceiling now form one closed box ===== */
+.mansion-floor,.mansion-ceiling{top:50%;height:2800px}
+.mansion-floor{transform:translate(-50%,-50%) translateZ(-800px) rotateX(90deg) translateZ(-145px)}
+.mansion-ceiling{transform:translate(-50%,-50%) translateZ(-800px) rotateX(90deg) translateZ(145px)}
+.mansion-wall{width:2800px}
+.mansion-wall.left{transform:translate(-50%,-50%) translate3d(-220px,0,-800px) rotateY(90deg)}
+.mansion-wall.right{transform:translate(-50%,-50%) translate3d(220px,0,-800px) rotateY(-90deg)}
+.mansion-wall.end{width:440px;transform:translate(-50%,-50%) translateZ(-2200px)}
+@media(max-width:650px){
+.mansion-wall.left{transform:translate(-50%,-50%) translate3d(-190px,0,-800px) rotateY(90deg)}
+.mansion-wall.right{transform:translate(-50%,-50%) translate3d(190px,0,-800px) rotateY(-90deg)}
+.mansion-wall.end{width:380px}}
+/* camera updates every frame, so no CSS smoothing on the hallway */
+.mansion-world{transition:none}
+/* ===== UX POLISH LAYER ===== */
+html{-webkit-text-size-adjust:100%}
+h1,h2,h3,.subtitle,.intro,.seventh p{text-wrap:balance}
+.letter p,.day-two-poem,.al-copy p,.panel-copy p{text-wrap:pretty}
+/* readable type floor (was 8-10px) */
+.intro{font-size:15px;line-height:1.85;max-width:540px}
+.subtitle{font-size:30px}
+.topline,.eyebrow,.rule,.hint,.footer,.envelope .day,.letter-top,.day-two-top,.day-three-top,.day-four-top,.day-three-hero .kicker,.surprise-tab .tab-name,.panel-eyebrow,.blue-cta,.day-three-foot,.al-top,.arcade-help,#cameraStatus,.mansion-controls,.door-reason small,.mansion-note-focus small,.mansion-note-focus button,.as-menu small,.lock-card button{font-size:11px}
+.memory-tile span,.mini-door small,.mansion-door small,.arcade-foot{font-size:10px}
+.seventh p,.lock-card p{font-size:14px}
+.letter p{font-size:19px;line-height:1.8}
+.day-two-poem,.panel-copy p{font-size:19px}
+.footer{color:#8a9bc4}.arcade-foot{color:#7ba3b8}
+/* centre the Day One envelope (a leftover nth-child(6) rule was shifting and tilting it) */
+.envelope.main-envelope{left:auto;right:auto;top:auto;bottom:auto;transform:none}
+/* tap targets 44px+ */
+.close,.day-two-close,.day-four-close,.al-close,.arcade-close,.day-three-close{min-width:44px;min-height:44px}
+.lock-card button{padding:13px 24px}
+/* progress + opened state */
+.open-count{text-align:center;margin:4px 0 0;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8da9e8}
+.envelope.opened{border-color:rgba(200,168,117,.8)}
+.envelope.opened .day:after{content:" \2713";color:var(--gold)}
+.envelope{-webkit-tap-highlight-color:transparent}
+.envelope:active{filter:brightness(1.35)}
+@media(hover:none){.envelope:hover{filter:none}}
+/* battery: freeze ambient motion behind dialogs */
+body.modal-open .star,body.modal-open .ambient i,body.modal-open .envelope:not(.opening),body.modal-open .hint{animation-play-state:paused}
+.letter,.day-two-paper,.al-paper,.day-three-overlay,.day-four-overlay{overscroll-behavior:contain}
+.day-three-overlay{padding-top:max(24px,env(safe-area-inset-top));padding-bottom:max(60px,env(safe-area-inset-bottom))}
+@media(max-width:650px){.day-three-overlay{padding-top:max(18px,env(safe-area-inset-top));padding-bottom:max(40px,env(safe-area-inset-bottom))}.hint{font-size:10px}}
+</style>
+<style>
+
+/* DAY VI — THE TWO OF US */
+#daySixGame{position:fixed;inset:0;z-index:70;display:none;overflow:auto;padding:clamp(12px,3vw,30px);background:radial-gradient(ellipse at 50% 0%,#33305e 0%,#17172f 42%,#090d20 100%);color:#f8f1e9;font-family:'DM Sans',sans-serif}
+#daySixGame.show{display:block;animation:arcadeIn .45s ease both}
+.d6-shell{width:min(980px,100%);margin:0 auto;position:relative}
+.d6-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#d4c6f4;font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:4px 2px 16px;border-bottom:1px solid #6c5e8b66}
+.d6-close,.d6-btn{border:1px solid #a797c9;background:#302b4e;color:#fff4f2;border-radius:999px;padding:11px 18px;font:600 11px 'DM Sans',sans-serif;letter-spacing:.08em;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s}
+.d6-close{width:38px;height:38px;padding:0;font-size:20px}.d6-btn:hover,.d6-close:hover{transform:translateY(-2px);background:#51436d;box-shadow:0 8px 24px #05061566}.d6-btn.primary{background:linear-gradient(120deg,#c77e9e,#8d7ac1);border-color:#e7b6ca;color:#1b1830}.d6-btn.soft{background:#252442;border-color:#655b85}.d6-btn.danger{background:#482d43;border-color:#9b6687}.d6-btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.d6-view{display:none;animation:panelIn .38s both}.d6-view.active{display:block}
+.d6-hero{text-align:center;padding:clamp(40px,8vh,82px) 12px 30px}.d6-kicker{font-size:9px;letter-spacing:.35em;color:#d3a8c4;text-transform:uppercase}.d6-hero h2{font:500 clamp(45px,8vw,82px)/.92 'Cormorant Garamond',serif;margin:18px 0 12px;color:#fff8ef;letter-spacing:-.025em}.d6-hero h2 em{color:#d9b7e7;font-weight:400}.d6-sub{font:italic 19px 'Cormorant Garamond',serif;color:#d4c5e8;margin:0 auto 22px}.d6-copy{max-width:560px;margin:0 auto;color:#c0bfd4;font-size:12px;line-height:1.9}
+.d6-card{background:linear-gradient(145deg,#282746ed,#1a1b35f5);border:1px solid #77688f88;border-radius:22px;padding:clamp(18px,4vw,30px);box-shadow:0 20px 65px #05061566;position:relative;overflow:hidden}.d6-card:before{content:'✦';position:absolute;right:22px;top:14px;color:#d6b3db66;font-size:17px;pointer-events:none}
+.d6-formgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.d6-field{display:flex;flex-direction:column;gap:7px;margin:13px 0}.d6-field label{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#d9c8e7}.d6-field input,.d6-field textarea{width:100%;border:1px solid #75698c;background:#13162b;color:#fff6f0;border-radius:12px;padding:13px 14px;font:14px 'DM Sans',sans-serif;outline:none}.d6-field textarea{min-height:76px;resize:vertical}.d6-field input:focus,.d6-field textarea:focus{border-color:#e1b4d0;box-shadow:0 0 0 3px #d89fc022}.d6-field input::placeholder,.d6-field textarea::placeholder{color:#8987a5}.d6-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 14px}.d6-tab{flex:1;min-width:130px;border:1px solid #625b7d;background:#1a1c35;color:#c9c2dc;border-radius:13px;padding:13px 10px;text-align:center;cursor:pointer}.d6-tab.active{background:#514363;border-color:#d3a9c8;color:#fff}.d6-tab small{display:block;font-size:9px;opacity:.75;margin-top:5px}.d6-list{display:grid;gap:8px;margin-top:16px}.d6-qrow{display:flex;align-items:center;gap:10px;padding:11px 12px;background:#17192f;border:1px solid #514968;border-radius:12px}.d6-qrow .qcopy{flex:1;min-width:0;font-size:12px;line-height:1.5;color:#f4eaf1;overflow-wrap:anywhere}.d6-qrow small{display:block;color:#a99bbd;font-size:9px;margin-top:3px}.d6-qrow button{border:1px solid #655b7c;background:#292641;color:#e8d8e7;border-radius:9px;padding:7px 9px;font-size:10px;cursor:pointer}.d6-note{font-size:10px;line-height:1.7;color:#aaa7c4;margin:12px 0}.d6-status{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:17px;padding-top:15px;border-top:1px solid #62577966;color:#c5bdd5;font-size:11px}.d6-ready{color:#d7c3e9}.d6-actions{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:20px 0 8px}.d6-error{min-height:18px;color:#ffb6c8;font-size:11px;text-align:center;margin:8px 0}
+.d6-gamehead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:26px 0 12px;color:#d5c7e6;font-size:10px;letter-spacing:.12em;text-transform:uppercase}.d6-progress{height:5px;background:#292742;border-radius:9px;overflow:hidden;margin:0 0 20px}.d6-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#d78eae,#b8a1df);transition:width .35s}
+.d6-question{max-width:740px;margin:0 auto;text-align:center;padding:clamp(25px,6vw,52px)}.d6-owner{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid #8d789d;border-radius:999px;color:#e0c7df;background:#302944;font-size:10px;letter-spacing:.1em;text-transform:uppercase}.d6-question h3{font:500 clamp(30px,5.5vw,51px)/1.12 'Cormorant Garamond',serif;color:#fff8ef;margin:25px 0 24px}.d6-question .d6-field{max-width:520px;margin:0 auto 12px;text-align:left}.d6-answer{font:italic 22px 'Cormorant Garamond',serif;color:#f4c6d8;background:#342b48;border:1px dashed #c494b6;border-radius:14px;padding:18px;margin:15px auto;max-width:520px;overflow-wrap:anywhere;animation:panelIn .35s both}.d6-judge{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0}.d6-scoreline{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px 0}.d6-score{border:1px solid #615779;background:#1c1d37;border-radius:12px;padding:10px 15px;text-align:center;min-width:125px}.d6-score b{display:block;font:24px 'Cormorant Garamond',serif;color:#f4c6d8}.d6-score small{font-size:9px;color:#c2bad2;letter-spacing:.1em;text-transform:uppercase}.d6-results{text-align:center;padding:clamp(30px,7vh,70px) 12px}.d6-results h2{font:500 clamp(46px,8vw,78px)/.95 'Cormorant Garamond',serif;margin:18px 0;color:#fff7ee}.d6-results .d6-copy{margin-bottom:24px}.d6-statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:650px;margin:22px auto}.d6-stat{background:#252440;border:1px solid #6d6085;border-radius:15px;padding:18px 10px}.d6-stat b{display:block;font:28px 'Cormorant Garamond',serif;color:#efc3d6}.d6-stat span{font-size:9px;color:#c9bfd8;letter-spacing:.08em;text-transform:uppercase}.d6-confetti{font-size:24px;letter-spacing:.35em;color:#f0c4d9;animation:pulse 2s infinite}
+@media(max-width:650px){#daySixGame{padding:12px}.d6-formgrid{grid-template-columns:1fr}.d6-qrow{align-items:flex-start;flex-wrap:wrap}.d6-qrow .qcopy{flex-basis:100%}.d6-statgrid{grid-template-columns:1fr 1fr}.d6-question{padding:24px 14px}.d6-top{font-size:8px;letter-spacing:.13em}}
+@media(prefers-reduced-motion:reduce){#daySixGame *{animation:none!important;transition:none!important}}
+
+</style>
+<style>
+/* BIRTHDAY LAYER */
+.bunt{margin:-34px -24px 10px;display:flex;flex-direction:column;align-items:center;gap:12px;pointer-events:none}
+.bl{display:flex;justify-content:center;position:relative;padding-top:4px;width:100%}
+.bl:before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:#c9b7e8aa}
+.bf{width:clamp(22px,5.4vw,52px);height:clamp(28px,7vw,62px);margin:0 1px;clip-path:polygon(0 0,100% 0,50% 100%);display:grid;place-items:start center;padding-top:14%;font:600 clamp(11px,2.8vw,24px) 'Fredoka',sans-serif;color:#2a2147;font-style:normal;transform-origin:50% -4px;animation:sw 3.2s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.37s)}
+.bf.g{background:none;width:clamp(10px,2.5vw,24px);animation:none}
+@keyframes sw{from{rotate:-4deg}to{rotate:4deg}}
+.bd{position:relative;max-width:460px;margin:34px auto 0;padding:26px 20px 24px;border-radius:32px;background:linear-gradient(160deg,#2f2b66d9,#1a2350d9);border:2px dashed #ffb7d6aa;box-shadow:0 20px 60px #0008,inset 0 0 44px #ff9ec41f}
+.bd h2{font:600 clamp(25px,6.5vw,34px)/1.12 'Fredoka',sans-serif;margin:0;color:#fff2f7;letter-spacing:0}
+.bd .bsub{font:25px 'Caveat',cursive;color:#ffd1e3;margin:2px 0 0}
+#cake{display:block;width:min(100%,330px);aspect-ratio:1;margin:4px auto 0;cursor:grab;touch-action:pan-y}
+.bcap{font:13px 'DM Sans',sans-serif;color:#c9b9ea;margin:0 0 12px;min-height:20px}
+.cd{display:flex;justify-content:center;gap:9px;margin:4px 0 6px;min-height:76px}
+.cd div{min-width:62px;padding:10px 6px 8px;border-radius:18px;color:#2a2147;box-shadow:0 5px 0 #0005}
+.cd div:nth-child(4n+1){background:#ffb3d1}.cd div:nth-child(4n+2){background:#ffe58f}.cd div:nth-child(4n+3){background:#a8f0d0}.cd div:nth-child(4n){background:#c7b6ff}
+.cd b{display:block;font:600 32px/1 'Fredoka',sans-serif}
+.cd small{font:500 10px 'Fredoka',sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.d7{margin-top:12px;border:0;border-radius:999px;padding:14px 26px;font:600 15px 'Fredoka',sans-serif;background:linear-gradient(120deg,#ff9ec4,#ffc99b);color:#3a1f3d;cursor:pointer;box-shadow:0 5px 0 #b45d86;min-height:48px}
+.d7:disabled{background:#33406b;color:#a3b3da;box-shadow:0 5px 0 #1b2547;cursor:not-allowed}
+.d7:not(:disabled){animation:bob 1.6s ease-in-out infinite}.d7:not(:disabled):active{translate:0 4px;box-shadow:0 1px 0 #b45d86}
+@keyframes bob{50%{transform:translateY(-4px)}}
+.sp{margin-top:34px}.spt{font:30px 'Caveat',cursive!important;color:#142443!important;margin:0 0 10px!important}
+.al-copy p.sig{font-size:22px}
+@media(prefers-reduced-motion:reduce){.bf,.d7{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<div class="wrap">
+  <div class="bunt" id="bunt" role="img" aria-label="Happy Birthday Agastya"></div>
+  <div class="topline"><span>AN ARCHIVE OF AFFECTION · VOL. 01</span><span>for A.</span></div>
+  <header class="hero">
+    <div class="eyebrow">A little something, made with love</div>
+    <h1>Seven Days<br><em>of You.</em></h1>
+    <p class="subtitle">to the boy who deserves an entire week.</p>
+    <p class="intro">Seven envelopes. Seven little pieces of my heart. One for every day leading up to you — because one birthday message could never hold everything I want you to know.</p>
+    <section class="bd" id="bd" aria-label="Birthday countdown">
+      <h2 id="bdTitle">Your birthday is almost here</h2>
+      <p class="bsub" id="bdSub">counting down to 12:00 AM</p>
+      <canvas id="cake" aria-label="A 3D birthday cake. Drag to spin it."></canvas>
+      <p class="bcap" id="cakeCap">the candles light up at midnight</p>
+      <div class="cd" id="cd" role="timer" aria-live="off"></div>
+      <button class="d7" id="openSeven" disabled>✧ Day Seven opens at midnight</button>
+    </section>
+    <div class="rule">choose an envelope</div>
+  </header>
+
+  <section class="envelope-stage" aria-label="Seven days of envelopes">
+    <button class="envelope" data-day="2" aria-label="Day two envelope"><span class="seal">✦</span><span class="day">Day Two</span></button>
+    <button class="envelope" data-day="3" aria-label="Day three envelope"><span class="seal">✦</span><span class="day">Day Three</span></button>
+    <button class="envelope" data-day="4" aria-label="Day four envelope"><span class="seal">✦</span><span class="day">Day Four</span></button>
+    <button class="envelope" data-day="5" aria-label="Day five envelope"><span class="seal">✦</span><span class="day">Day Five</span></button>
+    <button class="envelope" data-day="6" aria-label="Day six envelope"><span class="seal">✦</span><span class="day">Day Six</span></button>
+    <button class="envelope main-envelope" id="dayOne" aria-label="Open day one letter"><span class="seal">♡</span><span class="day">Day One · Open me</span></button>
+    <div class="hint">open Day One, then return for the Day Three surprises</div>
+  </section>
+
+  <section class="seventh">
+    <div class="eyebrow">And then, on the seventh day…</div>
+    <h2>Something worth<br>the wait.</h2>
+    <p>I'm keeping the last envelope a secret. No previews, no hints. Just know that I've saved the biggest little surprise for your actual day.</p>
+    <div class="date">The grand finale · Day Seven</div>
+  </section>
+  <div class="footer">sealed with love · opened only by you</div>
+</div>
+
+
+<div class="day-three-overlay" id="dayThreeOverlay" role="dialog" aria-modal="true" aria-label="Day three: five surprises">
+  <div class="day-three-shell">
+    <div class="day-three-top"><span>THE AGASTYA ARCHIVE · 03 / 07</span><button class="day-three-close" id="closeDayThree" aria-label="Close Day Three">×</button></div>
+    <header class="day-three-hero"><div class="kicker">a little world, made entirely for you</div><h2>THE BLUE <em>HOUR.</em></h2><p>five little surprises. one very special person.</p><div class="day-three-progress" id="dayThreeProgress"><i class="active"></i><i></i><i></i><i></i><i></i></div></header>
+    <nav class="surprise-nav" aria-label="Five Day Three surprises">
+      <button class="surprise-tab active" data-surprise="0"><span class="num">01</span><span class="tab-name">Constellation</span></button>
+      <button class="surprise-tab" data-surprise="1"><span class="num">02</span><span class="tab-name">Memory reel</span></button>
+      <button class="surprise-tab" data-surprise="2"><span class="num">03</span><span class="tab-name">Little doors</span></button>
+      <button class="surprise-tab" data-surprise="3"><span class="num">04</span><span class="tab-name">Wish machine</span></button>
+      <button class="surprise-tab" data-surprise="4"><span class="num">05</span><span class="tab-name">One last thing</span></button>
+    </nav>
+    <main class="surprise-stage">
+      <section class="surprise-panel active" data-panel="0">
+        <div class="constellation" id="constellation"></div><div class="panel-copy"><div class="panel-eyebrow">surprise no. 01 · a map of my favourite details</div><h3 class="panel-title">A constellation<br>called <em>you.</em></h3><p>Some people are remembered in grand gestures. You, somehow, are written into the smallest details. Tap a star; I've hidden a few of them here.</p><div><button class="star-note" data-note="Our eyes are two pools of dark, melted chocolate, rich and profound, a depth where I long to drown. They are a secret forest at twilight, filled with shadows and warmth, beckoning me deeper with every glance. Within those amber depths are embers, warm and glowing, a silent, steady hearth fire that promises comfort and a gentle heat. To look into them is to gaze into a sky on a moonless night, dotted with distant, hopeful stars—an entire universe of kindness, mystery, and an irresistible, sweet gravity that pulls at my very core, making me feel seen in a way I never thought possible."><b>✦</b> 01 · your eyes</button><button class="star-note" data-note="I know all your tells by now—the way your curls have a mind of their own, the smile you try to hold back before it wins anyway, and that split-second look-away when you get shy. You think you’re being subtle, and I just love watching you fail at it."><b>✦</b> 02 · your tells</button><button class="star-note" data-note="You’re dangerously smart, secretly soft-hearted, and somehow always know the exact moment to drop a joke when I’m trying to keep a straight face. You act like being this kind and effortless is just normal, and I’m over here completely charmed by how easily you make everything better."><b>✦</b> 03 · your heart</button></div><p id="starMessage" aria-live="polite" class="wish-output"></p></div>
+      </section>
+      <section class="surprise-panel" data-panel="1">
+        <div class="panel-copy"><div class="panel-eyebrow">surprise no. 02 · little things, kept forever</div><h3 class="panel-title">A memory reel<br>of <em>us.</em></h3><p>Not every favourite memory needs a photograph. Some of them have stayed because of how they felt.</p><div class="memory-strip"><div class="memory-tile"><span>24 april 2023</span><strong>The day we met</strong><small>The beginning of a story I never knew would mean this much.</small></div><div class="memory-tile"><span>around 2 september</span><strong>You proposed</strong><small>The day you asked me to be yours. (I’ll add the year when I confirm it.)</small></div><div class="memory-tile"><span>20 november 2024</span><strong>Our first date · our first hug</strong><small>Day three. The day we finally met, and the hug that came with it.</small></div><div class="memory-tile"><span>19 october 2025</span><strong>Our first proper kiss</strong><small>A date that deserves its own little place in our calendar.</small></div></div></div>
+      </section>
+      <section class="surprise-panel" data-panel="2">
+        <div class="panel-copy"><div class="panel-eyebrow">surprise no. 03 · a little mansion full of reasons</div><h3 class="panel-title">Twenty doors.<br><em>Twenty reasons.</em></h3><p class="door-game-intro">Somewhere inside this little midnight mansion are twenty doors. Explore the hallway, find them, and open each one. Every door has a reason I love you hidden behind it.</p><div class="mansion-hud"><span>THE HOUSE OF YOU</span><span class="mansion-count" id="mansionCount">00 / 20 FOUND</span></div><div class="mansion-frame" id="mansionFrame" tabindex="0" aria-label="Explore the 3D mansion in first person. Use WASD to move and shift lock to look around with the mouse."><div class="mansion-world" id="mansionWorld"><div class="mansion-floor"></div><div class="mansion-ceiling"></div><div class="mansion-wall left"></div><div class="mansion-wall right"></div><div class="mansion-wall end"></div><div class="mansion-light"></div><div id="mansionDoors"></div></div><div class="mansion-player" id="mansionPlayer" aria-hidden="true"><i class="player-head"></i><i class="player-body"></i><i class="player-arm left"></i><i class="player-arm right"></i><i class="player-leg left"></i><i class="player-leg right"></i></div><div class="mansion-reticle" id="mansionReticle" aria-hidden="true"></div><div class="mansion-zoom-shade" id="mansionZoomShade"></div><div class="mansion-note-focus" id="mansionNoteFocus" role="dialog" aria-modal="true"><small id="focusDoorLabel">A LITTLE NOTE · 01 / 20</small><p id="focusDoorText"></p><button type="button" id="returnToMansion">RETURN TO THE MANSION</button></div></div><div class="mansion-lock-row"><button type="button" id="shiftLockButton" aria-pressed="false">◎ &nbsp; ENABLE SHIFT LOCK</button><span id="cameraStatus">FIRST-PERSON CAMERA · OFF</span></div><div class="mansion-controls"><span>WASD / ARROWS · MOVE</span><span>MOUSE · LOOK AROUND</span><span>CLICK A DOOR · OPEN</span></div><div class="door-reason" id="doorReason" aria-live="polite"><small id="doorReasonLabel">REASON 01 · FOUND</small><p id="doorReasonText">A little reason, just for you.</p></div></div>
+      </section>
+      <section class="surprise-panel" data-panel="3">
+        <div class="panel-copy"><div class="panel-eyebrow">surprise no. 04 · a small machine for big wishes</div><h3 class="panel-title">A year of<br><em>possibilities.</em></h3><div class="wish-orbit"><span>for you.</span></div><p>Turn the little universe once. It has a few wishes saved for the year ahead.</p><div class="wish-output" id="wishOutput" aria-live="polite">Your next wish is waiting.</div><button class="blue-cta" id="makeWish">MAKE A WISH ✦</button></div>
+      </section>
+      <section class="surprise-panel" data-panel="4">
+        <div class="panel-copy"><div class="panel-eyebrow">surprise no. 05 · kept until last</div><h3 class="panel-title">One last<br><em>little letter.</em></h3><p>You've opened four doors. There's one more thing I wanted you to have.</p><button class="final-envelope" id="finalEnvelope" aria-label="Open the final envelope"><span>♡</span></button><div class="final-letter" id="finalLetter">I hope this year is kind to you. I hope you find a hundred reasons to be proud of yourself, that the things you've been working towards begin to fall into place, and that you never lose the curious, funny, wonderfully soft parts of yourself. I hope there are new places to see, new things to learn, recipes to try, stories to get lost in, and so many moments that make you think, “I'm glad I got to live this.” And somewhere in all of it, I hope you remember that you are loved, celebrated, and very, very worth the fuss. Happy birthday week, Agastya. — Chehaq</div></div>
+      </section>
+    </main>
+    <div class="day-three-foot">five surprises · one very celebrated boy</div>
+  </div>
+</div>
+
+<div class="overlay" id="letterOverlay" role="dialog" aria-modal="true" aria-label="Day one letter">
+  <article class="letter">
+    <button class="close" id="closeLetter" aria-label="Close letter">×</button>
+    <div class="letter-top"><span>Seven Days of You</span><span>01 / 07</span></div>
+    <h2>SEVEN DAYS OF YOU.</h2>
+    <div class="script">to the boy who deserves an entire week.</div>
+    <p>I HAVE BEEN THINKING ABOUT HOW TO MAKE YOUR BIRTHDAY SPECIAL, AND HONESTLY, ONE DAY JUST DIDN'T FEEL LIKE ENOUGH. Like, how am I supposed to celebrate someone who means this much to me in just twenty-four hours? How do I fit two years of memories, four years of knowing you, a million little things I adore about you and all the things I never seem to get around to saying into one birthday wish? I CAN'T. And I don't want to. So, I came up with something. SEVEN DAYS OF YOU. Seven days dedicated entirely to you, my love. Every day, you'll receive a little something from me. It could be a letter, a poem, a drawing, a collection of memories, something silly, something sentimental or something I've spent way too much time making because I thought you'd like it. I want each day to be a little surprise, something you can open and keep, something that reminds you that someone out here is ridiculously excited about the fact that YOU were born. Think of it as a little collection of my thoughts, feelings and everything I associate with you. Seven little chapters, all about one boy. And I hope you enjoy opening them as much as I'm going to enjoy making them. I want this entire week to feel like a celebration of you, not just the birthday you're approaching, but the person you are every single day. Because, jaan, you deserve to be celebrated even when there's no occasion. And if I can make an entire week out of it, WHY WOULD I SETTLE FOR ONE DAY?</p>
+    <p>AND THERE'S SOMETHING ABOUT YOUR BIRTHDAY THAT MAKES IT PARTICULARLY SPECIAL TO ME. Not just because it's the day you were born, but because it reminds me of one of my favourite days with you. The day we celebrated your birthday together at Barbeque Nation. OUR FIRST DATE. OUR FIRST HUG. I genuinely don't think you understand how much that day means to me. I still remember so much of it, even after two whole years. I was sick, I had a fever, and I wasn't even feeling well enough to properly enjoy the day. And yet, I remember crying. I couldn't figure out why. I don't know what came over me, but then I saw you. Your soft face, your deep eyes, YOU, standing right in front of me after all that time, and suddenly it made sense. I was crying because of you. Because of how badly I had wanted to see you. Because I had missed you, because I was overwhelmed, because I finally got to be in the same place as the boy I had spent so much time wanting to meet. I knew I loved you before that day, obviously. But that day made me realise just HOW MUCH. It was the day I truly understood how important you had become to me. I think there's a difference between knowing you love someone and actually experiencing just how much their presence means to you. And that day, I experienced it.</p>
+    <p>AND THEN WE HUGGED. FOR THE FIRST TIME. OH MY GOD. I don't think I'll ever be able to explain that feeling properly. I remember being in your arms and suddenly everything else just didn't matter. It was like the entire world had gone quiet. There was no restaurant, no noise, no one else, just you and me. I felt wanted. I felt comforted. I felt safe. And I don't mean that in some grand, dramatic way. I mean that for those few moments, I didn't feel like I needed to be anywhere else or think about anything else. I just wanted to stay there. I melted into that hug, and I swear my heart forgot how to function for a second. IT FELT HEAVENLY. And when we finally pulled away, what did I do? IMMEDIATELY ASKED FOR ANOTHER HUG. BECAUSE APPARENTLY ONE WAS NOT ENOUGH FOR ME. I wanted to hold you for a little longer, and I wish I could go back to that exact moment and experience it all over again. Not change anything, not do anything differently, just hug you again. I think a part of me knew that moment was going to stay with me for a very, very long time.</p>
+    <p>AND THE STRAWBERRY ICE CREAM. PLEASE. HOW DO I STILL REMEMBER THIS SO CLEARLY? The first time I fed you ice cream, strawberry to be exact, and somehow managed to get it on your pants. 😭 I remember trying to clean it off, and you just laughed instead of getting annoyed or making me feel embarrassed. It's such a tiny thing, but I STILL REMEMBER IT AFTER TWO YEARS. And then there's the way you paid for our lunch, despite me barely being able to eat anything. I remember telling you I couldn't eat but that I'd try, and you immediately put your fork down, checked my temperature and asked me about getting ice cream instead. DO YOU UNDERSTAND HOW MUCH I ADORE THAT ABOUT YOU? You didn't make me feel guilty for not eating. You didn't make a fuss. You just noticed I wasn't okay and cared. I think that's one of the things I remember most about that day. Not just the first date, not just the first hug, but the little ways you looked after me. The way you made me feel comfortable even when I wasn't feeling my best. You were so gentle with me, jaan. And I don't think I've ever forgotten that.</p>
+    <p>SOMETHING ELSE THAT DAY MADE ME REALISE WAS HOW MUCH I WANTED TO LOVE YOU BACK. AND I MEAN REALLY LOVE YOU. I know you had loved me for years before I even understood it. Fifth grade, sixth grade, seventh, eighth, all the way to ninth. You knew so many versions of me. You were there through my phases, my changing interests, my different personalities, my absolutely questionable decisions and all the little versions of myself I have grown out of. And somehow, you kept loving me. I didn't even realise the extent of it at the time. But now that I look back, I feel so much gratitude for that boy who stayed fond of me through all those years. And I made a little promise to myself that I wanted to give you that same kind of love. I wanted to make sure you knew you were appreciated. That someone noticed the little things you did. That someone cared about your happiness just as much as you cared about theirs. I wanted to protect the softness in you and give you a place where you could be yourself without having to pretend to be anything else. And I hope I can keep doing that.</p>
+    <p>NOW, YOU KEEP SAYING YOU HAVEN'T DONE MUCH FOR ME. AND I'M SORRY BUT WHAT DO YOU MEAN????? 😭 There are literally a BILLION things you've done, and I don't think I've properly explained even half of them. For starters, you know how I've never really told anyone my family's secrets? I've kept so much to myself for years. There were things I genuinely thought I'd never be able to tell another person. And then there was you. I didn't tell you because I wanted sympathy, or because I wanted you to feel responsible for me, or because I expected you to fix anything. I told you because I felt like you were family. You deserved to know. Somewhere along the way, you became someone I could trust with the parts of my life I had always kept hidden. And do you know what that did for me? For the first time, I felt a weight lift off my shoulders. I felt like I could breathe. Like I wasn't the only person who knew what I was carrying. Like if something frightened me, if something happened, if I was struggling to process something, I had someone I could go to. You acknowledged my discomfort, you understood my fears and you promised me that what I told you would stay between us. And I trusted you. I STILL DO. Thank you for that, Agastya. Seriously. You have no idea what it means to have someone know something so personal about me and still make me feel safe. Thank you for never making me feel like I was wrong for being scared. Thank you for letting me be vulnerable with you. I don't think I've ever properly thanked you for the freedom that came with finally being able to share some of that weight.</p>
+    <p>AND THEN THERE'S THE WAY YOU HANDLE ME. 😭 No one has loved me quite the way you do. You listen to me, you try to understand me, and even when I'm angry or overthinking or being unnecessarily difficult, you don't immediately make me feel crazy for having emotions. You try to understand where I'm coming from. You have so much patience with me, and I know I don't always make that easy. We're still working on our communication, and I know we have things to improve. I'm not going to pretend this year has been perfect because BHAGWAN, WHAT A ROLLERCOASTER. We've had our arguments, our misunderstandings, our tears, our moments of confusion and times when we didn't know how to reach each other. We almost lost something that meant so much to both of us. There were moments when I tried to run because I was scared, moments when I wasn't thinking straight, and moments when we both said things we probably wish we had handled differently. We have both made mistakes. I know I have, and I'm genuinely sorry for the times I've let my fears affect the way I treated you. I'm sorry for being toxic sometimes, for reacting instead of communicating and for the times I made you feel like your efforts weren't enough. I hope you can forgive me, and I hope I can continue becoming a better person and a better partner. But you know what I'm grateful for? That you wanted to fix things. That even when I was ready to give up, you wanted us to understand each other. You knew about my fears, you knew why certain things were difficult for me, and you tried to reassure me. And I don't take that for granted. I know not every relationship is willing to put in that kind of effort, and I appreciate that you have wanted to work on ours. We're not perfect, bubba, but I want us to keep learning. I want us to become better at loving each other, understanding each other and communicating even when things get difficult. Thank you for giving us another chance. Thank you for giving me a chance, too.</p>
+    <p>AND YOU KNOW WHAT'S ACTUALLY CRAZY? YOU KNOW ME. AND I DON'T MEAN MY FAVOURITE COLOUR, MY FAVOURITE FLOWER OR MY MIDDLE NAME. THAT'S BARE MINIMUM, SIR. 😭 I'm talking about how you somehow know what I'm going to say before I even say it. How you can predict my reactions, what I'm in the mood to eat, what I'm going to like, what I'm going to refuse, what I'm interested in, what I'm dreaming about and what I want my future to look like. You know the little details of my personality, the way my mind works, the things that make me excited and the things that bother me. Sometimes I genuinely think you're secretly reading my mind because HOW DO YOU KNOW???? YOU'RE LITERALLY MY PATRICK JANE. MY PERSONAL TELEPATHIC MIND READER. It's so funny because I don't even have to explain certain things anymore. You just KNOW. And I think that's one of the most beautiful feelings in a relationship. Being known beyond the obvious things. Being understood beyond the things you deliberately tell someone. You don't just know facts about me, you know ME. And thank you for paying attention to all those little things. Thank you for remembering the things I casually mention and for knowing the person behind all my words.</p>
+    <p>SO, AGASTYA, THIS IS WHY I'M DOING THIS. THIS IS WHY I WANT TO GIVE YOU AN ENTIRE WEEK. Because I don't think you realise just how much you've done for me. You keep saying you haven't, while I'm sitting here remembering a strawberry ice cream incident from two years ago, our first hug, the way you checked my temperature, the things I've trusted you with, the conversations we've had and all the little ways you've made me feel loved. You might think these things are ordinary, but they're not ordinary to me. They are memories I have kept, moments I revisit, little pieces of my life that I wouldn't want to forget. And I want you to know that. I want you to understand what I see when I look at you. I want you to know that you're appreciated not just for what you do for me, but for who you are. You don't have to constantly prove that you're a good boyfriend to deserve love. You don't have to do something extraordinary every day. I want to celebrate you on your ordinary days, too. The sleepy you, the silly you, the teasing you, the shy you, the boy who loves cooking, the anime-obsessed boy, the boy who makes the most ridiculous jokes and the boy with the softest heart.</p>
+    <p>I WISH I COULD SHOW YOU YOURSELF THROUGH MY EYES FOR JUST A MOMENT. Maybe then you'd understand why I remember such insignificant details. Why I can write an entire paragraph about one hug. Why I still remember the exact flavour of the ice cream I fed you. Why I get so excited about your birthday. It's because you have become someone I want to remember everything about. Someone I want to make memories with. Someone I want to keep discovering, even after all this time. I want more dates, more hugs, more photographs, more late-night conversations, more gaming sessions, more inside jokes, more birthdays and more opportunities to celebrate you. I want to see you accomplish the things you dream about. I want to watch you grow, learn, make mistakes, succeed and become the person you want to be. And I hope I get to be there for so many of those moments.</p>
+    <p>If I could go back to that day at Barbeque Nation, I'd tell that version of you something. I'd tell him that the girl who was sick, crying and desperately waiting to see him would still be writing about that day two years later. I'd tell him that one hug would become one of her favourite memories, that a little strawberry ice cream mishap would somehow remain unforgettable, and that he'd become one of the most important people in her life. I'd tell him that she would eventually understand all those years of affection he had given her, and that she would spend an entire week trying to find new ways to tell him how much she loved him.</p>
+    <p>And I'd probably tell him to give her another hug. Because clearly, she was going to need it.</p>
+    <p>HAPPY ALMOST-BIRTHDAY, MY LOVE.</p>
+    <p>This is only the first of seven surprises. There are six more little pieces of my heart waiting for you, and I hope you're ready because I have SO MUCH MORE TO SAY.</p>
+    <p>Thank you for being you. Thank you for loving me. Thank you for letting me love you.</p>
+    <p><strong>YOU KEEP SAYING YOU HAVEN'T DONE MUCH FOR ME. I SAY YOU'VE GIVEN ME A THOUSAND REASONS TO WRITE.</strong></p>
+    <p>SEVEN DAYS OF YOU. BECAUSE ONE DAY COULD NEVER BE ENOUGH.</p>
+    <p>I LOVE YOU, AGASTYA. MORE THAN THESE WORDS COULD EVER PROPERLY EXPLAIN.</p>
+    <p class="sign">P.S. I hope you realise that you're stuck being the protagonist of my little birthday project for the next seven days. No complaints accepted.</p>
+  </article>
+</div>
+
+
+<div class="day-two-overlay" id="dayTwoOverlay" role="dialog" aria-modal="true" aria-label="Day two poem">
+  <article class="day-two-paper">
+    <button class="day-two-close" id="closeDayTwo" aria-label="Close Day Two">×</button>
+    <div class="day-two-top"><span>THE AGASTYA ARCHIVE</span><span>02 / 07</span></div>
+    <h2 class="day-two-title">OF YOU, AND ALL THINGS LOVELY.</h2>
+    <p class="day-two-subtitle">day two of seven days of you.</p>
+    <div class="day-two-rule"></div>
+    <p class="day-two-poem">If beauty were a thing that words could keep,
+I'd gather every word the world has known,
+And lay them at your feet, a promise deep,
+Yet find that I had scarcely even shown.
+For what are words beside the warmth you bear?
+What verse could hold the kindness in your eyes?
+What painter could recreate, with tender care,
+The quiet magic of your softest smile?
+Your eyes, like midnight skies with stars concealed,
+Hold little worlds I find myself lost in.
+And in your smile, a thousand joys revealed,
+A light no passing day could ever dim.
+You are the gentle pause within a song,
+The sweetest thought that lingers through the day;
+The place my wandering thoughts return to long,
+The little wonder words cannot portray.
+And should the stars ask what I treasure most,
+I'd speak of you, and all that makes you, you.
+Not for some grand perfection or a boast,
+But for the boy that only I can see.
+For I have seen you laugh, and seen you shy,
+Seen mischief dancing softly in your eyes;
+I've watched you turn away, pretending not
+To notice how your cheeks betray surprise.
+And though the world may write of kings and skies,
+Of endless seas and love that conquers all,
+I'd rather write of you, in simple lines,
+For you make ordinary moments beautiful.
+So let this little verse remain with you,
+A humble offering, imperfect, true:
+If I were given all eternity,
+I'd still find newer things to write of you.
+For some things are too lovely to be told,
+Too dear to fit in ink upon a page.
+And you, my love, are worth a thousand poems,
+Yet never one could do you justice.</p>
+  </article>
+</div>
+
+
+<div class="day-four-overlay" id="dayFourOverlay" role="dialog" aria-modal="true" aria-label="Day four: a memory I'll keep">
+  <article class="day-four-paper">
+    <button class="day-four-close" id="closeDayFour" aria-label="Close Day Four">×</button>
+    <div class="day-four-top"><span>THE AGASTYA ARCHIVE</span><span>04 / 07</span></div>
+    <h2 class="day-four-title">A MEMORY I'LL KEEP.</h2>
+    <p class="day-four-subtitle">day four of seven days of you.</p>
+    <div class="day-four-rule"></div>
+    <div class="day-four-copy">
+      <p>I don't quite know how to explain yesterday, except that being with you made the world feel a little softer. I cannot remember the last time I smiled so much, or felt quite so happy simply doing the most ordinary things with someone. Your hugs, our kisses, the little moments in between — I wish I could gather them all and tuck them somewhere safe, just so I could return to them whenever I wanted.</p>
+      <p>And that ride with you on your bike; there's something about it that I cannot quite put into words. Perhaps it was the closeness, perhaps it was the simple joy of being beside you, or perhaps it was just you. Whatever it was, I know I'll remember it for a long, long time.</p>
+      <p>I hope you liked the letter I wrote for you, too. I wanted to give you something that existed beyond a screen, something my own hands had put together, with every word carrying a little of what I sometimes struggle to say aloud. I hope that when you hold it, you can feel just how much love went into writing it.</p>
+      <p>If I could keep one thing from yesterday, it would be the feeling of being so wonderfully, effortlessly happy beside you. And I think that's what made it so special — it was you, it was us, and it was a day I wish I could live all over again. ♡</p>
+    </div>
+  </article>
+</div>
+
+
+<div class="arcade-overlay" id="dayFiveArcade" role="dialog" aria-modal="true" aria-label="The Birthday Arcade">
+ <div class="arcade-shell">
+  <div class="arcade-head"><span class="arcade-brand">AGASTYA'S ARCADE · EST. YOUR BIRTHDAY</span><button class="arcade-close" id="closeArcade" aria-label="Close arcade">×</button></div>
+  <header class="arcade-title"><div class="arcade-kicker">INSERT COIN · PLAYER ONE READY</div><h2>THE BIRTHDAY <em>ARCADE.</em></h2><p>FIVE CLASSICS. FIVE CHALLENGES. ONE VERY SPECIAL PLAYER.</p></header>
+  <div class="arcade-playerbar"><span>PLAYER <strong>01 — AGASTYA</strong></span><span>HIGH SCORE <strong id="arcadeHighScore">000000</strong></span><span class="arcade-coins">TICKETS <strong id="arcadeTickets">00</strong> / 05</span></div>
+  <div class="arcade-lobby" id="arcadeLobby">
+   <button class="arcade-machine" data-game="bomber"><div class="machine-art">▦</div><b>01 · BIRTHDAY BOMBERMAN</b><small>Defeat five roaming monsters. Plant bombs and survive the blast.</small><span class="machine-status">▶ PLAY GAME</span></button>
+   <button class="arcade-machine" data-game="tron"><div class="machine-art">ϟ</div><b>02 · TRON: LAST CANDLE</b><small>Ride the neon grid. Don't cross a trail.</small><span class="machine-status">▶ PLAY GAME</span></button>
+   <button class="arcade-machine" data-game="asteroids"><div class="machine-art">✦</div><b>03 · PARTY CRASHER</b><small>Fly through the party and pop the balloons.</small><span class="machine-status">▶ PLAY GAME</span></button>
+   <button class="arcade-machine" data-game="pacman"><div class="machine-art">◉</div><b>04 · PAC-MAN: CAKE RUN</b><small>Collect the treats. Outrun the party ghosts.</small><span class="machine-status">▶ PLAY GAME</span></button>
+   <button class="arcade-machine" data-game="fighter"><div class="machine-art">✹</div><b>05 · BIRTHDAY BRAWL</b><small>Challenge the CPU. Claim the birthday crown.</small><span class="machine-status">▶ PLAY GAME</span></button>
+  </div>
+  <section class="arcade-gameview" id="arcadeGameView">
+   <div class="arcade-gamebar"><h3 id="arcadeGameTitle">GAME TITLE</h3><button id="arcadeBack">← ARCADE FLOOR</button></div>
+   <div class="arcade-screen"><canvas id="arcadeCanvas" width="800" height="500"></canvas><div class="arcade-gameover" id="arcadeGameOver"><div><h4 id="arcadeResultTitle">LEVEL CLEAR</h4><p id="arcadeResultText">You did it.</p><button class="arcade-action" id="arcadeReplay">PLAY AGAIN</button> <button class="arcade-action" id="arcadeContinue">BACK TO ARCADE</button></div></div></div>
+   <p class="arcade-help" id="arcadeHelp">WASD / ARROW KEYS TO MOVE · SPACE TO ACTION</p>
+  </section>
+  <div class="arcade-secret" id="arcadeSecret"><div class="secret-star">✦</div><div class="arcade-kicker">ALL MACHINES CLEARED · BONUS UNLOCKED</div><h3>PLAYER ONE, YOU DID IT.</h3><p>Congratulations, Agastya. You've conquered every machine in your birthday arcade. Your final surprise is waiting in the stars. ♡</p></div>
+  <div class="arcade-foot">A LITTLE ARCADE, BUILT JUST FOR YOU · 05 / 07</div>
+ </div>
+</div>
+
+<div class="locked-note" id="lockedNote">
+  <div class="lock-card">
+    <div class="lock-icon">✧</div>
+    <div class="eyebrow">A little patience, please</div>
+    <h3>Not just yet.</h3>
+    <p>This envelope is waiting for its day. Come back tomorrow and it'll have a little something inside. No peeking, Agastya.</p>
+    <button id="closeLocked">I'll wait</button>
+  </div>
+</div>
+
+<div id="daySixGame" role="dialog" aria-modal="true" aria-label="Day VI — The Two of Us">
+ <div class="d6-shell">
+  <div class="d6-top"><span>THE AGASTYA ARCHIVE · 06 / 07</span><button class="d6-close" id="d6Close" aria-label="Close game">×</button></div>
+  <section class="d6-view active" id="d6Intro">
+   <div class="d6-hero"><div class="d6-kicker">a tiny two-player love arcade</div><h2>DAY VI — <em>THE TWO OF US</em></h2><p class="d6-sub">“A little game of how well we know each other.”</p><p class="d6-copy">Two people. A little collection of questions. A whole lot of “HOW DID YOU NOT KNOW THAT?” Take turns adding questions about yourselves, then see who knows the other person best.</p><div class="d6-actions"><button class="d6-btn primary" id="d6Start">START</button></div><p class="d6-note">Made for two people sharing one device. Your questions stay saved in this browser, so you can close the game and come back later.</p></div>
+  </section>
+  <section class="d6-view" id="d6Setup">
+   <div class="d6-hero" style="padding-bottom:20px"><div class="d6-kicker">first, let's set the scene</div><h2>THE QUESTION <em>ROOM.</em></h2><p class="d6-sub">Write the questions only you would know.</p></div>
+   <div class="d6-card">
+    <div class="d6-formgrid">
+     <div class="d6-field"><label for="d6Name0">Player one</label><input id="d6Name0" maxlength="24" value="Agastya" autocomplete="off"></div>
+     <div class="d6-field"><label for="d6Name1">Player two</label><input id="d6Name1" maxlength="24" value="Chehaq" autocomplete="off"></div>
+    </div>
+    <div class="d6-tabs"><button class="d6-tab active" data-player="0" id="d6Tab0">Agastya<small id="d6Count0">0 questions</small></button><button class="d6-tab" data-player="1" id="d6Tab1">Chehaq<small id="d6Count1">0 questions</small></button></div>
+    <div id="d6Editor">
+     <div class="d6-kicker" id="d6OwnerLabel">AGASTYA'S QUESTIONS</div>
+     <div class="d6-field"><label for="d6Question">Your question</label><textarea id="d6Question" maxlength="180" placeholder="e.g. What's my favourite childhood memory?"></textarea></div>
+     <div class="d6-field"><label for="d6Answer">The correct answer <span style="color:#dcaac6">· kept private</span></label><input id="d6Answer" type="password" maxlength="180" placeholder="Only reveal this during the game" autocomplete="new-password"></div>
+     <div class="d6-actions" style="margin:12px 0"><button class="d6-btn primary" id="d6Add">ADD QUESTION ✦</button><button class="d6-btn soft" id="d6CancelEdit" hidden>CANCEL EDIT</button></div>
+     <div class="d6-list" id="d6QuestionList"></div>
+     <p class="d6-note">Answers are masked while you're adding questions. Please hand the device to the other player before they add theirs. Each player can add, edit or delete their own questions until both are ready.</p>
+    </div>
+    <div class="d6-status"><span id="d6ReadyStatus">Both players need at least one question.</span><button class="d6-btn soft" id="d6Ready">I'M DONE — PASS THE DEVICE</button></div>
+    <div class="d6-error" id="d6SetupError" aria-live="polite"></div>
+    <div class="d6-actions"><button class="d6-btn primary" id="d6Begin" disabled>START THE GAME ♡</button></div>
+   </div>
+  </section>
+  <section class="d6-view" id="d6Play">
+   <div class="d6-gamehead"><span id="d6RoundLabel">QUESTION 1 / 10</span><span id="d6TurnLabel">AGASTYA'S TURN TO GUESS</span></div><div class="d6-progress"><span id="d6Progress"></span></div>
+   <div class="d6-scoreline" id="d6Scores"></div>
+   <div class="d6-card d6-question">
+    <div class="d6-owner" id="d6QuestionOwner">✦ A QUESTION FROM AGASTYA</div>
+    <h3 id="d6Prompt">What's my favourite colour?</h3>
+    <div class="d6-field" id="d6GuessWrap"><label id="d6GuessLabel" for="d6Guess">Chehaq's guess</label><input id="d6Guess" maxlength="180" placeholder="Take your best guess…" autocomplete="off"></div>
+    <div class="d6-actions" id="d6SubmitRow"><button class="d6-btn primary" id="d6Submit">LOCK IN MY GUESS</button><button class="d6-btn soft" id="d6Skip">SKIP THIS ONE</button></div>
+    <div id="d6RevealArea" hidden><button class="d6-btn primary" id="d6Reveal">REVEAL THE ANSWER ♡</button><div class="d6-answer" id="d6CorrectAnswer" hidden></div><p class="d6-note" id="d6OwnerJudgeNote">Question owner: how close were they?</p><div class="d6-judge" id="d6Judge" hidden><button class="d6-btn primary" data-judge="correct">CORRECT ✦</button><button class="d6-btn soft" data-judge="close">CLOSE ENOUGH ♡</button><button class="d6-btn danger" data-judge="wrong">NOT QUITE</button></div></div>
+    <div class="d6-error" id="d6PlayError" aria-live="polite"></div>
+   </div>
+  </section>
+  <section class="d6-view" id="d6Results">
+   <div class="d6-results"><div class="d6-confetti">✦ ♡ ✧ ♡ ✦</div><div class="d6-kicker">THE LITTLE RESULTS CEREMONY</div><h2>THAT'S <em>US.</em></h2><p class="d6-sub" id="d6WinnerLine">You know each other in all the little ways.</p><div class="d6-statgrid" id="d6FinalStats"></div><p class="d6-copy" id="d6FunStats"></p><div class="d6-actions"><button class="d6-btn primary" id="d6Replay">PLAY AGAIN · RESHUFFLE</button><button class="d6-btn soft" id="d6BackSetup">EDIT OUR QUESTIONS</button></div></div>
+  </section>
+ </div>
+</div>
+
+<script>
+const starField=document.getElementById('stars');
+for(let i=0;i<75;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*4)+'s';s.style.animationDuration=(2+Math.random()*4)+'s';starField.appendChild(s)}
+const overlay=document.getElementById('letterOverlay');
+document.getElementById('dayOne').addEventListener('click',e=>{e.currentTarget.classList.add('opening');setTimeout(()=>{overlay.classList.add('show');document.body.style.overflow='hidden'},380)});
+document.getElementById('closeLetter').addEventListener('click',()=>{overlay.classList.remove('show');document.body.style.overflow='';document.getElementById('dayOne').classList.remove('opening')});
+overlay.addEventListener('click',e=>{if(e.target===overlay){overlay.classList.remove('show');document.body.style.overflow='';document.getElementById('dayOne').classList.remove('opening')}});
+const dayThree=document.getElementById('dayThreeOverlay');
+const openDayThree=()=>{dayThree.classList.add('show');if(!moveLoop){moveLoop=true;lastMoveFrame=0;requestAnimationFrame(updateMovement)};document.body.style.overflow='hidden';document.querySelectorAll('.surprise-tab').forEach((b,i)=>b.classList.toggle('active',i===0));document.querySelectorAll('.surprise-panel').forEach((p,i)=>p.classList.toggle('active',i===0));document.querySelectorAll('#dayThreeProgress i').forEach((p,i)=>p.classList.toggle('active',i===0));};
+const closeDayThree=()=>{dayThree.classList.remove('show');document.body.style.overflow='';};
+const dayTwo=document.getElementById('dayTwoOverlay');
+const openDayTwo=()=>{dayTwo.classList.add('show');document.body.style.overflow='hidden';};
+const closeDayTwo=()=>{dayTwo.classList.remove('show');document.body.style.overflow='';};
+const dayFour=document.getElementById('dayFourOverlay');
+const openDayFour=()=>{dayFour.classList.add('show');document.body.style.overflow='hidden';};
+const closeDayFour=()=>{dayFour.classList.remove('show');document.body.style.overflow='';};
+document.getElementById('closeDayFour').addEventListener('click',closeDayFour);
+dayFour.addEventListener('click',e=>{if(e.target===dayFour)closeDayFour()});
+document.getElementById('closeDayTwo').addEventListener('click',closeDayTwo);
+dayTwo.addEventListener('click',e=>{if(e.target===dayTwo)closeDayTwo()});
+document.querySelectorAll('.envelope:not(#dayOne)').forEach(el=>el.addEventListener('click',()=>{if(el.dataset.day==='2'){openDayTwo()}else if(el.dataset.day==='3'){openDayThree()}else if(el.dataset.day==='4'){openDayFour()}else if(el.dataset.day==='5'){}else if(el.dataset.day==='6'){window.openDaySix()}else{document.getElementById('lockedNote').classList.add('show')}}));
+document.getElementById('closeDayThree').addEventListener('click',closeDayThree);
+dayThree.addEventListener('click',e=>{if(e.target===dayThree)closeDayThree()});
+document.querySelectorAll('.surprise-tab').forEach(tab=>tab.addEventListener('click',()=>{const n=Number(tab.dataset.surprise);document.querySelectorAll('.surprise-tab').forEach((b,i)=>b.classList.toggle('active',i===n));document.querySelectorAll('.surprise-panel').forEach((p,i)=>p.classList.toggle('active',i===n));document.querySelectorAll('#dayThreeProgress i').forEach((p,i)=>p.classList.toggle('active',i===n));}));
+document.querySelectorAll('.star-note').forEach(b=>b.addEventListener('click',()=>{document.getElementById('starMessage').textContent=b.dataset.note;b.style.background='#12345a';}));
+// Twenty numbered doors, with first-person mouse-look and shift lock.
+const mansionDoors=document.getElementById('mansionDoors'),mansionWorld=document.getElementById('mansionWorld'),mansionFrame=document.getElementById('mansionFrame');
+const foundDoors=new Set();
+let cameraX=0,cameraZ=0,cameraYaw=0,cameraPitch=0,dragging=false,lastX=0,lastY=0,shiftLocked=false,pointerLockActive=false,zooming=false;
+const player=document.getElementById('mansionPlayer');
+const heldKeys=new Set();
+let lastMoveFrame=0,moveLoop=false,cine=false;
+function renderMansion(){
+ if(!cine)mansionWorld.style.transition='none';
+ mansionWorld.style.transform=`translate3d(${cameraX}px,0px,${cameraZ}px) rotateX(${cameraPitch}deg) rotateY(${-cameraYaw}deg)`;
+}
+function updateMovement(now){
+ const dt=Math.min((now-(lastMoveFrame||now))/1000,.05);lastMoveFrame=now;
+ if(!zooming&&heldKeys.size){
+  let forward=0,strafe=0;
+  if(heldKeys.has('w')||heldKeys.has('arrowup'))forward+=1;
+  if(heldKeys.has('s')||heldKeys.has('arrowdown'))forward-=1;
+  if(heldKeys.has('d')||heldKeys.has('arrowright'))strafe-=1;
+  if(heldKeys.has('a')||heldKeys.has('arrowleft'))strafe+=1;
+  const length=Math.hypot(forward,strafe)||1;forward/=length;strafe/=length;
+  const speed=150*dt,rad=cameraYaw*Math.PI/180;
+  // Match the camera's inverse-world rotation: W follows the view's horizontal
+  // forward vector; A/D strafe perpendicular to it (never turn into sideways drift).
+  const forwardX=-Math.sin(rad), forwardZ=Math.cos(rad);
+  const rightX=Math.cos(rad), rightZ=Math.sin(rad);
+  cameraX+=(forwardX*forward+rightX*strafe)*speed;
+  cameraZ+=(forwardZ*forward+rightZ*strafe)*speed;
+  // Hard interior bounds: keep the player away from both side walls and inside
+  // the playable length of the corridor, even while looking/strafe-moving diagonally.
+  cameraX=Math.max(-132,Math.min(132,cameraX));
+  cameraZ=Math.max(-20,Math.min(1660,cameraZ));
+  renderMansion();
+ }
+ if(dayThree.classList.contains('show'))requestAnimationFrame(updateMovement);else moveLoop=false;
+}
+const doorReasons=[
+ 'I love how your curls never seem to do what you want them to, and somehow look perfect anyway.',
+ 'I love that smile you try to hide, even though I can always tell when it is about to appear.',
+ 'I love the way you look away when you get shy. You are not nearly as subtle as you think.',
+ 'I love your brown eyes. There is so much warmth in them, and I could look at them forever.',
+ 'I love how ridiculously smart you are, especially when you pretend it is no big deal.',
+ 'I love your soft heart. You care in ways you probably do not even notice.',
+ 'I love your sense of humour and how you can make me laugh when I am trying so hard to be serious.',
+ 'I love how patient you can be with me, even when my thoughts are going in seventeen directions.',
+ 'I love that you remember the little things I mention. It makes me feel listened to.',
+ 'I love how excited you get about the things you genuinely enjoy, especially anime.',
+ 'I love that you love cooking. There is something so sweet about seeing you talk about it.',
+ 'I love how you make ordinary conversations feel like somewhere I want to stay.',
+ 'I love that I can be completely silly around you and never feel like I have to pretend.',
+ 'I love the kindness you showed me from the very beginning, when we first met.',
+ 'I love that our first date gave me a memory I still get happy thinking about.',
+ 'I love that our first hug is part of that same day. I still keep that little moment close.',
+ 'I love that you were brave enough to ask me to be yours.',
+ 'I love our first proper kiss, and how special that day became to me.',
+ 'I love the way you make me feel seen in the smallest, quietest moments.',
+ 'I love that you are you. Even twenty reasons could never fit everything.'
+];
+function openDoor(i,door){
+ if(zooming)return;zooming=true;
+ if(document.pointerLockElement===mansionFrame)document.exitPointerLock();
+ if(shiftLocked)setShiftLock(false);
+ const n=i+1;foundDoors.add(n);door.classList.add('opened');door.innerHTML=`<b>${String(n).padStart(2,'0')}</b><small>FOUND</small>`;
+ document.getElementById('mansionCount').textContent=`${String(foundDoors.size).padStart(2,'0')} / 20 FOUND`;
+ document.getElementById('focusDoorLabel').textContent=`A LITTLE NOTE · ${String(n).padStart(2,'0')} / 20`;
+ document.getElementById('focusDoorText').textContent=doorReasons[i];
+ if(foundDoors.size===20){document.getElementById('focusDoorLabel').textContent='ALL TWENTY DOORS · FOUND';document.getElementById('focusDoorText').textContent='You found all twenty little notes. And I still have a thousand more reasons.';}
+ mansionFrame.classList.add('door-zoom');
+ mansionWorld.style.transition='transform .85s cubic-bezier(.2,.8,.2,1)';
+ mansionWorld.style.transform=`translate3d(${cameraX}px,0px,${cameraZ}px) rotateX(${cameraPitch}deg) rotateY(${-cameraYaw}deg) scale(1.28)`;
+ cine=true;setTimeout(()=>mansionFrame.classList.add('door-note-open'),420);
+ setTimeout(()=>{zooming=false;},1050);
+}
+const hallMQ=matchMedia('(max-width:650px)');
+function placeDoor(door,i){const hw=hallMQ.matches?190:220,left=i%2===0,x=left?-(hw-6):(hw-6),depth=360+Math.floor(i/2)*145;door.style.transform=`translate3d(${x}px,0px,${-depth}px) rotateY(${left?'90deg':'-90deg'})`}
+hallMQ.addEventListener&&hallMQ.addEventListener('change',()=>mansionDoors.querySelectorAll('.mansion-door').forEach((d,i)=>placeDoor(d,i)));
+for(let i=0;i<20;i++){
+ const door=document.createElement('button');door.className='mansion-door';door.type='button';door.dataset.door=String(i+1);
+ door.setAttribute('aria-label',`Door ${i+1} — open a little note`);
+ door.innerHTML=`<b>${String(i+1).padStart(2,'0')}</b><small>OPEN</small>`;
+ placeDoor(door,i);
+ door.addEventListener('click',()=>openDoor(i,door));mansionDoors.appendChild(door);
+}
+function closeDoorNote(){mansionFrame.classList.remove('door-note-open','door-zoom');zooming=false;heldKeys.clear();cine=true;mansionWorld.style.transition='transform .55s cubic-bezier(.16,1,.3,1)';renderMansion();setTimeout(()=>{cine=false;mansionWorld.style.transition='none'},600);mansionFrame.focus({preventScroll:true});}
+document.getElementById('returnToMansion').addEventListener('click',closeDoorNote);
+function setShiftLock(on){
+ shiftLocked=on;
+ mansionFrame.classList.toggle('shift-locked',on);
+ document.getElementById('shiftLockButton').setAttribute('aria-pressed',String(on));
+ document.getElementById('shiftLockButton').innerHTML=on?'◎ &nbsp; DISABLE SHIFT LOCK':'◎ &nbsp; ENABLE SHIFT LOCK';
+ document.getElementById('cameraStatus').textContent=on?(pointerLockActive?'FIRST-PERSON CAMERA · MOUSE LOCKED':'FIRST-PERSON CAMERA · SHIFT LOCK ON'):'FIRST-PERSON CAMERA · OFF';
+ if(!on)heldKeys.clear();
+}
+document.getElementById('shiftLockButton').addEventListener('click',()=>{
+ if(shiftLocked){
+  if(document.pointerLockElement===mansionFrame)document.exitPointerLock();
+  pointerLockActive=false;setShiftLock(false);return;
+ }
+ mansionFrame.focus({preventScroll:true});
+ // Enable immediately. Some embedded browsers deny Pointer Lock; in that case
+ // the same control remains usable with mouse-look as a graceful fallback.
+ setShiftLock(true);
+ document.getElementById('cameraStatus').textContent='SHIFT LOCK ON · MOVE MOUSE TO LOOK';
+ // Focus the game surface so keyboard input is routed to the mansion immediately.
+ mansionFrame.focus({preventScroll:true});
+ if(mansionFrame.requestPointerLock){
+  try{
+   const request=mansionFrame.requestPointerLock();
+   if(request&&typeof request.catch==='function')request.catch(()=>{
+    pointerLockActive=false;
+    document.getElementById('cameraStatus').textContent='SHIFT LOCK ON · MOVE MOUSE TO LOOK';
+   });
+  }catch(err){
+   pointerLockActive=false;
+   document.getElementById('cameraStatus').textContent='SHIFT LOCK ON · MOVE MOUSE TO LOOK';
+  }
+ }
+});
+document.addEventListener('pointerlockchange',()=>{
+ const locked=document.pointerLockElement===mansionFrame;
+ if(locked){pointerLockActive=true;setShiftLock(true);}
+ else if(pointerLockActive){pointerLockActive=false;setShiftLock(false);}
+});
+document.addEventListener('pointerlockerror',()=>{
+ pointerLockActive=false;
+ if(shiftLocked)document.getElementById('cameraStatus').textContent='SHIFT LOCK ON · MOVE MOUSE TO LOOK';
+});
+document.addEventListener('mousemove',e=>{
+ if(!shiftLocked||zooming)return;
+ if(pointerLockActive&&document.pointerLockElement===mansionFrame){
+  cameraYaw=(cameraYaw-e.movementX*.08)%360;
+  cameraPitch=Math.max(-48,Math.min(48,cameraPitch-e.movementY*.06));
+  renderMansion();return;
+ }
+ // Fallback for previews/iframes that do not grant Pointer Lock.
+ const rect=mansionFrame.getBoundingClientRect();
+ if(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom){lastX=e.clientX;lastY=e.clientY;return;}
+ if(lastX!==0||lastY!==0){
+  cameraYaw=(cameraYaw-(e.clientX-lastX)*.11)%360;
+  cameraPitch=Math.max(-48,Math.min(48,cameraPitch-(e.clientY-lastY)*.09));
+  renderMansion();
+ }
+ lastX=e.clientX;lastY=e.clientY;
+});
+// Continuous keyboard movement. Use physical key codes so WASD stays consistent
+// across keyboard layouts and continues working while Pointer Lock owns the mouse.
+const movementCodes=new Set(['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowLeft','ArrowDown','ArrowRight']);
+const movementCodeToKey={KeyW:'w',KeyA:'a',KeyS:'s',KeyD:'d',ArrowUp:'arrowup',ArrowLeft:'arrowleft',ArrowDown:'arrowdown',ArrowRight:'arrowright'};
+document.addEventListener('keydown',e=>{
+ const k=movementCodeToKey[e.code];
+ const gameActive=dayThree.classList.contains('show')&&!zooming&&(shiftLocked||document.activeElement===mansionFrame||mansionFrame.contains(document.activeElement));
+ if(gameActive&&movementCodes.has(e.code)){
+  e.preventDefault();heldKeys.add(k);
+ }
+},true);
+document.addEventListener('keyup',e=>{
+ const k=movementCodeToKey[e.code];
+ if(k)heldKeys.delete(k);
+},true);
+window.addEventListener('blur',()=>heldKeys.clear());
+document.addEventListener('visibilitychange',()=>{if(document.hidden)heldKeys.clear();});
+// Door interaction works in both modes: the reticle selects a door with true
+// Pointer Lock, while fallback shift-lock can still click a visible door directly.
+mansionFrame.addEventListener('click',e=>{
+ if(zooming)return;
+ const directlyClickedDoor=e.target.closest && e.target.closest('.mansion-door');
+ if(shiftLocked && !pointerLockActive && directlyClickedDoor){directlyClickedDoor.click();return;}
+ if(!shiftLocked || !pointerLockActive || document.pointerLockElement!==mansionFrame)return;
+ const rect=mansionFrame.getBoundingClientRect();
+ const hit=document.elementFromPoint(rect.left+mansionFrame.clientWidth/2,rect.top+mansionFrame.clientHeight*.48);
+ const door=hit && (hit.classList.contains('mansion-door')?hit:(hit.closest && hit.closest('.mansion-door')));
+ if(door)door.click();
+});
+mansionFrame.addEventListener('pointerdown',e=>{
+ if(shiftLocked||e.target.closest('button'))return;
+ mansionFrame.focus({preventScroll:true});dragging=true;lastX=e.clientX;lastY=e.clientY;
+ mansionFrame.setPointerCapture(e.pointerId);
+});
+// Drag-to-look remains available when shift lock is off, including on touch screens.
+mansionFrame.addEventListener('pointermove',e=>{
+ if(!dragging||shiftLocked||zooming)return;
+ const dx=e.clientX-lastX,dy=e.clientY-lastY;lastX=e.clientX;lastY=e.clientY;cameraYaw=(cameraYaw-dx*.11)%360;cameraPitch=Math.max(-48,Math.min(48,cameraPitch-dy*.09));renderMansion();
+});
+mansionFrame.addEventListener('pointerup',()=>dragging=false);mansionFrame.addEventListener('pointercancel',()=>dragging=false);
+const wishes=['May the things you dream about find their way to you.','May you surprise yourself with how much you can do.','May this year bring you good stories, good food, and people who feel like home.','May you always have a reason to be curious.','May you be as proud of yourself as I already am.','May there be more laughter than worry, and more adventures than plans.'];
+let wishIndex=0;document.getElementById('makeWish').addEventListener('click',()=>{document.getElementById('wishOutput').textContent=wishes[wishIndex%wishes.length];wishIndex++;});
+document.getElementById('finalEnvelope').addEventListener('click',()=>{document.getElementById('finalLetter').classList.add('show');document.getElementById('finalEnvelope').style.transform='scale(.86) rotateX(25deg)';});
+const constellation=document.getElementById('constellation');for(let i=0;i<28;i++){const star=document.createElement('i');star.style.left=(4+Math.random()*92)+'%';star.style.top=(5+Math.random()*90)+'%';star.style.animationDelay=(Math.random()*3)+'s';constellation.appendChild(star);}
+document.getElementById('closeLocked').addEventListener('click',()=>document.getElementById('lockedNote').classList.remove('show'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDoorNote();overlay.classList.remove('show');document.getElementById('lockedNote').classList.remove('show');dayFour.classList.remove('show');dayThree.classList.remove('show');if(window.closeDaySix)window.closeDaySix();document.body.style.overflow='';document.getElementById('dayOne').classList.remove('opening')}});
+</script>
+<script>
+// DAY FIVE: The Birthday Arcade (rewritten). Shared engine + five games.
+(()=>{
+const $=i=>document.getElementById(i),ov=$('dayFiveArcade');if(!ov)return;
+const cv=$('arcadeCanvas'),W=800,H=500,dpr=Math.min(2,window.devicePixelRatio||1);
+cv.width=W*dpr;cv.height=H*dpr;const c=cv.getContext('2d');
+const lobby=$('arcadeLobby'),view=$('arcadeGameView'),goEl=$('arcadeGameOver');
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const T={bomber:'BIRTHDAY BOMBERMAN',tron:'TRON: THE LAST CANDLE',asteroids:'ASTEROIDS: PARTY CRASHER',pacman:'PAC-MAN: CAKE RUN',fighter:'BIRTHDAY BRAWL'};
+const HELP={
+ bomber:'WASD / ARROWS MOVE · SPACE DROPS A BOMB (MAX 2) · BLAST 5 MONSTERS · 3 LIVES · P PAUSE · R RESTART',
+ tron:'ARROWS / WASD / SWIPE TURN · OUTLAST THE ORANGE RIDER OR SURVIVE 50 SECONDS · P PAUSE · R RESTART',
+ asteroids:'← → ROTATE · ↑ THRUST · SPACE FIRES · POP 12 BALLOONS · BIG ONES SPLIT · 3 LIVES',
+ pacman:'WASD / ARROWS / SWIPE STEER · EAT EVERY TREAT · POWER CANDLES TURN THE TABLES · 3 LIVES',
+ fighter:'A/D MOVE · W JUMP · S BLOCK · J PUNCH · K SPECIAL (RECHARGES) · WIN 2 ROUNDS'};
+const rd=(k,d)=>{try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}};
+const wr=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+let tickets=rd('agastyaArcadeTickets',0),high=rd('agastyaArcadeHigh',0),done=rd('agastyaArcadeDone',[]),mute=rd('agastyaArcadeMute',false);
+const rnd=(a,b)=>a+Math.random()*(b-a),clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),pad=(n,l)=>String(Math.max(0,Math.floor(n))).padStart(l,'0');
+let G=null,name='',raf=0,last=0,acc=0,score=0,paused=false,run=0,keys={},hit={},fx=[],pops=[],shake=0,bump=0;
+const MK={};
+
+/* ---------- sound (WebAudio, created on first gesture) ---------- */
+let AC=null;
+function snd(f,d=.08,type='square',v=.04,slide=0){if(mute)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.setValueAtTime(f,t);if(slide)o.frequency.exponentialRampToValueAtTime(Math.max(30,f+slide),t+d);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+d)}catch(e){}}
+const jingle=(n,w)=>n.forEach((f,i)=>setTimeout(()=>snd(f,.16,w?'triangle':'sawtooth',.05),i*110));
+
+/* ---------- juice: particles, floating score, shake ---------- */
+function burst(x,y,col,n=12,sp=200,life=.6){for(let i=0;i<n;i++){const a=Math.random()*6.283,s=sp*(.3+Math.random());fx.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:life*(.6+Math.random()*.6),m:life,col})}}
+function pop(x,y,t,col='#ffe29a'){pops.push({x,y,t,col,l:.9})}
+function add(n,x,y){score+=n;bump=1;if(x!=null)pop(x,y,'+'+n)}
+function fxStep(dt){for(const p of fx){p.x+=p.vx*dt;p.y+=p.vy*dt;p.vx*=.96;p.vy*=.96;p.l-=dt}fx=fx.filter(p=>p.l>0);for(const p of pops){p.y-=42*dt;p.l-=dt}pops=pops.filter(p=>p.l>0);shake=Math.max(0,shake-dt*34);bump=Math.max(0,bump-dt*3)}
+function txt(t,x,y,s=14,col='#a8f6ff',al='left'){c.fillStyle=col;c.font=`${s}px 'Courier New',monospace`;c.textAlign=al;c.fillText(t,x,y)}
+function banner(g,t,sub,time,live){g.bn={t,sub,l:time,m:time,live}}
+function drawBanner(g){const b=g.bn;if(!b||b.l<=0)return;const k=Math.min(1,(b.m-b.l)*5,b.l*5);c.save();c.globalAlpha=k;c.fillStyle='rgba(3,10,19,.55)';c.fillRect(0,H/2-52,W,104);c.translate(W/2,H/2);c.scale(.9+.1*k,.9+.1*k);c.shadowColor='#3beeff';c.shadowBlur=18;txt(b.t,0,6,38,'#effcff','center');c.shadowBlur=0;if(b.sub)txt(b.sub,0,34,13,'#f4d58c','center');c.restore()}
+
+/* ---------- input: keyboard + touch pad + swipe ---------- */
+const DK={arrowup:[0,-1],w:[0,-1],arrowdown:[0,1],s:[0,1],arrowleft:[-1,0],a:[-1,0],arrowright:[1,0],d:[1,0]};
+const dirIn=edge=>{for(const k in DK)if(edge?hit[k]:keys[k])return DK[k];return null};
+const K=(...a)=>a.some(k=>keys[k]);
+function setKey(k,d){if(d&&!keys[k])hit[k]=1;keys[k]=d}
+const HANDLED=new Set(['arrowup','arrowdown','arrowleft','arrowright',' ','w','a','s','d','j','k','shift','p','r']);
+window.addEventListener('keydown',e=>{
+ if(!ov.classList.contains('show'))return;
+ const k=e.key.toLowerCase();
+ if(k==='escape'&&letterEl.classList.contains('show')){closeLetter();return}
+ if(letterEl.classList.contains('show'))return;
+ if(k==='escape'){if(startEl.classList.contains('show')){if(!tutEl.hidden&&!tutFromGame){$('asBack').click()}else if(tutFromGame)hideStart();else close()}else if(name){showLobby();document.body.style.overflow='hidden'}else close();return}
+ if(startEl.classList.contains('show'))return;
+ if(!name||e.ctrlKey||e.metaKey||e.altKey)return;
+ if(!HANDLED.has(k))return;e.preventDefault();
+ if(e.repeat)return;
+ if(k==='p'){togglePause();return}
+ if(k==='r'){start(name);return}
+ if(paused&&k!==' '){return}
+ setKey(k,true)});
+window.addEventListener('keyup',e=>{keys[e.key.toLowerCase()]=false});
+const releaseAll=()=>{keys={};hit={}};
+window.addEventListener('blur',()=>{releaseAll();if(G&&!G.over&&!paused)togglePause(true)});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&G&&!G.over&&!paused)togglePause(true)});
+// touch pad
+view.querySelector('.arcade-screen').insertAdjacentHTML('afterend','<div class="arcade-pad" id="arcadePad" aria-label="Touch controls"><div class="dpad"><button data-k="arrowup" aria-label="Up">▲</button><button data-k="arrowleft" aria-label="Left">◀</button><button data-k="arrowdown" aria-label="Down">▼</button><button data-k="arrowright" aria-label="Right">▶</button></div><div class="acts"><button data-k="k" aria-label="Special">B</button><button data-k="space,j" aria-label="Action">A</button></div></div>');
+document.querySelectorAll('#arcadePad button').forEach(b=>{
+ const ks=b.dataset.k.split(',').map(k=>k==='space'?' ':k);
+ const on=e=>{e.preventDefault();b.classList.add('on');ks.forEach(k=>setKey(k,true));snd(520,.03,'square',.02)};
+ const off=()=>{b.classList.remove('on');ks.forEach(k=>keys[k]=false)};
+ b.addEventListener('pointerdown',on);['pointerup','pointercancel','pointerleave'].forEach(t=>b.addEventListener(t,off))});
+let sw=null;
+cv.addEventListener('pointerdown',e=>{sw={x:e.clientX,y:e.clientY}});
+cv.addEventListener('pointerup',e=>{if(!sw)return;const dx=e.clientX-sw.x,dy=e.clientY-sw.y;sw=null;if(Math.max(Math.abs(dx),Math.abs(dy))<28)return;
+ const k=Math.abs(dx)>Math.abs(dy)?(dx>0?'arrowright':'arrowleft'):(dy>0?'arrowdown':'arrowup');setKey(k,true);setTimeout(()=>keys[k]=false,140)});
+cv.style.touchAction='none';
+
+/* ---------- shell: HUD, lobby, pause, results ---------- */
+function hud(){$('arcadeTickets').textContent=pad(tickets,2);$('arcadeHighScore').textContent=pad(high,6);
+ document.querySelectorAll('.arcade-machine').forEach(b=>{const d=done.includes(b.dataset.game);b.classList.toggle('done',d);b.querySelector('.machine-status').textContent=d?'✦ CLEARED · PLAY AGAIN':'▶ PLAY GAME'});
+ if(done.length>=5)$('arcadeSecret').classList.add('show')}
+function lobbyIn(){lobby.classList.remove('in');void lobby.offsetWidth;lobby.querySelectorAll('.arcade-machine').forEach((m,i)=>m.style.setProperty('--i',i));lobby.classList.add('in')}
+function close(){ov.classList.remove('show');document.body.style.overflow='';stop();name=''}
+function stop(){cancelAnimationFrame(raf);raf=0;G=null;run++;releaseAll();paused=false}
+function showLobby(){stop();name='';if(pendingLetter){pendingLetter=false;setTimeout(openLetter,600)}view.classList.remove('active');lobby.style.display='grid';goEl.classList.remove('show');hud();lobbyIn()}
+function syncPause(){const b=$('arcadePause');if(b)b.textContent=paused?'RESUME':'PAUSE'}
+function togglePause(force){if(!G||G.over)return;paused=force===true?true:!paused;releaseAll();syncPause();if(paused)snd(300,.08,'triangle',.03)}
+$('closeArcade').addEventListener('click',close);
+ov.addEventListener('click',e=>{if(e.target===ov)close()});
+$('arcadeBack').onclick=showLobby;$('arcadeContinue').onclick=showLobby;$('arcadeReplay').onclick=()=>start(name);
+$('arcadeBack').insertAdjacentHTML('beforebegin','<button id="arcadePause" type="button">PAUSE</button><button id="arcadeMute" type="button" aria-pressed="false">SOUND ON</button>');
+$('arcadePause').onclick=()=>togglePause();
+const syncMute=()=>{$('arcadeMute').textContent=mute?'SOUND OFF':'SOUND ON';$('arcadeMute').setAttribute('aria-pressed',String(mute))};
+$('arcadeMute').onclick=()=>{mute=!mute;wr('agastyaArcadeMute',mute);syncMute();snd(660,.06)};syncMute();
+document.querySelectorAll('.arcade-machine').forEach(b=>b.addEventListener('click',()=>{snd(440,.08,'square',.04,220);start(b.dataset.game)}));
+function start(n){stop();name=n;score=0;fx=[];pops=[];shake=0;bump=0;acc=0;goEl.classList.remove('show');lobby.style.display='none';view.classList.add('active');
+ $('arcadeGameTitle').textContent=T[n];$('arcadeHelp').textContent=HELP[n];G=MK[n]();G.over=false;syncPause();last=performance.now();raf=requestAnimationFrame(frame)}
+function finish(win,msg){if(!G||G.over)return;G.over=true;const tok=run,first=win&&!done.includes(name);
+ if(win){jingle([523,659,784,1047],1);burst(W/2,H/2,'#ffe29a',40,380,1.2)}else{jingle([392,330,262,196]);shake=18}
+ setTimeout(()=>{if(tok!==run)return;
+  if(first){done.push(name);wr('agastyaArcadeDone',done);tickets=Math.min(5,done.length);wr('agastyaArcadeTickets',tickets);if(done.length>=5)pendingLetter=true}
+  const nh=score>high;if(nh){high=score;wr('agastyaArcadeHigh',high)}hud();
+  $('arcadeResultTitle').textContent=win?'LEVEL CLEAR!':'GAME OVER';
+  $('arcadeResultText').textContent=`${msg} SCORE ${pad(score,6)}${nh&&score>0?' · NEW HIGH SCORE!':''}${first?(done.length>=5?' That\u2019s all five tickets! Head back to the arcade. A letter is waiting for you.':' A birthday ticket has been added to your collection.'):win?'':' Give it another try. The arcade is waiting.'}`;
+  goEl.classList.add('show');$('arcadeReplay').focus({preventScroll:true})},win?700:900)}
+
+/* ---------- main loop: fixed 60Hz simulation, variable render ---------- */
+function frame(t){raf=requestAnimationFrame(frame);const dt=Math.min((t-last)/1000,.1);last=t;
+ if(G&&!paused){acc+=dt;let n=0;while(acc>=1/60&&n++<6){if(G.bn&&G.bn.l>0){G.bn.l-=1/60;if(G.bn.live&&!G.over)G.u(1/60*(G.ts||1))}else if(!G.over)G.u(1/60*(G.ts||1));fxStep(1/60);hit={};acc-=1/60}}
+ render()}
+function render(){c.setTransform(dpr,0,0,dpr,0,0);c.fillStyle='#030a13';c.fillRect(0,0,W,H);
+ c.save();if(shake>0&&!RM)c.translate((Math.random()-.5)*shake,(Math.random()-.5)*shake);
+ if(G)G.d();
+ for(const p of fx){c.globalAlpha=Math.max(0,p.l/p.m);c.fillStyle=p.col;c.fillRect(p.x-2,p.y-2,4,4)}c.globalAlpha=1;
+ for(const p of pops){c.globalAlpha=Math.min(1,p.l*2);txt(p.t,p.x,p.y,15,p.col,'center')}c.globalAlpha=1;
+ c.restore();
+ if(G){drawBanner(G);
+  c.fillStyle='rgba(3,10,19,.72)';c.fillRect(0,0,W,30);
+  c.save();c.translate(16,21);c.scale(1+bump*.25,1+bump*.25);txt('SCORE '+pad(score,6),0,0,15,bump>0?'#fff3c4':'#8cefff');c.restore();
+  txt(G.hud?G.hud():'',W-16,21,13,'#f4d58c','right');
+  if(paused){c.fillStyle='rgba(3,10,19,.78)';c.fillRect(0,0,W,H);txt('PAUSED',W/2,H/2,40,'#effcff','center');txt('PRESS P OR TAP RESUME',W/2,H/2+30,12,'#8cefff','center')}}}
+
+/* ================= 1 · BOMBERMAN ================= */
+MK.bomber=()=>{const C=15,R=13,TW=W/C,TH=H/R,X=q=>(q+.5)*TW,Y=r=>(r+.5)*TH;
+ const map=Array.from({length:R},(_,r)=>Array.from({length:C},(_,q)=>(r==0||q==0||r==R-1||q==C-1||(r%2==0&&q%2==0))?1:(q+r<=4?0:Math.random()<.5?2:0)));
+ const bombs=[],flames=[],mkp=()=>({c:1,r:1,x:X(1),y:Y(1),mv:0});let p=mkp(),lives=3,inv=0;
+ const cells=[];for(let r=1;r<R-1;r++)for(let q=1;q<C-1;q++)if(map[r][q]===0&&q+r>=11)cells.push([q,r]);
+ cells.sort(()=>Math.random()-.5);
+ const en=cells.slice(0,5).map(([q,r],i)=>({c:q,r,x:X(q),y:Y(r),t:0,sp:i<3?.38:.3,d:[0,0],k:i<3?0:1}));
+ const free=(q,r,foe)=>map[r]&&map[r][q]===0&&!bombs.some(b=>b.c==q&&b.r==r&&(foe||b.out));
+ const flame=(q,r)=>flames.push({c:q,r,t:.5});
+ const boom=b=>{if(!bombs.includes(b))return;bombs.splice(bombs.indexOf(b),1);snd(90,.35,'sawtooth',.08,-50);shake=10;flame(b.c,b.r);burst(X(b.c),Y(b.r),'#ffb347',14,240);
+  for(const [dc,dr] of [[1,0],[-1,0],[0,1],[0,-1]])for(let n=1;n<=2;n++){const q=b.c+dc*n,r=b.r+dr*n;if(map[r][q]===1)break;const ch=bombs.find(o=>o.c==q&&o.r==r);if(ch)boom(ch);flame(q,r);if(map[r][q]===2){map[r][q]=0;add(10,X(q),Y(r));burst(X(q),Y(r),'#b2522a',8,140);break}}};
+ const hurt=()=>{lives--;inv=2;shake=14;burst(p.x,p.y,'#ff6b9a',22,260);snd(140,.4,'sawtooth',.07,-100);
+  if(lives<=0){finish(false,'The monsters got you.');return}p=mkp()};
+ const g={hud:()=>'LIVES '+'♥'.repeat(Math.max(0,lives))+'  MONSTERS '+en.length,
+ u(dt){if(inv>0)inv-=dt;p.mv-=dt;const d=dirIn(false);
+  if(d&&p.mv<=0){const nc=p.c+d[0],nr=p.r+d[1];if(free(nc,nr,false)){p.c=nc;p.r=nr;p.mv=.13}}
+  const k=Math.min(1,dt*18);p.x+=(X(p.c)-p.x)*k;p.y+=(Y(p.r)-p.y)*k;
+  for(const b of bombs){if(b.c!=p.c||b.r!=p.r)b.out=true;b.t-=dt}
+  if(hit[' ']&&bombs.length<2&&!bombs.some(b=>b.c==p.c&&b.r==p.r)){bombs.push({c:p.c,r:p.r,t:2,out:false});snd(180,.1,'square',.04,-60)}
+  bombs.filter(b=>b.t<=0).forEach(boom);
+  for(const f of flames)f.t-=dt;for(let i=flames.length;i--;)if(flames[i].t<=0)flames.splice(i,1);
+  for(const e of en){e.t-=dt;if(e.t<=0){e.t=e.sp;const all=[[1,0],[-1,0],[0,1],[0,-1]].filter(v=>free(e.c+v[0],e.r+v[1],true));
+    let o=all.filter(v=>!(v[0]==-e.d[0]&&v[1]==-e.d[1]));if(!o.length)o=all;
+    const keep=o.find(v=>v[0]==e.d[0]&&v[1]==e.d[1]);
+    if(o.length){e.d=keep&&Math.random()>(e.k?.45:.2)?keep:o[Math.floor(Math.random()*o.length)];e.c+=e.d[0];e.r+=e.d[1]}}
+   const k2=Math.min(1,dt*10);e.x+=(X(e.c)-e.x)*k2;e.y+=(Y(e.r)-e.y)*k2}
+  const fk=new Set(flames.map(f=>f.r*100+f.c));
+  for(let i=en.length;i--;){const e=en[i];if(fk.has(e.r*100+e.c)){en.splice(i,1);add(250,e.x,e.y);burst(e.x,e.y,'#ff9f43',16,220);snd(520,.2,'square',.05,300)}}
+  if(inv<=0&&(fk.has(p.r*100+p.c)||en.some(e=>(e.c==p.c&&e.r==p.r)||Math.hypot(e.x-p.x,e.y-p.y)<TH*.5))){hurt();return}
+  if(!en.length){add(lives*500);finish(true,'STAGE CLEAR! All five monsters are history.')}},
+ d(){for(let r=0;r<R;r++)for(let q=0;q<C;q++){const x=q*TW,y=r*TH,m=map[r][q];
+   if(m===1){c.fillStyle='#6b7480';c.fillRect(x,y,TW,TH);c.fillStyle='#98a2b2';c.fillRect(x,y,TW,4);c.fillRect(x,y,4,TH);c.fillStyle='#434852';c.fillRect(x,y+TH-4,TW,4);c.fillRect(x+TW-4,y,4,TH)}
+   else if(m===2){c.fillStyle='#b2522a';c.fillRect(x+1,y+1,TW-2,TH-2);c.fillStyle='#d4733f';c.fillRect(x+3,y+3,TW-6,5);c.strokeStyle='#6e2d14';c.lineWidth=2;c.strokeRect(x+4,y+4,TW-8,TH-8)}
+   else{c.fillStyle=(r+q)%2?'#1e7030':'#227a36';c.fillRect(x,y,TW,TH)}}
+  for(const b of bombs){const s=15+Math.sin(b.t*(b.t<.7?40:14))*2.5;c.fillStyle='#19191e';c.beginPath();c.arc(X(b.c),Y(b.r),s,0,7);c.fill();c.fillStyle='#788296';c.beginPath();c.arc(X(b.c)-5,Y(b.r)-5,3,0,7);c.fill();c.fillStyle=b.t<.7&&Math.floor(b.t*16)%2?'#fff':'#ff9f24';c.beginPath();c.arc(X(b.c)+8,Y(b.r)-s-3,3.5,0,7);c.fill()}
+  for(const f of flames){const a=Math.min(1,f.t*4),x=f.c*TW,y=f.r*TH;c.globalAlpha=a;c.fillStyle='#ff6e14';c.fillRect(x+2,y+2,TW-4,TH-4);c.fillStyle='#ffeb5a';c.fillRect(x+TW*.22,y+TH*.22,TW*.56,TH*.56);c.globalAlpha=1}
+  for(const e of en){c.fillStyle=e.k?'#4a86f0':'#f57323';c.beginPath();c.arc(e.x,e.y,15,0,7);c.fill();c.fillStyle='#fff';c.fillRect(e.x-8,e.y-5,5,7);c.fillRect(e.x+3,e.y-5,5,7);c.fillStyle='#111';c.fillRect(e.x-6+e.d[0]*2,e.y-3+e.d[1]*2,3,4);c.fillRect(e.x+5+e.d[0]*2,e.y-3+e.d[1]*2,3,4)}
+  if(inv<=0||Math.floor(inv*10)%2){c.fillStyle='#f4f4f8';c.beginPath();c.arc(p.x,p.y-3,14,0,7);c.fill();c.fillStyle='#ffcea8';c.fillRect(p.x-8,p.y-8,16,11);c.fillStyle='#222';c.fillRect(p.x-5,p.y-5,3,5);c.fillRect(p.x+2,p.y-5,3,5);c.fillStyle='#eb4191';c.fillRect(p.x-2,p.y-22,4,8);c.fillStyle='#2873eb';c.fillRect(p.x-9,p.y+6,18,9)}}};
+ banner(g,'GET READY','DROP A BOMB · RUN FOR COVER',1.4);return g};
+
+/* ================= 2 · TRON ================= */
+MK.tron=()=>{const S=38,CO=21,RO=12,oy=40,DIRS=[[0,-1],[1,0],[0,1],[-1,0]],DKI={arrowup:0,w:0,arrowright:1,d:1,arrowdown:2,s:2,arrowleft:3,a:3};
+ const grid=new Map(),P={x:3,y:6,d:1,q:[]},E={x:17,y:6,d:3};grid.set('3,6','#45edff');grid.set('17,6','#ff9f43');
+ const occ=(x,y)=>x<0||y<0||x>=CO||y>=RO||grid.has(x+','+y);
+ const flood=(x,y,lim)=>{if(occ(x,y))return 0;const seen=new Set([x+','+y]),q=[[x,y]];for(let i=0;i<q.length&&q.length<lim;i++)for(const v of DIRS){const nx=q[i][0]+v[0],ny=q[i][1]+v[1],k=nx+','+ny;if(!occ(nx,ny)&&!seen.has(k)){seen.add(k);q.push([nx,ny])}}return q.length};
+ let t=0,a2=0,steps=0;
+ const tick=()=>{
+  while(P.q.length){const n=P.q.shift();if(n!==P.d&&n!==(P.d+2)%4){P.d=n;snd(330,.04,'square',.02);break}}
+  const np=[P.x+DIRS[P.d][0],P.y+DIRS[P.d][1]];
+  let best=-1,bs=-1;for(const o of [E.d,(E.d+1)%4,(E.d+3)%4]){const v=DIRS[o],nx=E.x+v[0],ny=E.y+v[1];const s=(occ(nx,ny)||(nx==np[0]&&ny==np[1]))?-1:flood(nx,ny,90)+(o===E.d?7:0)+Math.random()*5;if(s>bs){bs=s;best=o}}
+  if(bs>=0)E.d=best;
+  const ne=[E.x+DIRS[E.d][0],E.y+DIRS[E.d][1]],same=np[0]==ne[0]&&np[1]==ne[1];
+  // head-on tie: the CPU is the one that loses it, so a CPU crash is always a win for you
+  const pc=occ(np[0],np[1]),ec=occ(ne[0],ne[1])||same;
+  if(pc||ec){const px=P.x*S+S/2,py=oy+P.y*S+S/2;if(pc){burst(px,py,'#45edff',30,320);snd(110,.5,'sawtooth',.08,-60)}if(ec){burst(ne[0]*S+S/2,oy+ne[1]*S+S/2,'#ff9f43',30,320);snd(150,.4,'sawtooth',.07,-90);add(500)}
+   if(pc)finish(false,'You hit a wall or a light trail.');else finish(true,same?'You forced the orange rider into a head-on crash!':'The orange rider crashed. You win!');return}
+  P.x=np[0];P.y=np[1];E.x=ne[0];E.y=ne[1];grid.set(P.x+','+P.y,'#45edff');grid.set(E.x+','+E.y,'#ff9f43');if(++steps%4==0)add(10)};
+ const g={hud:()=>'SURVIVE '+Math.max(0,50-t).toFixed(1)+'s',
+ u(dt){t+=dt;for(const k in hit)if(DKI[k]!=null&&P.q.length<2)P.q.push(DKI[k]);
+  a2+=dt;const step=Math.max(.065,.115-t*.0009);while(a2>=step&&!g.over){a2-=step;tick()}
+  if(!g.over&&t>=50){add(500);finish(true,'You outlasted the orange rider for 50 seconds!')}},
+ d(){c.strokeStyle='#0d2c3f';c.lineWidth=1;for(let x=0;x<=CO;x++){c.beginPath();c.moveTo(x*S+1,oy);c.lineTo(x*S+1,oy+RO*S);c.stroke()}for(let y=0;y<=RO;y++){c.beginPath();c.moveTo(0,oy+y*S);c.lineTo(W,oy+y*S);c.stroke()}
+  c.strokeStyle='#1c8196';c.lineWidth=2;c.strokeRect(1,oy,CO*S,RO*S);
+  grid.forEach((col,k)=>{const [x,y]=k.split(',').map(Number);c.globalAlpha=.78;c.fillStyle=col;c.fillRect(x*S+6,oy+y*S+6,S-10,S-10)});c.globalAlpha=1;
+  c.shadowBlur=18;for(const [o,col] of [[P,'#e8ffff'],[E,'#ffe2c4']]){c.shadowColor=col;c.fillStyle=col;c.fillRect(o.x*S+3,oy+o.y*S+3,S-4,S-4)}c.shadowBlur=0}};
+ banner(g,'LIGHT CYCLES','ORANGE RIDER AHEAD · DON\u2019T CROSS A TRAIL',1.3);return g};
+
+/* ================= 3 · ASTEROIDS (party crasher) ================= */
+MK.asteroids=()=>{const S={x:400,y:270,a:-Math.PI/2,vx:0,vy:0},shots=[];let rocks=[],lives=3,inv=2,popped=0,cd=0;
+ const RAD=[0,13,22,34],COL=['','#ff7aa8','#ffd36b','#6fd6ff'];
+ const mkRock=(x,y,s)=>{const a=Math.random()*6.283,v=rnd(40,95)*(4-s*.45);return{x,y,s,vx:Math.cos(a)*v,vy:Math.sin(a)*v,ph:Math.random()*6}};
+ const wrap=o=>{o.x=(o.x+W)%W;o.y=(o.y+H)%H};
+ for(let i=0;i<5;i++){let x,y;do{x=rnd(0,W);y=rnd(0,H)}while(Math.hypot(x-S.x,y-S.y)<170);rocks.push(mkRock(x,y,3))}
+ const g={hud:()=>'BALLOONS '+popped+'/12   LIVES '+'♥'.repeat(Math.max(0,lives)),
+ u(dt){if(inv>0)inv-=dt;cd-=dt;
+  S.a+=((K('arrowright','d')?1:0)-(K('arrowleft','a')?1:0))*4.2*dt;
+  if(K('arrowup','w')){S.vx+=Math.cos(S.a)*280*dt;S.vy+=Math.sin(S.a)*280*dt;if(Math.random()<.5)fx.push({x:S.x-Math.cos(S.a)*14,y:S.y-Math.sin(S.a)*14,vx:-Math.cos(S.a)*90+rnd(-30,30),vy:-Math.sin(S.a)*90+rnd(-30,30),l:.3,m:.3,col:'#ffb36b'})}
+  const sp=Math.hypot(S.vx,S.vy);if(sp>380){S.vx*=380/sp;S.vy*=380/sp}const fr=Math.pow(.5,dt);S.vx*=fr;S.vy*=fr;S.x+=S.vx*dt;S.y+=S.vy*dt;wrap(S);
+  if(K(' ','j')&&cd<=0&&shots.length<5){shots.push({x:S.x+Math.cos(S.a)*18,y:S.y+Math.sin(S.a)*18,vx:Math.cos(S.a)*520+S.vx*.4,vy:Math.sin(S.a)*520+S.vy*.4,t:1.1});cd=.22;snd(760,.07,'square',.03,-420)}
+  for(const b of shots){b.x+=b.vx*dt;b.y+=b.vy*dt;b.t-=dt;wrap(b)}
+  for(const r of rocks){r.x+=r.vx*dt;r.y+=r.vy*dt;wrap(r)}
+  for(let i=shots.length;i--;){const b=shots[i];if(b.t<=0){shots.splice(i,1);continue}
+   const j=rocks.findIndex(r=>Math.hypot(r.x-b.x,r.y-b.y)<RAD[r.s]+3);if(j<0)continue;
+   const r=rocks[j];shots.splice(i,1);rocks.splice(j,1);popped++;add([0,100,50,20][r.s],r.x,r.y);burst(r.x,r.y,COL[r.s],14,230);snd(300+r.s*-60+200,.14,'triangle',.06,-150);shake=4;
+   if(r.s>1){rocks.push(mkRock(r.x,r.y,r.s-1),mkRock(r.x,r.y,r.s-1))}}
+  if(popped>=12){add(lives*300);finish(true,'Twelve balloons popped. The party is officially underway!');return}
+  if(rocks.length<3)rocks.push(mkRock(Math.random()<.5?0:W,rnd(0,H),3));
+  if(inv<=0&&rocks.some(r=>Math.hypot(r.x-S.x,r.y-S.y)<RAD[r.s]+9)){lives--;burst(S.x,S.y,'#75efff',26,300);shake=14;snd(120,.5,'sawtooth',.08,-80);
+   if(lives<=0){finish(false,'Your ship popped.');return}S.x=W/2;S.y=H/2;S.vx=S.vy=0;inv=2.5}},
+ d(){for(const r of rocks){c.save();c.translate(r.x,r.y);const R=RAD[r.s];c.fillStyle=COL[r.s];c.globalAlpha=.9;c.beginPath();c.ellipse(0,0,R*.9,R,0,0,7);c.fill();c.globalAlpha=1;c.fillStyle='rgba(255,255,255,.55)';c.beginPath();c.ellipse(-R*.3,-R*.35,R*.2,R*.3,.6,0,7);c.fill();c.strokeStyle=COL[r.s];c.lineWidth=1.5;c.beginPath();c.moveTo(0,R);c.quadraticCurveTo(5,R+8,-3,R+14);c.stroke();c.restore()}
+  for(const b of shots){c.fillStyle='#79f5ff';c.beginPath();c.arc(b.x,b.y,3.5,0,7);c.fill()}
+  if(inv<=0||Math.floor(inv*12)%2){c.save();c.translate(S.x,S.y);c.rotate(S.a);c.strokeStyle='#75efff';c.lineWidth=2.5;c.shadowColor='#3beeff';c.shadowBlur=10;c.beginPath();c.moveTo(19,0);c.lineTo(-13,-11);c.lineTo(-8,0);c.lineTo(-13,11);c.closePath();c.stroke();c.restore()}}};
+ banner(g,'POP THE BALLOONS','BIG ONES SPLIT INTO SMALLER ONES',1.3);return g};
+
+/* ================= 4 · PAC-MAN (cake run) ================= */
+MK.pacman=()=>{const M=['111111111111111','100000100000001','101110101110101','100000000000001','101011111010101','100010001000001','111010101011111','100000000000001','101110101110101','100000000000001','111111111111111'];
+ const cw=48,ch=42,ox=40,oy=36,D4=[[0,-1],[-1,0],[0,1],[1,0]],open=(x,y)=>!!M[y]&&M[y][x]==='0';
+ const dots=new Set(),power=new Set(['1,1','13,1','1,9','13,9']);
+ for(let y=0;y<11;y++)for(let x=0;x<15;x++){const k=x+','+y;if(open(x,y)&&!(x==7&&y==9)&&!power.has(k))dots.add(k)}
+ const total=dots.size+power.size;let eaten=0,age=0,mi=0,mt=6,fr=0,combo=0,lives=3,dead=0,rd=1.4,wob=0;const SEQ=[6,18,5,18,4,18,4,1e9];
+ const P={c:7,r:9,pc:7,pr:9,d:[0,0],w:[0,0],f:[1,0],t:0};
+ const defs=[['BLINKY','#ff4b58',13,1,7,3,0],['PINKY','#ff8ac5',1,1,5,5,2],['INKY','#65eaff',13,9,9,5,5],['CLYDE','#ffad62',1,9,7,7,8]];
+ const gs=defs.map(([n,col,sx,sy,hx,hy,rel])=>({n,col,sc:[sx,sy],h:[hx,hy],c:hx,r:hy,pc:hx,pr:hy,d:[0,-1],t:0,rel,nf:false}));
+ const resetPos=()=>{Object.assign(P,{c:7,r:9,pc:7,pr:9,d:[0,0],w:[0,0],t:0});gs.forEach(x=>{x.c=x.pc=x.h[0];x.r=x.pr=x.h[1];x.d=[0,-1];x.t=0;x.nf=false});age=0;fr=0;rd=1.4;g.bn=null;banner(g,'READY!','',1.3,1)};
+ const scared=x=>fr>0&&!x.nf;
+ const target=x=>{if(mi%2==0)return x.sc;const a=gs[0];const ah=(k)=>[P.c+P.f[0]*k,P.r+P.f[1]*k];
+  if(x.n=='BLINKY')return[P.c,P.r];if(x.n=='PINKY')return ah(4);
+  if(x.n=='INKY'){const t=ah(2);return[t[0]*2-a.c,t[1]*2-a.r]}return Math.hypot(x.c-P.c,x.r-P.r)>4?[P.c,P.r]:x.sc};
+ const gstep=x=>{x.pc=x.c;x.pr=x.r;let o=D4.filter(v=>open(x.c+v[0],x.r+v[1]));const nr=o.filter(v=>!(v[0]==-x.d[0]&&v[1]==-x.d[1]));if(nr.length)o=nr;if(!o.length)return;
+  if(scared(x))x.d=o[Math.floor(Math.random()*o.length)];else{const tg=target(x);let b=1e9;for(const v of o){const dd=Math.hypot(x.c+v[0]-tg[0],x.r+v[1]-tg[1]);if(dd<b){b=dd;x.d=v}}}
+  x.c+=x.d[0];x.r+=x.d[1]};
+ const touch=()=>{for(const x of gs){if(age<x.rel)continue;if(!((x.c==P.c&&x.r==P.r)||(x.c==P.pc&&x.r==P.pr&&x.pc==P.c&&x.pr==P.r)))continue;
+   if(scared(x)){combo++;const pts=Math.min(1600,100*2**combo);add(pts,ox+x.c*cw+24,oy+x.r*ch);burst(ox+x.c*cw+24,oy+x.r*ch+20,x.col,16,240);snd(700,.2,'square',.05,500);x.c=x.pc=x.h[0];x.r=x.pr=x.h[1];x.d=[0,-1];x.rel=age+2.2;x.nf=true;x.t=0}
+   else{lives--;dead=1.3;shake=12;burst(ox+P.c*cw+24,oy+P.r*ch+21,'#ffdf16',24,260);snd(260,.9,'sawtooth',.07,-220);return true}}};
+ const g={hud:()=>'LIVES '+'●'.repeat(Math.max(0,lives))+'  TREATS LEFT '+(total-eaten),
+ u(dt){wob+=dt;
+  if(rd>0){rd-=dt;return}
+  if(dead>0){dead-=dt;if(dead<=0){if(lives<=0)finish(false,'Out of lives with '+(total-eaten)+' treats left.');else resetPos()}return}
+  age+=dt;mt-=dt;if(mt<=0){mi++;mt=SEQ[Math.min(mi,SEQ.length-1)];gs.forEach(x=>x.d=[-x.d[0],-x.d[1]])}
+  if(fr>0){fr-=dt;if(fr<=0)combo=0}
+  const nd=dirIn(true)||dirIn(false);if(nd)P.w=nd;
+  P.t+=dt;
+  if(P.t>=.125){P.t-=.125;P.pc=P.c;P.pr=P.r;
+   if((P.w[0]||P.w[1])&&open(P.c+P.w[0],P.r+P.w[1]))P.d=P.w;
+   if((P.d[0]||P.d[1])&&open(P.c+P.d[0],P.r+P.d[1])){P.c+=P.d[0];P.r+=P.d[1];P.f=P.d}
+   const k=P.c+','+P.r;
+   if(dots.delete(k)){eaten++;add(10);snd(P.c%2?420:360,.04,'triangle',.03)}
+   else if(power.delete(k)){eaten++;add(50,ox+P.c*cw+24,oy+P.r*ch);fr=7;combo=0;gs.forEach(x=>{x.nf=false;x.d=[-x.d[0],-x.d[1]]});snd(200,.35,'sawtooth',.06,500)}
+   if(eaten>=total){add(lives*200+500);finish(true,'Every treat is gone. Cake run complete!');return}
+   if(touch())return}
+  for(const x of gs){if(age<x.rel)continue;const iv=scared(x)?.24:.15;x.t+=dt;if(x.t>=iv){x.t-=iv;gstep(x);if(touch())return}}},
+ d(){for(let y=0;y<11;y++)for(let x=0;x<15;x++){const k=x+','+y,X=ox+x*cw,Y=oy+y*ch;
+   if(M[y][x]==='1'){c.fillStyle='#123e68';c.fillRect(X+2,Y+2,cw-4,ch-4);c.strokeStyle='#2b8fbd';c.lineWidth=1.5;c.strokeRect(X+6,Y+6,cw-12,ch-12)}
+   else if(power.has(k)){c.fillStyle='#fff1b8';c.beginPath();c.arc(X+24,Y+21,6+Math.sin(wob*8)*2.5,0,7);c.fill();c.fillStyle='#ff7a9a';c.fillRect(X+22,Y+8,3,6)}
+   else if(dots.has(k)){c.fillStyle='#ffe3a2';c.beginPath();c.arc(X+24,Y+21,3.5,0,7);c.fill()}}
+  const pk=Math.min(1,P.t/.125),px=ox+(P.pc+(P.c-P.pc)*pk)*cw+24,py=oy+(P.pr+(P.r-P.pr)*pk)*ch+21;
+  if(dead>0){const k=1-dead/1.3,m=Math.min(3.1,k*3.4);c.fillStyle='#ffdf16';c.beginPath();c.moveTo(px,py);c.arc(px,py,15*(1-k*.4),-Math.PI/2+m,-Math.PI/2+Math.PI*2-m);c.closePath();c.fill()}
+  else{const fa=Math.atan2(P.f[1],P.f[0]),mo=.05+.42*Math.abs(Math.sin(wob*14));c.fillStyle='#ffdf16';c.beginPath();c.moveTo(px,py);c.arc(px,py,15,fa+mo,fa+6.283-mo);c.closePath();c.fill()}
+  if(dead>0&&dead<1.0)return;
+  for(const x of gs){const iv=scared(x)?.24:.15,k=age<x.rel?0:Math.min(1,x.t/iv),gx=ox+(x.pc+(x.c-x.pc)*k)*cw+24,gy=oy+(x.pr+(x.r-x.pr)*k)*ch+20+(age<x.rel?Math.sin(wob*6+x.rel)*2:0),sc=scared(x),fl=sc&&fr<2&&Math.floor(wob*8)%2;
+   c.fillStyle=sc?(fl?'#fff':'#2348d8'):x.col;c.beginPath();c.arc(gx,gy,14,Math.PI,0);c.lineTo(gx+14,gy+14);for(let i=0;i<4;i++)c.lineTo(gx+14-i*7-3.5,gy+(i%2?14:9));c.lineTo(gx-14,gy+14);c.closePath();c.fill();
+   if(sc){c.fillStyle=fl?'#d33':'#ffd7a8';c.fillRect(gx-7,gy-4,4,4);c.fillRect(gx+3,gy-4,4,4)}else{c.fillStyle='#fff';c.fillRect(gx-8,gy-6,6,8);c.fillRect(gx+2,gy-6,6,8);c.fillStyle='#1a2a6a';c.fillRect(gx-6+x.d[0]*2,gy-3+x.d[1]*2,3,4);c.fillRect(gx+4+x.d[0]*2,gy-3+x.d[1]*2,3,4)}}}};
+ banner(g,'READY!','EAT EVERY TREAT',1.3,1);return g};
+
+/* ================= 5 · BIRTHDAY BRAWL ================= */
+MK.fighter=()=>{const GY=390,ATK={punch:{su:.08,ac:.1,re:.2,dmg:7,rg:80,kb:150},special:{su:.2,ac:.14,re:.42,dmg:16,rg:118,kb:340}};
+ const mk=(x,f,col)=>({x,y:GY,vy:0,kx:0,hp:100,dh:100,f,col,st:'idle',t:0,hd:false,cd:0,fl:0,mv:0,bk:0,th:0});
+ const P=mk(190,1,'#6beeff'),E=mk(610,-1,'#ffb477');
+ let round=1,wins=0,lw=0,rt=60,over=0,res=null,wob=0;
+ const att=o=>o.st==='punch'||o.st==='special';
+ const reset=()=>{Object.assign(P,mk(190,1,P.col));Object.assign(E,mk(610,-1,E.col));rt=60;over=0;res=null;g.ts=1;banner(g,'ROUND '+round,'FIGHT!',1.3)};
+ const strike=(a,b,isP)=>{const A=ATK[a.st];if(a.hd||a.t<A.su||a.t>=A.su+A.ac)return;
+  const dx=b.x-a.x;if(Math.sign(dx)!==a.f||Math.abs(dx)>A.rg||Math.abs(b.y-a.y)>80)return;a.hd=true;
+  const blocked=b.st==='block';const dmg=blocked?Math.max(1,A.dmg*.15):A.dmg;b.hp-=dmg;b.fl=.12;
+  b.kx=a.f*(blocked?A.kb*.35:A.kb);shake=blocked?3:a.st==='special'?12:6;burst((a.x+b.x)/2,b.y-55,blocked?'#9fd0ff':'#ffe29a',blocked?5:12,220,.4);
+  snd(blocked?200:a.st==='special'?110:160,.12,'square',.07,-60);if(isP)add(Math.round(dmg*10),b.x,b.y-100);
+  if(!blocked){b.st='hit';b.t=0;b.hd=false}};
+ const phys=(o,dt)=>{o.vy+=1800*dt;o.y+=o.vy*dt;if(o.y>=GY){o.y=GY;o.vy=0}o.x=clamp(o.x+o.kx*dt,40,760);o.kx*=Math.pow(.01,dt);o.t+=dt;o.fl-=dt;o.cd-=dt;
+  if(att(o)){const A=ATK[o.st];if(o.t>=A.su+A.ac+A.re){o.st='idle';o.t=0}}else if(o.st==='hit'&&o.t>.32){o.st='idle';o.t=0}};
+ const g={ts:1,hud:()=>'ROUND '+round+'   WINS '+wins+' - '+lw,
+ u(dt){wob+=dt;P.dh+=(P.hp-P.dh)*Math.min(1,dt*4);E.dh+=(E.hp-E.dh)*Math.min(1,dt*4);
+  if(over>0){over-=dt/(g.ts||1);if(over<.9)g.ts=.35;if(over<=0){g.ts=1;
+    if(res==='p')wins++;else if(res==='e')lw++;
+    if(wins>=2){finish(true,'Two rounds won. You are the birthday champion!');return}
+    if(lw>=2){finish(false,'The CPU takes the crown this time.');return}
+    round++;reset()}
+   phys(P,dt);phys(E,dt);return}
+  rt-=dt;
+  // player
+  const free=!att(P)&&P.st!=='hit',gr=P.y>=GY;
+  const mvx=(K('d','arrowright')?1:0)-(K('a','arrowleft')?1:0);
+  P.st=free?(K('s','arrowdown','shift')&&gr?'block':'idle'):P.st;
+  if(free&&P.st!=='block'){P.x=clamp(P.x+mvx*230*dt,40,760);if((K('w','arrowup'))&&gr){P.vy=-640;snd(420,.1,'triangle',.03,300)}
+   if(hit.j||hit[' ']){P.st='punch';P.t=0;P.hd=false;snd(300,.06,'square',.03,-120)}
+   else if(hit.k&&P.cd<=0){P.st='special';P.t=0;P.hd=false;P.cd=2.4;snd(220,.2,'sawtooth',.05,400)}}
+  P.f=Math.sign(E.x-P.x)||1;
+  // cpu
+  E.th-=dt;E.bk-=dt;const dx=P.x-E.x,ad=Math.abs(dx),ef=!att(E)&&E.st!=='hit';
+  if(E.th<=0){E.th=rnd(.15,.32);const r=Math.random();
+   if(att(P)&&ad<ATK[P.st].rg+30&&r<.45)E.bk=.55;
+   else if(ad>95)E.mv=Math.sign(dx);
+   else if(ad<45)E.mv=-Math.sign(dx)*(r<.5?1:0);
+   else if(ef&&E.y>=GY&&r<.5){if(E.cd<=0&&r<.15){E.st='special';E.cd=3.2}else E.st='punch';E.t=0;E.hd=false;E.mv=0}
+   else E.mv=r<.7?0:-Math.sign(dx);
+   if(ef&&E.y>=GY&&ad>170&&Math.random()<.1)E.vy=-600}
+  if(ef){if(E.bk>0&&E.y>=GY){E.st='block'}else if(E.st==='block')E.st='idle';if(E.st!=='block')E.x=clamp(E.x+(E.mv||0)*135*dt,40,760)}
+  E.f=Math.sign(P.x-E.x)||-1;
+  phys(P,dt);phys(E,dt);
+  if(att(P))strike(P,E,true);if(att(E))strike(E,P,false);
+  if(Math.abs(P.x-E.x)<40&&Math.abs(P.y-E.y)<60){const s=Math.sign(P.x-E.x)||1;P.x=clamp(P.x+s*60*dt,40,760);E.x=clamp(E.x-s*60*dt,40,760)}
+  if(P.hp<=0||E.hp<=0||rt<=0){const pw=P.hp>E.hp?'p':E.hp>P.hp?'e':'d';res=pw==='d'?null:pw;over=1.8;
+   if(P.hp<=0||E.hp<=0){banner(g,'K.O.',pw==='p'?'ROUND WON':'ROUND LOST',1.8,1);snd(90,.6,'sawtooth',.09,-50)}else banner(g,'TIME',pw==='p'?'ROUND WON':pw==='e'?'ROUND LOST':'DRAW · REPLAY',1.8,1);
+   if(pw==='p'){add(500+Math.ceil(rt)*10);if(P.hp>=100)add(300)}round-=pw==='d'?1:0}},
+ d(){c.fillStyle='#0b2234';c.fillRect(0,0,W,GY+4);const gg=c.createLinearGradient(0,60,0,GY);gg.addColorStop(0,'#10304a');gg.addColorStop(1,'#0a1a2b');c.fillStyle=gg;c.fillRect(0,30,W,GY-26);
+  for(let i=0;i<9;i++){c.fillStyle=i%2?'#ffd36b':'#ff7aa8';c.beginPath();c.moveTo(i*100+10,36);c.lineTo(i*100+30,36);c.lineTo(i*100+20,60+Math.sin(wob*2+i)*3);c.fill()}
+  c.fillStyle='#102b3d';c.fillRect(0,GY+4,W,H);c.fillStyle='#2a657a';c.fillRect(0,GY+4,W,2);
+  const bar=(x,w,o,col,al)=>{c.fillStyle='#071421';c.fillRect(x,38,w,16);c.fillStyle='#a53a3a';c.fillRect(x+(al=='r'?w-w*o.dh/100:0),38,w*o.dh/100,16);c.fillStyle=col;const hw=w*Math.max(0,o.hp)/100;c.fillRect(al=='r'?x+w-hw:x,38,hw,16);c.strokeStyle='#2a657a';c.strokeRect(x,38,w,16)};
+  bar(20,350,P,'#60eaff','l');bar(430,350,E,'#ffb77a','r');txt('AGASTYA',20,68,11);txt('CPU',780,68,11,'#ffc18a','right');
+  c.fillStyle='#071421';c.fillRect(20,72,120,5);c.fillStyle=P.cd<=0?'#ffe29a':'#5c6b7a';c.fillRect(20,72,120*(1-clamp(P.cd/2.4,0,1)),5);
+  txt(String(Math.max(0,Math.ceil(rt))),400,56,24,rt<10?'#ff8a8a':'#f4d58c','center');
+  for(let i=0;i<2;i++){c.fillStyle=i<wins?'#60eaff':'#17465b';c.beginPath();c.arc(375-i*16,70,4,0,7);c.fill();c.fillStyle=i<lw?'#ffb77a':'#17465b';c.beginPath();c.arc(425+i*16,70,4,0,7);c.fill()}
+  for(const o of [E,P]){const A=att(o)?ATK[o.st]:null,sw=A?clamp((o.t-A.su)/A.ac,0,1):0,x=o.x,y=o.y,f=o.f,col=o.fl>0?'#fff':o.col,lean=o.st==='hit'?-f*8:0,wk=Math.sin(wob*12+o.x*.05)*(o.st==='idle'&&o.y>=GY?4:0);
+   c.save();c.fillStyle='rgba(0,0,0,.35)';c.beginPath();c.ellipse(x,GY+4,24-(GY-y)*.05,5,0,0,7);c.fill();
+   c.strokeStyle=col;c.lineCap='round';c.lineWidth=9;c.beginPath();c.moveTo(x+lean,y-30);c.lineTo(x+lean,y-72);c.moveTo(x+lean,y-30);c.lineTo(x-10+wk,y);c.moveTo(x+lean,y-30);c.lineTo(x+10-wk,y);c.stroke();
+   c.fillStyle='#f3c27b';c.beginPath();c.arc(x+lean+f*2,y-86,14,0,7);c.fill();c.fillStyle='#222';c.fillRect(x+lean+f*8-1,y-90,3,5);c.fillStyle=o===P?'#eb4191':'#4a86f0';c.fillRect(x+lean-9,y-102,18,5);
+   c.strokeStyle=col;c.lineWidth=7;c.beginPath();c.moveTo(x+lean,y-64);
+   if(A){const len=o.st==='special'?A.rg-8:A.rg-14;c.lineTo(x+lean+f*(22+len*(o.t<A.su?0:sw>0?.5+.5*sw:1)*(o.t<A.su?.3:1)),y-62)}else if(o.st==='block'){c.lineTo(x+f*20,y-76)}else c.lineTo(x+f*18,y-48+wk);
+   c.stroke();
+   if(o.st==='block'){c.strokeStyle='rgba(150,210,255,.8)';c.lineWidth=3;c.beginPath();c.arc(x,y-55,46,f>0?-1.1:Math.PI-1.1,f>0?1.1:Math.PI+1.1);c.stroke()}
+   if(o.st==='special'&&o.t>=A.su&&o.t<A.su+A.ac){c.strokeStyle='#fff0a7';c.lineWidth=5;c.beginPath();c.arc(x+f*(A.rg-30),y-62,26,-1,1);c.stroke()}
+   c.restore()}}};
+ banner(g,'ROUND 1','FIGHT!',1.4);return g};
+
+
+/* ---------- start screen + tutorials ---------- */
+const TUT={
+ bomber:{goal:'Blast all five monsters. Soft brick walls break; steel walls don\u2019t.',keys:[['W A S D / ARROWS','Move'],['SPACE','Drop a bomb (max 2)'],['P','Pause']],touch:'D-pad to move, A to drop a bomb.',tips:['Bombs explode after 2 seconds, 2 tiles in each direction.','Blasts chain: a bomb caught in another\u2019s fire goes off too.','You can step off your own bomb, but then it blocks you. Plan an escape route first.','You have 3 lives. Touching a monster or a flame costs one.']},
+ tron:{goal:'Outlast the orange rider, or survive 50 seconds.',keys:[['ARROWS / W A S D','Turn'],['SWIPE','Turn (touch)'],['P','Pause']],touch:'D-pad or swipe on the screen.',tips:['Your light trail and the walls are deadly, so are the orange rider\u2019s.','You can\u2019t reverse into yourself. Turns are queued, so tap early.','Cut the rider off and leave it no room. If you both hit the same cell, you win.','The grid gets faster the longer you survive.']},
+ asteroids:{goal:'Pop 12 balloons before you run out of lives.',keys:[['\u2190 \u2192 / A D','Rotate'],['\u2191 / W','Thrust'],['SPACE','Fire'],['P','Pause']],touch:'D-pad to fly, A to fire.',tips:['Big balloons split into two smaller ones. Small ones are worth the most.','You drift, so thrust in short bursts.','You flash briefly after a hit and can\u2019t be hurt.','Only 5 shots can be in the air at once.']},
+ pacman:{goal:'Eat every treat in the maze without losing all 3 lives.',keys:[['ARROWS / W A S D','Steer'],['SWIPE','Steer (touch)'],['P','Pause']],touch:'D-pad or swipe. Your next turn is remembered until you can take it.',tips:['Each ghost hunts differently: Blinky chases, Pinky ambushes, Inky flanks, Clyde gets shy up close.','Eat a glowing candle and the ghosts turn blue. Eat them for 200, 400, 800, 1600.','Ghosts alternate between chasing and retreating to their corners. Use the breaks.','Blue ghosts flicker just before they recover.']},
+ fighter:{goal:'Win 2 rounds against the CPU. Each round is 60 seconds.',keys:[['A D / \u2190 \u2192','Move'],['W / \u2191','Jump'],['S / \u2193','Block (hold)'],['J / SPACE','Punch'],['K','Special (recharges)'],['P','Pause']],touch:'D-pad to move, jump and block. A punches, B uses your special.',tips:['Punches are quick; the special hits harder and farther but is slow to start.','Blocking cuts damage to a sliver. Hold it when the CPU winds up.','Each attack hits only once, so back off after you swing.','If time runs out, whoever has more health wins the round.']}};
+const ORDER=['bomber','tron','asteroids','pacman','fighter'];
+const shell=ov.querySelector('.arcade-shell');
+shell.insertAdjacentHTML('beforeend','<div class="arcade-start" id="arcadeStart" role="region" aria-label="Arcade start screen"><div class="as-menu" id="asMenu"><div class="arcade-kicker">AGASTYA\u2019S ARCADE</div><h2>PRESS <em>START.</em></h2><p>five machines \u00b7 five tickets \u00b7 one champion</p><div class="as-btns"><button class="arcade-action as-primary" id="asStart">START GAME</button><button class="arcade-action" id="asHow">HOW TO PLAY</button></div><small>Esc closes the arcade</small></div><div class="as-tut" id="asTut" hidden><div class="as-tabs" id="asTabs" role="tablist"></div><div class="as-body" id="asBody" aria-live="polite"></div><div class="as-btns"><button class="arcade-action" id="asBack">\u2190 BACK</button><button class="arcade-action as-primary" id="asPlay">PLAY THIS GAME</button></div></div></div>');
+const startEl=$('arcadeStart'),menuEl=$('asMenu'),tutEl=$('asTut');let tutGame='bomber',tutFromGame=false;
+$('asTabs').innerHTML=ORDER.map(g=>'<button role="tab" data-g="'+g+'">'+T[g].split(':')[0].replace('BIRTHDAY ','')+'</button>').join('');
+function renderTut(g){tutGame=g;const t=TUT[g];
+ $('asTabs').querySelectorAll('button').forEach(b=>{const on=b.dataset.g===g;b.classList.toggle('on',on);b.setAttribute('aria-selected',String(on))});
+ $('asBody').innerHTML='<h3>'+T[g]+'</h3><p class="as-goal"><b>GOAL</b> '+t.goal+'</p><div class="as-keys">'+t.keys.map(k=>'<div><kbd>'+k[0]+'</kbd><span>'+k[1]+'</span></div>').join('')+'</div><p class="as-touch"><b>TOUCH</b> '+t.touch+'</p><ul>'+t.tips.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+ const b=$('asBody');b.classList.remove('swap');void b.offsetWidth;b.classList.add('swap')}
+$('asTabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b){renderTut(b.dataset.g);snd(500,.04,'square',.02)}});
+function openTut(g,fromGame){tutFromGame=!!fromGame;startEl.classList.add('show');menuEl.hidden=true;tutEl.hidden=false;$('asPlay').hidden=!!fromGame;$('asBack').textContent=fromGame?'\u2190 RESUME':'\u2190 BACK';renderTut(g||'bomber');$('asBack').focus({preventScroll:true})}
+function showStart(){showLobby();startEl.classList.add('show');menuEl.hidden=false;tutEl.hidden=true;$('asStart').focus({preventScroll:true})}
+function hideStart(){startEl.classList.remove('show')}
+$('asStart').onclick=()=>{snd(440,.1,'square',.04,300);hideStart();lobbyIn()};
+$('asHow').onclick=()=>{snd(500,.05);openTut('bomber',false)};
+$('asBack').onclick=()=>{if(tutFromGame){hideStart();return}menuEl.hidden=false;tutEl.hidden=true;$('asStart').focus({preventScroll:true})};
+$('asPlay').onclick=()=>{hideStart();start(tutGame)};
+$('arcadeBack').insertAdjacentHTML('beforebegin','<button id="arcadeHow" type="button">HOW TO</button>');
+$('arcadeHow').onclick=()=>{if(G&&!G.over)togglePause(true);openTut(name,true)};
+$('arcadeHighScore').closest('.arcade-playerbar').insertAdjacentHTML('beforeend','<button class="arcade-action" id="lobbyHow" type="button" style="padding:5px 10px">HOW TO PLAY</button>');
+$('lobbyHow').onclick=()=>openTut('bomber',false);
+
+/* ---------- the letter: unlocked by all five tickets ---------- */
+const LETTER=`MY LOVE,
+AND THAT BRINGS US TO THE END OF ALL OUR LITTLE GAMESSS. I HOPE YOU HAD AS MUCH FUN PLAYING THEM AS I HAD MAKING THEM FOR YOU. I KNOW THEY'RE JUST GAMES, LITTLE PIXELS ON A SCREEN, CHARACTERS RUNNING AROUND AND A BUNCH OF SILLY CHALLENGES, BUT SOMEHOW, EVERY LITTLE THING I MAKE FOR YOU BECOMES SO MUCH MORE SPECIAL BECAUSE IT'S YOU WHO GETS TO EXPERIENCE IT.
+I wish I could bottle up the happiness of watching you play, the excitement of you discovering something new, and all the tiny moments that made this whole thing worth putting together. I wanted to give you something different this birthday, something that wasn't just another present you could unwrap and put away, but something you could actually experience. A little world made out of all the love, thought, and ridiculous amounts of time I put into making you smile.
+And if there's one thing I hope you take away from all of this, it's that you deserve to be celebrated in the tiniest and grandest of ways. You deserve surprises, silly little adventures, handwritten letters, games made just for you, and someone who gets ridiculously excited over the thought of making your day a little brighter.
+Thank you for playing along with all my little ideas, for being patient with my million modifications, and for letting me turn my imagination into something you could be a part of. I hope somewhere between all the ghosts, mazes, bombs, doors and little adventures, you found a few moments that made you genuinely happy.
+I LOVE YOU. More than I could ever fit into these little letters, more than all the words I could possibly arrange into sentences, and certainly more than any game could ever calculate.
+Now come here and collect your real-life reward: THE BIGGEST HUG EVER.
+HAPPY BIRTHDAY, MY LOVE. ❤️`.split('\n');
+document.body.insertAdjacentHTML('beforeend','<div class="arcade-letter" id="arcadeLetter" role="dialog" aria-modal="true" aria-label="A letter for collecting all five tickets"><article class="al-paper"><button class="al-close" id="alClose" aria-label="Close letter">\u00d7</button><div class="al-top"><span>THE AGASTYA ARCHIVE</span><span>05 / 07</span></div><div class="al-copy">'+LETTER.map((p,i)=>'<p'+(i===0?' class="al-first"':'')+'>'+p+'</p>').join('')+'</div></article></div>');
+const letterEl=$('arcadeLetter');let pendingLetter=false;
+const openLetter=()=>{letterEl.classList.add('show');snd(523,.2,'triangle',.04,260);$('alClose').focus({preventScroll:true})};
+const closeLetter=()=>letterEl.classList.remove('show');
+$('alClose').onclick=closeLetter;letterEl.addEventListener('click',e=>{if(e.target===letterEl)closeLetter()});
+const secretEl=$('arcadeSecret');
+secretEl.querySelector('p').textContent='Congratulations, Agastya. You\u2019ve collected all five tickets. A letter is waiting for you.';
+secretEl.insertAdjacentHTML('beforeend','<button class="arcade-action as-primary" id="openLetter" type="button" style="margin-top:14px">\u2661 OPEN YOUR LETTER</button>');
+$('openLetter').onclick=openLetter;
+hud();$('arcadeHighScore').textContent=pad(high,6);
+const d5=document.querySelector('.envelope[data-day="5"]');
+if(d5)d5.addEventListener('click',()=>{ov.classList.add('show');document.body.style.overflow='hidden';hud();showStart()});
+window.__arcade={MK,start:n=>start(n),frame};
+})();
+</script>
+<script>
+// MOTION LAYER: reveals, spotlight, magnetic buttons, ambient depth
+(()=>{
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+// ambient orbs
+document.body.insertAdjacentHTML('afterbegin','<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>');
+// hero load sequence + scroll reveals
+const hero=['.topline','.hero .eyebrow','.hero h1','.hero .subtitle','.hero .intro','.hero .rule','.envelope-stage'];
+const later=['.seventh .eyebrow','.seventh h2','.seventh p','.seventh .date','.footer'];
+const tag=(sels,base)=>sels.forEach((s,i)=>{const el=document.querySelector(s);if(el){el.classList.add('rv');el.style.setProperty('--i',i+(base||0))}});
+tag(hero);tag(later);
+const show=el=>el.classList.add('in');
+requestAnimationFrame(()=>requestAnimationFrame(()=>hero.forEach(s=>{const el=document.querySelector(s);el&&show(el)})));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){show(e.target);io.unobserve(e.target)}}),{threshold:.2,rootMargin:'0px 0px -6% 0px'});
+later.forEach((s,i)=>{const el=document.querySelector(s);if(el){el.style.setProperty('--i',i%4);io.observe(el)}});
+if(RM||!('IntersectionObserver' in window))document.querySelectorAll('.rv').forEach(show);
+if(RM||!fine)return;
+// cursor spotlight on cards (a transform-driven glow, clipped to each card)
+const HOSTS='.arcade-machine,.memory-tile,.surprise-tab,.star-note,.lock-card,.mini-door';
+const ensure=h=>{if(h._s)return h._s;const s=document.createElement('span');s.className='spot';s.setAttribute('aria-hidden','true');s.innerHTML='<i></i>';h.appendChild(s);h.classList.add('has-spot');return h._s=s.firstChild};
+// magnetic buttons (uses the independent `translate` property, so existing transforms are untouched)
+const MAG='.blue-cta,.arcade-action,.arcade-gamebar button,#shiftLockButton,.lock-card button,.arcade-close,.day-three-close,#arcadePause,#arcadeMute';
+let raf=0,px=0,py=0,tgt=null,mg=null;
+const flush=()=>{raf=0;
+ if(tgt){const r=tgt.getBoundingClientRect(),i=ensure(tgt);i.style.transform=`translate3d(${px-r.left}px,${py-r.top}px,0)`}
+ if(mg){const r=mg.getBoundingClientRect(),dx=px-(r.left+r.width/2),dy=py-(r.top+r.height/2);mg.style.translate=`${(dx*.28).toFixed(1)}px ${(dy*.35).toFixed(1)}px`}};
+document.addEventListener('pointermove',e=>{
+ if(e.pointerType!=='mouse')return;px=e.clientX;py=e.clientY;
+ const t=e.target.closest&&e.target.closest(HOSTS),m=e.target.closest&&e.target.closest(MAG);
+ if(mg&&mg!==m){mg.classList.remove('live');mg.style.translate='';mg=null}
+ if(m&&m!==mg){mg=m;m.classList.add('mag','live')}
+ tgt=t;if((tgt||mg)&&!raf)raf=requestAnimationFrame(flush)},{passive:true});
+document.addEventListener('pointerout',e=>{if(!e.relatedTarget){if(mg){mg.classList.remove('live');mg.style.translate='';mg=null}tgt=null}});
+})();
+</script>
+<script>
+// UX LAYER: opened-state progress, focus restore, background inert while a dialog is open
+(()=>{
+const KEY='sdoy_opened_v1',OPENABLE=['1','2','3','4','5','6'];
+let seen=[];try{seen=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
+const envs=[...document.querySelectorAll('.envelope')],dayOf=e=>e.id==='dayOne'?'1':e.dataset.day;
+const count=document.createElement('p');count.className='open-count';count.setAttribute('aria-live','polite');
+document.querySelector('.hero .rule').insertAdjacentElement('afterend',count);
+const paint=()=>{const n=OPENABLE.filter(d=>seen.includes(d)).length;
+ count.textContent=n===6?'All six opened \u2661':n+' of 6 opened';
+ envs.forEach(e=>{const d=dayOf(e),b=e.dataset.base||e.getAttribute('aria-label');e.dataset.base=b;
+  e.classList.toggle('opened',seen.includes(d));
+  e.setAttribute('aria-label',b+(seen.includes(d)?', opened':d==='6'?', waiting for its day':''))})};
+let opener=null;
+envs.forEach(e=>e.addEventListener('click',()=>{opener=e;const d=dayOf(e);
+ if(OPENABLE.includes(d)&&!seen.includes(d)){seen.push(d);try{localStorage.setItem(KEY,JSON.stringify(seen))}catch(_){}paint()}}));
+paint();
+const DLG=['letterOverlay','dayTwoOverlay','dayThreeOverlay','dayFourOverlay','dayFiveArcade','lockedNote','arcadeLetter','daySixGame'].map(i=>document.getElementById(i)).filter(Boolean);
+const wrap=document.querySelector('.wrap');
+const sync=()=>{const open=DLG.filter(d=>d.classList.contains('show'));
+ document.body.classList.toggle('modal-open',open.length>0);wrap.inert=open.length>0;
+ open.forEach(d=>{if(!d.contains(document.activeElement)){const b=d.querySelector('button:not([hidden])');b&&b.focus({preventScroll:true})}});
+ if(!open.length&&opener){const o=opener;opener=null;o.focus({preventScroll:true})}};
+const mo=new MutationObserver(sync);DLG.forEach(d=>mo.observe(d,{attributes:true,attributeFilter:['class']}));
+})();
+</script>
+
+<script>
+/* DAY VI — THE TWO OF US · local, pass-and-play multiplayer */
+(()=>{
+ const $=id=>document.getElementById(id), root=$('daySixGame'); if(!root)return;
+ const STORE='sdoy_day_vi_two_of_us_v1';
+ const defaults={names:['Agastya','Chehaq'],questions:[[],[]],ready:[false,false],stage:'intro',pool:[],index:0,scores:[0,0],judged:0,skipped:0,history:[],draftOwner:0};
+ let state=load(),ownerTab=0,editingId=null,locked=false;
+ function load(){try{const x=JSON.parse(localStorage.getItem(STORE)||'null');if(x&&Array.isArray(x.questions)&&x.questions.length===2)return {...defaults,...x}}catch(e){}return structuredClone(defaults)}
+ function save(){try{localStorage.setItem(STORE,JSON.stringify(state))}catch(e){$('d6SetupError').textContent='Your browser could not save this game. You can still play while this page stays open.'}}
+ const clean=s=>String(s||'').trim();
+ function view(id){root.querySelectorAll('.d6-view').forEach(v=>v.classList.toggle('active',v.id===id));}
+ function openDaySix(){root.classList.add('show');document.body.style.overflow='hidden';if(state.stage==='play'&&state.pool.length){view('d6Play');renderQuestion()}else if(state.stage==='results'){view('d6Results');renderResults()}else if(state.stage==='setup'){view('d6Setup');renderSetup()}else view('d6Intro');}
+ window.openDaySix=openDaySix;
+ function close(){root.classList.remove('show');document.body.style.overflow='';$('d6Close').blur()}
+ window.closeDaySix=close;
+ $('d6Close').addEventListener('click',close);root.addEventListener('click',e=>{if(e.target===root)close()});
+ $('d6Start').addEventListener('click',()=>{state.stage='setup';save();renderSetup();view('d6Setup')});
+ function updateNames(){for(let i=0;i<2;i++){const n=clean($('d6Name'+i).value)||defaults.names[i];state.names[i]=n.slice(0,24);$('d6Tab'+i).childNodes[0].textContent=state.names[i]}}
+ for(let i=0;i<2;i++)$('d6Name'+i).addEventListener('change',()=>{updateNames();save();renderSetup()});
+ function renderSetup(){for(let i=0;i<2;i++){$('d6Name'+i).value=state.names[i];$('d6Tab'+i).childNodes[0].textContent=state.names[i];$('d6Count'+i).textContent=state.questions[i].length+' question'+(state.questions[i].length===1?'':'s')+(state.ready[i]?' · ready':'');$('d6Tab'+i).classList.toggle('active',i===ownerTab)}
+  const ready=state.ready.map((v,i)=>v?state.names[i]+' is ready':'Waiting for '+state.names[i]);$('d6ReadyStatus').textContent=ready.join(' · ');
+  $('d6Ready').textContent=state.ready[ownerTab]?'READY ✓':'I’M DONE — PASS THE DEVICE';$('d6Ready').disabled=state.ready[ownerTab];
+  $('d6Begin').disabled=!(state.ready.every(Boolean)&&state.questions.every(a=>a.length>0));
+  $('d6OwnerLabel').textContent=state.names[ownerTab].toUpperCase()+"'S QUESTIONS";
+  $('d6Editor').style.opacity=state.ready[ownerTab]?'.55':'1';
+  $('d6Question').disabled=state.ready[ownerTab];$('d6Answer').disabled=state.ready[ownerTab];$('d6Add').disabled=state.ready[ownerTab];
+  $('d6SetupError').textContent='';renderQuestionList();
+ }
+ function renderQuestionList(){const list=$('d6QuestionList');list.replaceChildren();const qs=state.questions[ownerTab];if(!qs.length){const p=document.createElement('p');p.className='d6-note';p.textContent='No questions yet — add your first one above ♡';list.append(p);return}
+  qs.forEach(q=>{const row=document.createElement('div');row.className='d6-qrow';const copy=document.createElement('div');copy.className='qcopy';copy.textContent=q.q;const sub=document.createElement('small');sub.textContent='Answer saved · hidden until reveal 🔒';copy.append(sub);row.append(copy);if(!state.ready[ownerTab]){const edit=document.createElement('button');edit.type='button';edit.textContent='EDIT';edit.addEventListener('click',()=>{editingId=q.id;$('d6Question').value=q.q;$('d6Answer').value=q.a;$('d6Answer').type='password';$('d6Add').textContent='SAVE CHANGES';$('d6CancelEdit').hidden=false;$('d6Question').focus()});const del=document.createElement('button');del.type='button';del.textContent='DELETE';del.addEventListener('click',()=>{state.questions[ownerTab]=qs.filter(x=>x.id!==q.id);if(editingId===q.id)cancelEdit();save();renderSetup()});row.append(edit,del)}list.append(row)})}
+ function cancelEdit(){editingId=null;$('d6Question').value='';$('d6Answer').value='';$('d6Add').textContent='ADD QUESTION ✦';$('d6CancelEdit').hidden=true}
+ $('d6CancelEdit').addEventListener('click',cancelEdit);
+ $('d6Add').addEventListener('click',()=>{if(locked)return;const q=clean($('d6Question').value),a=clean($('d6Answer').value);if(!q||!a){$('d6SetupError').textContent='Add both a question and its answer before saving.';return}if(q.length<4){$('d6SetupError').textContent='Make the question a little more specific.';return}
+  const qs=state.questions[ownerTab];if(editingId){const item=qs.find(x=>x.id===editingId);if(item){item.q=q;item.a=a}}else{if(qs.some(x=>x.q.toLowerCase()===q.toLowerCase())){$('d6SetupError').textContent='You already added that question. Try a different one.';return}qs.push({id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random()),q,a})}
+  cancelEdit();save();renderSetup();});
+ root.querySelectorAll('.d6-tab').forEach(b=>b.addEventListener('click',()=>{ownerTab=Number(b.dataset.player);cancelEdit();renderSetup()}));
+ $('d6Ready').addEventListener('click',()=>{updateNames();if(!state.questions[ownerTab].length){$('d6SetupError').textContent='Add at least one question before marking yourself ready.';return}state.ready[ownerTab]=true;save();ownerTab=1-ownerTab;renderSetup();});
+ $('d6Begin').addEventListener('click',()=>{updateNames();if(!state.ready.every(Boolean)||!state.questions.every(a=>a.length)){return}startRound()});
+ function shuffledPool(){const all=[...state.questions[0].map(q=>({...q,owner:0})),...state.questions[1].map(q=>({...q,owner:1}))];for(let i=all.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[all[i],all[j]]=[all[j],all[i]]}
+  // Reorder same-owner neighbours when a different-owner question is available.
+  for(let i=1;i<all.length;i++){if(all[i].owner===all[i-1].owner){let j=i+1;while(j<all.length&&all[j].owner===all[i-1].owner)j++;if(j<all.length)[all[i],all[j]]=[all[j],all[i]]}}
+  return all}
+ function startRound(){state.pool=shuffledPool();state.index=0;state.scores=[0,0];state.judged=0;state.skipped=0;state.history=[];state.stage='play';save();view('d6Play');renderQuestion()}
+ function scoreMarkup(){const box=$('d6Scores');box.replaceChildren();state.names.forEach((n,i)=>{const d=document.createElement('div');d.className='d6-score';const b=document.createElement('b');b.textContent=state.scores[i].toFixed(1).replace(/\.0$/,'');const sm=document.createElement('small');sm.textContent=n;d.append(b,sm);box.append(d)})}
+ let submitted=false,revealed=false,judgedThisQuestion=false;
+ function renderQuestion(){const q=state.pool[state.index];if(!q){state.stage='results';save();view('d6Results');renderResults();return}submitted=false;revealed=false;judgedThisQuestion=false;$('d6RoundLabel').textContent='QUESTION '+(state.index+1)+' / '+state.pool.length;$('d6TurnLabel').textContent=state.names[1-q.owner].toUpperCase()+"'S TURN TO GUESS";$('d6Progress').style.width=(state.index/state.pool.length*100)+'%';$('d6QuestionOwner').textContent='✦ A QUESTION FROM '+state.names[q.owner].toUpperCase();$('d6Prompt').textContent=q.q;$('d6GuessLabel').textContent=state.names[1-q.owner]+"'s guess";$('d6Guess').value='';$('d6Guess').disabled=false;$('d6GuessWrap').hidden=false;$('d6SubmitRow').hidden=false;$('d6Submit').textContent='LOCK IN MY GUESS';$('d6RevealArea').hidden=true;$('d6Reveal').hidden=false;$('d6CorrectAnswer').hidden=true;$('d6Judge').hidden=true;$('d6PlayError').textContent='';scoreMarkup();}
+ $('d6Submit').addEventListener('click',()=>{if(submitted)return;const g=clean($('d6Guess').value);if(!g){$('d6PlayError').textContent='Put in your guess before locking it in.';return}submitted=true;$('d6Guess').disabled=true;$('d6SubmitRow').hidden=true;$('d6RevealArea').hidden=false;$('d6CorrectAnswer').textContent='The answer: '+state.pool[state.index].a;$('d6CorrectAnswer').hidden=true;$('d6Judge').hidden=true;$('d6Reveal').hidden=false;$('d6OwnerJudgeNote').textContent=state.names[state.pool[state.index].owner]+', reveal the answer, then judge the guess.';});
+ $('d6Reveal').addEventListener('click',()=>{if(!submitted||revealed)return;revealed=true;$('d6CorrectAnswer').hidden=false;$('d6Judge').hidden=false;$('d6Reveal').hidden=true;$('d6OwnerJudgeNote').textContent=state.names[state.pool[state.index].owner]+', how close were they?'});
+ $('d6Guess').addEventListener('keydown',e=>{if(e.key==='Enter')$('d6Submit').click()});
+ $('d6Skip').addEventListener('click',()=>{if(submitted)return;state.skipped++;state.history.push({owner:state.pool[state.index].owner,guesser:1-state.pool[state.index].owner,result:'skipped'});nextQuestion()});
+ root.querySelectorAll('[data-judge]').forEach(b=>b.addEventListener('click',()=>{if(!submitted||!revealed||judgedThisQuestion)return;judgedThisQuestion=true;const result=b.dataset.judge,guesser=1-state.pool[state.index].owner;if(result==='correct')state.scores[guesser]+=1;else if(result==='close')state.scores[guesser]+=.5;state.judged++;state.history.push({owner:state.pool[state.index].owner,guesser,result});b.disabled=true;root.querySelectorAll('[data-judge]').forEach(x=>x.disabled=true);$('d6PlayError').textContent=result==='correct'?'A PERFECT MATCH. +1 POINT ✦':result==='close'?'Close counts as half a point. +0.5 ♡':'Aww, the answer was a little different. Next one!';setTimeout(()=>{root.querySelectorAll('[data-judge]').forEach(x=>x.disabled=false);nextQuestion()},850)}));
+ function nextQuestion(){state.index++;save();if(state.index>=state.pool.length){state.stage='results';save();view('d6Results');renderResults()}else renderQuestion()}
+ function renderResults(){scoreMarkup();const a=state.scores[0],b=state.scores[1],chances0=state.pool.filter(q=>q.owner===1).length,chances1=state.pool.filter(q=>q.owner===0).length,rate0=chances0?a/chances0:0,rate1=chances1?b/chances1:0;let winner='A tie! Clearly, you two pay attention to the little things.';if(rate0>rate1)winner=state.names[0]+' knows '+state.names[1]+' a little better this round. Look at that!';if(rate1>rate0)winner=state.names[1]+' knows '+state.names[0]+' a little better this round. The plot twist!';$('d6WinnerLine').textContent=winner;const stats=$('d6FinalStats');stats.replaceChildren();[[a.toFixed(1).replace(/\.0$/,''),state.names[0]+' · SCORE'],[b.toFixed(1).replace(/\.0$/,''),state.names[1]+' · SCORE'],[state.judged,'QUESTIONS JUDGED'],[state.skipped,'SKIPPED'],[state.pool.length,'TOTAL QUESTIONS']].forEach(([v,l])=>{const d=document.createElement('div');d.className='d6-stat';const b=document.createElement('b');b.textContent=v;const sp=document.createElement('span');sp.textContent=l;d.append(b,sp);stats.append(d)});const correct=state.history.filter(h=>h.result==='correct').length,close=state.history.filter(h=>h.result==='close').length,wrong=state.history.filter(h=>h.result==='wrong').length;$('d6FunStats').textContent='Perfect guesses: '+correct+' · “Close enough” moments: '+close+' · Lovingly questionable guesses: '+wrong+'. '+(correct>=Math.ceil(state.judged*.7)&&state.judged?'Someone has been paying VERY close attention.':'The best part is that now you know a few more little things about each other. ♡');}
+ $('d6Replay').addEventListener('click',startRound);$('d6BackSetup').addEventListener('click',()=>{state.stage='setup';state.ready=[false,false];state.pool=[];save();ownerTab=0;renderSetup();view('d6Setup')});
+ // Restore an in-progress game without exposing any answers before a guess is submitted.
+ if(state.stage==='setup'){renderSetup()}else if(state.stage==='play'&&state.pool.length){view('d6Play');renderQuestion()}else if(state.stage==='results'){view('d6Results');renderResults()}
+})();
+</script>
+
+<div class="arcade-letter" id="daySevenOverlay" role="dialog" aria-modal="true" aria-label="Day seven: happy birthday letter"><article class="al-paper"><button class="al-close" id="d7Close" aria-label="Close letter">×</button><div class="al-top"><span>THE AGASTYA ARCHIVE</span><span>07 / 07</span></div><div class="al-copy"><p class="al-first">HAPPY BIRTHDAY, AGASTYA.</p><p>I don’t really know where to begin, which is slightly ironic considering I’ve spent the last seven days trying to find different ways to tell you how much you mean to me. I suppose there’s only so much you can fit into little notes, games, surprises and everything else I’ve made for you. So, for the last day, I wanted to sit down and write you something properly. Something you can come back to whenever you feel like reading it.</p><p>Firstly, HAPPY BIRTHDAYYYYY! I hope this year brings you so many wonderful things, opportunities that make you excited, experiences that teach you something new, and reasons to be proud of yourself. I hope you get closer to everything you’ve been working towards, that you find happiness in the little things, and that you never stop being curious about the world around you. You deserve a year that makes you feel good about yourself and everything you’re becoming.</p><p>It’s honestly quite strange to think that we’ve been together for two and a half years. TWO AND A HALF YEARS. When I think about it, there’s so much that has happened between us. We’ve gone from being two people getting to know each other to having an entire collection of memories, conversations, jokes, habits and little things that are so distinctly ours. There are things about you that I’ve come to recognise without even thinking, and there are probably a hundred little references that would make absolutely no sense to anyone except us.</p><p>I think one of my favourite things about having you in my life is that I have someone with whom I’ve shared so many different versions of myself. The person I was when we first got together isn’t exactly the person I am today, and neither are you. We’ve both grown, learnt things, changed our minds, made mistakes and figured things out along the way. Two and a half years isn’t just a number to me. It’s all those ordinary days that somehow became memories worth keeping.</p><p>I still think about our calls, especially the ones where we somehow managed to spend hours talking about the most random things. The gaming sessions, the silly conversations, the times neither of us had anything particularly interesting to say but still wanted to be there. I don’t think you realise how much I cherish those memories. Sometimes it’s not even about what we were doing; it’s simply that I got to share that moment with you.</p><p>And then there are the memories that I can still picture so clearly. Our hugs, the excitement of finally getting to spend time together, our first kiss, and that recent day when we went around the city together. I remember being on your bike and how happy I felt. I remember smiling so much that day, and I genuinely hope you know how much I enjoyed being with you. These are the kinds of moments I wish I could put in a little box and revisit whenever I wanted.</p><p>I also want you to know that I appreciate the person you are outside of being my boyfriend. I love how much you enjoy the things you’re interested in, how you can get so enthusiastic about something, your sense of humour, your teasing, and the way you sometimes manage to make me laugh when I’m being unnecessarily dramatic. I love your little habits, your expressions, and all those things that you probably don’t even notice about yourself. I hope you never feel like you have to change the parts of yourself that make you who you are.</p><p>Of course, we’ve had our disagreements too. We’ve had days when understanding each other wasn’t particularly easy, when we didn’t communicate as well as we could have, and when things felt a little more complicated than they needed to be. But I think those experiences have also taught me that a relationship isn’t made up only of its happiest moments. It’s also about learning to listen, understanding where the other person is coming from, taking responsibility and making an effort. I don’t expect us to get everything right all the time. I just hope we continue learning how to be better to each other.</p><p>And Agastya, I really hope you give yourself enough credit. I know you have your own ambitions, responsibilities, interests and things you’re figuring out. I hope you keep pursuing them. I hope you try things that scare you a little, take opportunities even when you’re unsure, and never underestimate what you’re capable of doing. I want to see you achieve the things you talk about, and I hope that when you do, you remember just how much work you put into getting there. Don’t be too hard on yourself when things don’t happen immediately. You have time to figure things out.</p><p>I hope you keep cooking, keep obsessing over anime, keep making questionable jokes, keep annoying me, and keep being that person who can turn an otherwise ordinary conversation into something entertaining. I hope you make new friends, discover new interests, visit places you’ve always wanted to see, and have stories that you’ll be excited to tell me about.</p><p>I don’t know exactly what the next two and a half years will look like. We have so much left to experience, so many places we haven’t visited, so many things we haven’t tried and so many conversations we haven’t had. There will be birthdays, celebrations, ordinary afternoons, spontaneous plans and probably plenty of arguments about completely ridiculous things. But I hope we make the most of the time we have and never stop appreciating the little moments in between the big ones.</p><p>I made all these little things for you over the past seven days because I wanted your birthday to feel special. I wanted you to have something to explore, something to play, something to read and something that reminded you of us. I hope you’ve enjoyed going through everything as much as I’ve enjoyed putting it together. And I hope you know that every little detail was something I thought about because it was for you.</p><p>There’s also something I want you to remember beyond today: you don’t have to accomplish something extraordinary to be worth celebrating. I’m happy that you exist, that you’re growing into your own person, and that I get to know you through all these different stages of your life. I hope this birthday reminds you to celebrate yourself, not just the things you achieve.</p><p>So here’s to twenty-five hundred little things we haven’t done yet, to more memories, more laughter, more adventures, more terrible jokes, more games, and more days that we’ll look back on fondly.</p><p>Happy birthday once again, Agastya. I hope you have the loveliest day. Take care of yourself, be proud of who you are, and please never stop being you.</p><p><strong>I’m really glad that, out of all the people in the world, our paths crossed.</strong></p><p class="sig">With love,<br>Chehaq ♡</p><div class="sp"><p class="spt">and a playlist, just for you ♡</p><iframe id="spot" data-src="https://open.spotify.com/embed/playlist/0GCRFyV7wIgCEDOlG1tYVm?utm_source=generator" style="border-radius:12px" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify playlist"></iframe></div></div></article></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* BIRTHDAY LAYER: bunting, confetti, 3D cake, midnight countdown, Day Seven letter */
+(()=>{
+const $=id=>document.getElementById(id),RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const cols=['#ff9ec4','#ffc99b','#ffe58f','#a8f0d0','#9fd3ff','#c7b6ff'];
+let k=0;
+$('bunt').innerHTML=['HAPPY BIRTHDAY','AGASTYA'].map(t=>'<div class="bl">'+[...t].map(c=>c===' '?'<i class="bf g"></i>':`<i class="bf" style="background:${cols[k%6]};--i:${k++}">${c}</i>`).join('')+'</div>').join('');
+/* confetti */
+const cv=document.createElement('canvas');cv.setAttribute('aria-hidden','true');cv.style.cssText='position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:4';document.body.append(cv);
+const g=cv.getContext('2d');let W,H,P=[];
+const fit=()=>{W=cv.width=innerWidth;H=cv.height=innerHeight};fit();addEventListener('resize',fit);
+const mk=(x,y,vx,vy,b)=>({x,y,vx,vy,b,w:6+Math.random()*7,h:3+Math.random()*5,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:cols[Math.random()*6|0],s:Math.random()*6});
+function burst(){const n=RM?20:90;for(let i=0;i<n;i++){const L=i%2;P.push(mk(L?0:W,H,(L?1:-1)*(3+Math.random()*9),-(9+Math.random()*10),1));P.push(mk(Math.random()*W,-20,(Math.random()-.5)*2,1+Math.random()*3,1))}}
+(function loop(){requestAnimationFrame(loop);g.clearRect(0,0,W,H);
+if(!RM&&P.length<26&&Math.random()<.08)P.push(mk(Math.random()*W,-10,(Math.random()-.5)*.6,.7+Math.random()));
+for(const p of P){if(p.b){p.vy+=.2;p.vx*=.97;p.vy*=.97}p.x+=p.vx+Math.sin(p.s+=.05)*.4;p.y+=p.vy;p.r+=p.vr;g.save();g.translate(p.x,p.y);g.rotate(p.r);g.fillStyle=p.c;g.fillRect(-p.w/2,-p.h/2,p.w,p.h);g.restore()}
+P=P.filter(p=>p.y<H+20)})();
+/* 3D cake */
+let setLit=()=>{},on=false,lit=false;
+function cake(){
+ if(!window.THREE)return $('cake').style.display='none';
+ try{
+ const T=THREE,el=$('cake'),R=new T.WebGLRenderer({canvas:el,antialias:true,alpha:true});
+ R.setPixelRatio(Math.min(devicePixelRatio,2));
+ const S=new T.Scene(),C=new T.PerspectiveCamera(32,1,.1,50);C.position.set(0,4.4,10.2);C.lookAt(0,1.5,0);
+ S.add(new T.AmbientLight(0xffffff,.78));const dl=new T.DirectionalLight(0xffffff,.8);dl.position.set(4,8,6);S.add(dl);
+ const gl=new T.PointLight(0xffb066,0,5);gl.position.set(0,3.4,0);S.add(gl);
+ const G=new T.Group();S.add(G);
+ const M=c=>new T.MeshLambertMaterial({color:c}),add=(geo,c,x,y,z)=>{const m=new T.Mesh(geo,M(c));m.position.set(x,y,z);G.add(m);return m};
+ const num=[0xff9ec4,0xffc99b,0xffe58f,0xa8f0d0,0x9fd3ff,0xc7b6ff];
+ add(new T.CylinderGeometry(2.4,2.4,.14,64),0xfff4f8,0,.07,0);
+ let y=.14;
+ [[1.75,.95,0xffc2da],[1.25,.85,0xfff1cf],[.8,.75,0xffc2da]].forEach(([r,h,c])=>{
+  add(new T.CylinderGeometry(r,r,h,56),c,0,y+h/2,0);const top=y+h;
+  const t=add(new T.TorusGeometry(r-.02,.09,10,64),0xffffff,0,top,0);t.rotation.x=Math.PI/2;
+  for(let i=0;i<16;i++){const a=i/16*6.283,l=.15+((i*7)%5)*.07,x=Math.cos(a)*(r-.01),z=Math.sin(a)*(r-.01);
+   add(new T.CylinderGeometry(.08,.08,l,8),0xffffff,x,top-l/2,z);add(new T.SphereGeometry(.08,8,8),0xffffff,x,top-l,z)}
+  y=top});
+ [[1.35,1.65,1.09,36],[.9,1.15,1.94,24]].forEach(([a,b,yy,n])=>{for(let i=0;i<n;i++){const t=Math.random()*6.283,r=a+Math.random()*(b-a),s=add(new T.BoxGeometry(.2,.05,.05),num[i%6],Math.cos(t)*r,yy+.1,Math.sin(t)*r);s.rotation.y=Math.random()*6}});
+ add(new T.SphereGeometry(.2,16,16),0xe5173f,0,2.69+.18,0);
+ const fl=[];
+ [0,1,2].forEach(i=>{const a=i*2.094+.5,x=Math.cos(a)*.45,z=Math.sin(a)*.45;
+  add(new T.CylinderGeometry(.06,.06,.55,12),[0xff9ec4,0xffe58f,0x9fd3ff][i],x,2.69+.275,z);
+  const f=new T.Group();f.position.set(x,2.69+.68,z);
+  const core=new T.Mesh(new T.SphereGeometry(.07,10,10),new T.MeshBasicMaterial({color:0xffe08a})),halo=new T.Mesh(new T.SphereGeometry(.14,10,10),new T.MeshBasicMaterial({color:0xff9a3c,transparent:true,opacity:.35}));
+  f.add(core,halo);G.add(f);fl.push(f)});
+ setLit=b=>{lit=b;fl.forEach(f=>f.visible=b);gl.intensity=b?.7:0};setLit(false);
+ const size=()=>{const w=el.clientWidth||300;R.setSize(w,w,false)};size();addEventListener('resize',size);
+ let drag=0,lx=0,moved=0;
+ el.addEventListener('pointerdown',e=>{drag=1;lx=e.clientX;moved=0;el.setPointerCapture(e.pointerId);el.style.cursor='grabbing'});
+ el.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-lx;lx=e.clientX;moved+=Math.abs(dx);G.rotation.y+=dx*.012});
+ el.addEventListener('pointerup',()=>{drag=0;el.style.cursor='grab';if(moved<6&&on){setLit(!lit);$('cakeCap').textContent=lit?'tap the cake to blow out the candles':'make a wish ✦ tap to relight';if(lit)burst()}});
+ el.addEventListener('pointercancel',()=>{drag=0});
+ (function f(t){requestAnimationFrame(f);if(!drag&&!RM)G.rotation.y+=.006;G.position.y=RM?0:Math.sin(t/900)*.05;
+  fl.forEach((m,i)=>m.scale.set(1,1.5+Math.sin(t/90+i*2)*.2,1));R.render(S,C)})(0);
+ }catch(e){$('cake').style.display='none'}
+}
+cake();
+/* countdown to 12:00 AM, 24 Nov 2026 (device time). Add ?bday to the address to preview the unlocked state */
+const TG=/[?&]bday/.test(location.search)?Date.now():new Date(2026,10,24,0,0,0).getTime();
+const cd=$('cd'),btn=$('openSeven'),p2=n=>String(n).padStart(2,'0');let iv;
+function unlock(){on=true;clearInterval(iv);cd.hidden=true;
+ $('bdTitle').textContent='Happy Birthday, Agastya!';$('bdSub').textContent='Day Seven is finally open';
+ $('cakeCap').textContent='tap the cake to blow out the candles';
+ btn.disabled=false;btn.textContent='Open Day Seven ♡';setLit(true);burst();setTimeout(burst,1400)}
+function tick(){const d=TG-Date.now();if(d<=0)return unlock();
+ const s=Math.floor(d/1e3),D=Math.floor(s/86400);
+ cd.innerHTML=(D?`<div><b>${D}</b><small>days</small></div>`:'')+`<div><b>${p2(Math.floor(s%86400/3600))}</b><small>hours</small></div><div><b>${p2(Math.floor(s%3600/60))}</b><small>mins</small></div><div><b>${p2(s%60)}</b><small>secs</small></div>`}
+tick();if(!on)iv=setInterval(tick,250);
+/* Day Seven letter */
+const ov=$('daySevenOverlay'),wrap=document.querySelector('.wrap');
+function openSeven(){if(btn.disabled)return;ov.classList.add('show');document.body.style.overflow='hidden';wrap.inert=true;
+ const f=$('spot');if(!f.src)f.src=f.dataset.src;burst();$('d7Close').focus({preventScroll:true})}
+function closeSeven(){ov.classList.remove('show');document.body.style.overflow='';wrap.inert=false;btn.focus({preventScroll:true})}
+btn.addEventListener('click',openSeven);$('d7Close').addEventListener('click',closeSeven);
+ov.addEventListener('click',e=>{if(e.target===ov)closeSeven()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&ov.classList.contains('show'))closeSeven()});
+})();
+</script>
+</body>
+</html>
